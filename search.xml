@@ -26,43 +26,62 @@
   <entry>
     <title>Markdown语法</title>
     <url>/2020/11/06/hexo-markdown-%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<p>Markdown 是一种轻量级标记语言，后缀为 .md, .markdown，广泛用来撰写帮助文档或用于论坛上发表消息。</p>
+    <content><![CDATA[<p>Markdown 是一种轻量级标记语言，文本后缀为 .md, .markdown，广泛用来撰写帮助文档或用于论坛上发表消息。</p>
 <a id="more"></a>
 
 <!-- 注释 -->
 <hr>
-<h1 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h1><p>使用 # 号可表示 1-6 级标题<br>示例：</p>
+<h1 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h1><p>使用 # 号可表示 1-6 级标题<br>语法：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 这是一级标题</span><br><span class="line">## 这是二级标题</span><br><span class="line">### 这是三级标题</span><br><span class="line">#### 这是四级标题</span><br><span class="line">##### 这是五级标题</span><br><span class="line">###### 这是六级标题</span><br></pre></td></tr></table></figure>
 <p>效果：</p>
 <h1 id="这是一级标题"><a href="#这是一级标题" class="headerlink" title="这是一级标题"></a>这是一级标题</h1><h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h3 id="这是三级标题"><a href="#这是三级标题" class="headerlink" title="这是三级标题"></a>这是三级标题</h3><h4 id="这是四级标题"><a href="#这是四级标题" class="headerlink" title="这是四级标题"></a>这是四级标题</h4><h5 id="这是五级标题"><a href="#这是五级标题" class="headerlink" title="这是五级标题"></a>这是五级标题</h5><h6 id="这是六级标题"><a href="#这是六级标题" class="headerlink" title="这是六级标题"></a>这是六级标题</h6><hr>
-<h1 id="二、段落格式"><a href="#二、段落格式" class="headerlink" title="二、段落格式"></a>二、段落格式</h1><h2 id="段落换行"><a href="#段落换行" class="headerlink" title="段落换行"></a>段落换行</h2><p>段落末尾两个以上空格加回车 或者 段落后空一行另起一段。<br>空行：<br>示例</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;emsp;</span><br></pre></td></tr></table></figure>
-<p>效果：<br>&emsp;  </p>
-<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>斜体     左右分别用一个<code>*</code>号包起来 或者 底线<br>加粗     左右分别用两个<code>*</code>号包起来 或者 底线<br>斜体加粗 左右分别用三个<code>*</code>号包起来 或者 底线<br>删除线   左右分别用两个<code>~~</code>号包起来<br>下划线   通过 HTML 的<code>&lt;u&gt;</code> 标签来实现：<br>示例：</p>
+<h1 id="二、段落格式"><a href="#二、段落格式" class="headerlink" title="二、段落格式"></a>二、段落格式</h1><h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><p><code>&amp;emsp;</code>和<code>&amp;nbsp;</code>，注意加<code>;</code><strong>分号</strong>。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">空格：&amp;emsp;空格</span><br><span class="line">&amp;nbsp;</span><br><span class="line">空格</span><br></pre></td></tr></table></figure>
+<p>效果：<br>空格：&emsp;空格<br>&nbsp;<br>空格 </p>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><table>
+<thead>
+<tr>
+<th>字体</th>
+<th>语法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>斜体</td>
+<td>左右分别加一个<code>*</code>或<code>_</code>号</td>
+</tr>
+<tr>
+<td>加粗</td>
+<td>左右分别加两个<code>*</code>号</td>
+</tr>
+<tr>
+<td>斜体加粗</td>
+<td>左右分别加三个<code>*</code>号</td>
+</tr>
+<tr>
+<td>删除线</td>
+<td>左右分别加两个<code>~~</code>号</td>
+</tr>
+<tr>
+<td>下划线</td>
+<td>通过HTML 的<code>&lt;u&gt;</code> 标签</td>
+</tr>
+</tbody></table>
+<p>语法：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体文本*        _斜体文本_</span><br><span class="line">**粗体文本**      __粗体文本__</span><br><span class="line">***粗斜体文本***  ___粗斜体文本___</span><br><span class="line">~~加删除线文本~~</span><br><span class="line">&lt;u&gt;带下划线文本&lt;&#x2F;u&gt;</span><br></pre></td></tr></table></figure>
 <p>效果：<br><em>斜体文本</em>        <em>斜体文本</em><br><strong>粗体文本</strong>      <strong>粗体文本</strong><br><strong><em>粗斜体文本</em></strong>  <strong><em>粗斜体文本</em></strong><br><del>加删除线文本</del><br><u>带下划线文本</u></p>
 <h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西，星号或是减号中间可以插入空格。</p>
-<h2 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h2><p>脚注是对文本的补充说明。<br>Markdown 脚注格式为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[^我是脚注]</span><br><span class="line">创建脚注：[^MXW01]</span><br><span class="line">[^MXW01]：MXW01&#39;s Blog</span><br></pre></td></tr></table></figure>
-<p>效果：<br>创建脚注：[^MXW01]<br>[^MXW01]：MXW01’s Blog</p>
 <hr>
 <h1 id="三、列表"><a href="#三、列表" class="headerlink" title="三、列表"></a>三、列表</h1><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>无序列表使用星号<code>*</code>、加号<code>+</code>或是减号<code>-</code>作为列表标记，标记后面要添加一个空格：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">* 第二项</span><br><span class="line">* 第三项</span><br><span class="line">+ 第一项</span><br><span class="line">+ 第二项</span><br><span class="line">+ 第三项</span><br><span class="line">- 第一项</span><br><span class="line">- 第二项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">+ 第一项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure>
 <p>效果：</p>
 <ul>
 <li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
 </ul>
 <ul>
 <li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
 </ul>
 <ul>
 <li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
 </ul>
 <h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>数字并加上<code>.</code>号来表示：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 第一项</span><br><span class="line">2. 第二项</span><br><span class="line">3. 第三项</span><br></pre></td></tr></table></figure>
@@ -70,8 +89,12 @@
 <ol>
 <li>第一项</li>
 <li>第二项</li>
-<li>第三项<h2 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 第一项：</span><br><span class="line">    - 第一篇博客</span><br><span class="line">    - 第二篇博客</span><br><span class="line">2. 第二项：</span><br><span class="line">    - 第三篇博客</span><br><span class="line">    - 第四篇博客</span><br></pre></td></tr></table></figure>
-效果：</li>
+<li>第三项</li>
+</ol>
+<h2 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h2><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 第一项：</span><br><span class="line">    - 第一篇博客</span><br><span class="line">    - 第二篇博客</span><br><span class="line">2. 第二项：</span><br><span class="line">    - 第三篇博客</span><br><span class="line">    - 第四篇博客</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<ol>
 <li>第一项：<ul>
 <li>第一篇博客</li>
 <li>第二篇博客</li>
@@ -84,7 +107,7 @@
 </li>
 </ol>
 <hr>
-<h1 id="四、区块引用"><a href="#四、区块引用" class="headerlink" title="四、区块引用"></a>四、区块引用</h1><p>区块引用是在段落开头使用<code>&gt;</code>符号 ，然后后面紧跟一个<strong>空格</strong>符号：</p>
+<h1 id="四、区块引用"><a href="#四、区块引用" class="headerlink" title="四、区块引用"></a>四、区块引用</h1><p>区块引用是在段落开头使用<code>&gt;</code>符号 ，然后后面紧跟一个<strong>空格</strong>符号：<br>语法：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块引用</span><br><span class="line">&gt; MXW&#39;s Blog</span><br></pre></td></tr></table></figure>
 <p>效果：</p>
 <blockquote>
@@ -107,22 +130,16 @@
 </blockquote>
 </blockquote>
 <h2 id="列表-区块"><a href="#列表-区块" class="headerlink" title="列表+区块"></a>列表+区块</h2><p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块1</span><br><span class="line">&gt; 区块2</span><br><span class="line">&gt; + 列表1</span><br><span class="line">&gt; + 列表2</span><br><span class="line"></span><br><span class="line">+ 列表1</span><br><span class="line">+ 列表2</span><br><span class="line">+ &gt; 区块1</span><br><span class="line">+ &gt; 区块2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块1</span><br><span class="line">&gt; + 列表2</span><br><span class="line"></span><br><span class="line">+ 列表1</span><br><span class="line">+ &gt; 区块2</span><br></pre></td></tr></table></figure>
 <p>效果：</p>
 <blockquote>
-<p>区块1<br>区块2</p>
+<p>区块1</p>
 <ul>
-<li>列表1</li>
 <li>列表2</li>
 </ul>
 </blockquote>
 <ul>
 <li>列表1</li>
-<li>列表2</li>
-<li><blockquote>
-<p>区块1</p>
-</blockquote>
-</li>
 <li><blockquote>
 <p>区块2  </p>
 </blockquote>
@@ -148,11 +165,47 @@
 
 <p>效果：<br><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3065461735,3257830606&fm=26&gp=0.jpg" width="50%"></p>
 <hr>
-<h1 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h1><p>表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">|  表头   | 表头  |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line">| 单元格  | 单元格 |</span><br></pre></td></tr></table></figure>
-<p>效果：<br>|  表头   | 表头  |<br>|  —-  | —-  |<br>| 单元格  | 单元格 |<br>| 单元格  | 单元格 |<br><strong>对齐方式：</strong><br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :-----| ----: | :----: |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br></pre></td></tr></table></figure>
-<p>效果：<br>| 左对齐 | 右对齐 | 居中对齐 |<br>| :—–| —-: | :—-: |<br>| 单元格 | 单元格 | 单元格 |<br>| 单元格 | 单元格 | 单元格 |</p>
+<h1 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h1><p>表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行,表格前后需要空一行。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">|  表头   | 表头  |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody></table>
+<p><strong>对齐方式：</strong><br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :-----| ----: | :----: |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="right">右对齐</th>
+<th align="center">居中对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+<tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+</tbody></table>
 <hr>
 <h1 id="九、高级技巧"><a href="#九、高级技巧" class="headerlink" title="九、高级技巧"></a>九、高级技巧</h1><p><strong>支持的 HTML 元素</strong></p>
 <p><strong>转义</strong><br>示例：</p>
