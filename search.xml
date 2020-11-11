@@ -6,27 +6,121 @@
     <content><![CDATA[<p>MXW01的简单自我介绍，Blog的目的、目标与计划更新内容。</p>
 <a id="more"></a>
 
-<h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><p>目前帝都在读研究生，学过一点机械，一点控制，一点计算机，拧过螺丝，敲过代码。总体而言，属于底层的技术工…<br>既然躲不了打工人的命运，我更愿意选择付出回报比更高的计算机。我也因为互联网大环境下的包容、互助、开源精神，相信这条路并不是盲人摸象。但也不是自信满满，谁又知道明天的旦夕祸福呢？<br>世界是如此的五彩斑斓，我只想走好下一步。</p>
+<h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><p>目前帝都在读研究生，学过一点机械，一点控制，一点计算机，拧过螺丝，敲过代码。总体而言，属于底层的技术工…</p>
+<p>打工人 打工魂….</p>
 <h1 id="Blog的目的"><a href="#Blog的目的" class="headerlink" title="Blog的目的"></a>Blog的目的</h1><p>学习笔记</p>
-<h1 id="Blog的目标"><a href="#Blog的目标" class="headerlink" title="Blog的目标"></a>Blog的目标</h1><h1 id="学习的计划"><a href="#学习的计划" class="headerlink" title="学习的计划"></a>学习的计划</h1>]]></content>
+<h1 id="Blog的目标"><a href="#Blog的目标" class="headerlink" title="Blog的目标"></a>Blog的目标</h1><p>&emsp;<br>&emsp;<br>&emsp;<br>&emsp;</p>
+<h1 id="学习的计划"><a href="#学习的计划" class="headerlink" title="学习的计划"></a>学习的计划</h1><p>&emsp;<br>&emsp;<br>&emsp;<br>&emsp;</p>
+]]></content>
       <tags>
         <tag>唯一</tag>
       </tags>
   </entry>
   <entry>
+    <title>学习方法改进</title>
+    <url>/2020/11/11/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E6%94%B9%E8%BF%9B/</url>
+    <content><![CDATA[<p>学习方法</p>
+<a id="more"></a>
+
+<p>之前觉得看书效率还不错，在连啃几本厚书后（600+页），发现吸收较差。<br>同时，在B站和MOOC上发现很多不错的教程，计划学习方法转为看教学视频，记blog，找实例或者项目做的形式。</p>
+<h1 id="B站"><a href="#B站" class="headerlink" title="B站"></a>B站</h1><p>B站上的IT视频比较丰富，观看人数也很多，弹幕也有解答。<br>之前曾在B站看过stm32视频，之前不常在B站看教学视频因为校园网流量太少。现在多了一些，4G流量也很多，计划多看一些。<br>复习 ：<br>C++<br>数据结构与算法<br>计算机系统<br>计算机网络<br>计算机接口与组成<br>Linux</p>
+<p>学习：<br>QT<br>Opencv<br>深度学习<br>Java</p>
+<h1 id="MOOC"><a href="#MOOC" class="headerlink" title="MOOC"></a>MOOC</h1><p>慕课上有一些专业的课还是很不错。<br>之前看了一个医学图像处理的课，还有ROS系统的课。</p>
+]]></content>
+      <tags>
+        <tag>学习方法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>visual studio学习</title>
+    <url>/2020/11/10/visual-studio%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>visual studio</p>
+<a id="more"></a>
+
+<p>一个vs窗口只能打开一个解决方案，一个解决方案可以包括多个工程项目。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>English words</title>
+    <url>/2020/11/10/English-words-in-IT/</url>
+    <content><![CDATA[<p>English words</p>
+<a id="more"></a>
+
+
+
+<p>backwards compatibility 向后兼容</p>
+<p>toolkit 工具箱</p>
+<p>dashboard 仪表盘</p>
+<p>binaries 二进制</p>
+<p>cross-platform 跨平台</p>
+<p>inheritance and collaboration  继承和协作</p>
+<p>capture dependencies 获取依赖项</p>
+<p>invoke  调用   invocation</p>
+<p>extract 提取</p>
+<p>executables 可执行文件</p>
+<p>customize 定制</p>
+<p>Rendering Engine  绘制/渲染引擎</p>
+<p>dialog 对话</p>
+<p>cache  缓存</p>
+<p>scroll down 向下滚动</p>
+<p>toggle 切换/开关</p>
+<p>makefile 生成文件</p>
+<p>prompt 提示</p>
+<p>batch script 批处理脚本</p>
+<p>shortcut 快捷方式</p>
+<p>drag-and-drop 拖放</p>
+<p>modify the properties of the shortcut  修改属性</p>
+<p>System Architecture 系统架构</p>
+<p>manipulate 操纵</p>
+<p>remainder 剩余的</p>
+<p>raw 原始的</p>
+<p>annotation 标注</p>
+<p>opacity 透明度 ambient, diffuse, and specular coefficient 环境系数、漫射系数和镜面系数</p>
+<p>clip  剪裁</p>
+<p>focal  焦点的 stereo, anti-aliasing, motion blur 立体，抗锯齿，运动模糊</p>
+<p>derivative 派生的</p>
+<p>spheres and cylinders  球体和圆柱体</p>
+<p>dataset 数据集</p>
+]]></content>
+      <tags>
+        <tag>English</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git使用方法学习</title>
     <url>/2020/11/09/git%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>计划使用github托管一部分代码</p>
+<a id="more"></a>
+
+<p>之前学过git使用，了解过一部分git指令（现在忘光了）。<br>先占一个位置，学一点再更新。</p>
+]]></content>
   </entry>
   <entry>
     <title>hexo next主题持续优化</title>
     <url>/2020/11/09/hexo-next%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>已做的优化待更新，发现的bug统计，计划修改的样式记录。</p>
+<a id="more"></a>
+
+<h1 id="已做优化"><a href="#已做优化" class="headerlink" title="已做优化"></a>已做优化</h1><h1 id="发现问题："><a href="#发现问题：" class="headerlink" title="发现问题："></a>发现问题：</h1><p>首行需要空两格。</p>
+<p>进度条 需要换 颜色，蓝色让人觉得没有加载完。</p>
+<p>发现问题：置顶功能有bug，取消置顶top后首页依然存在标签。</p>
+<p>每个blog中间留白太多</p>
+<h1 id="添加功能"><a href="#添加功能" class="headerlink" title="添加功能"></a>添加功能</h1><p>需要添加搜索栏功能，之前取消是因为代码上传github后出现加载现象，功能没有实现。</p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>研究方向变更</title>
     <url>/2020/11/09/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E5%8F%98%E6%9B%B4/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>研究内容从机器人硬件改为医学图像处理</p>
+<a id="more"></a>
+
+<p>原先做了一点 机械结构设计，stm32控制。<br>现在在学医学图像处理的知识，预计这周五（11/13）做一次汇报。</p>
+<p>查了一晚上资料，医学图像处理，在技术上更接近数字图像处理，在学术前沿更多使用深度学习。</p>
+<p>医学图像处理使用VTK等软件，具体内容待学习。</p>
+]]></content>
   </entry>
   <entry>
     <title>Linux指令（备忘录）</title>
@@ -274,14 +368,14 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">**文本加粗**</span><br><span class="line">\*\*显示星星\*\*</span><br></pre></td></tr></table></figure>
 <p>效果：<br><strong>文本加粗</strong><br>**显示星星**</p>
 <p><strong>支持的 HTML 元素</strong></p>
-<h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><p>菜鸟教程——<a href="https://www.runoob.com/markdown/md-tutorial.html">Markdown教程</a></p>
+<h1 id="本文参考"><a href="#本文参考" class="headerlink" title="本文参考"></a>本文参考</h1><p>菜鸟教程——<a href="https://www.runoob.com/markdown/md-tutorial.html">Markdown教程</a></p>
 ]]></content>
       <categories>
         <category>前端</category>
       </categories>
       <tags>
-        <tag>语法</tag>
         <tag>hexo</tag>
+        <tag>语法</tag>
       </tags>
   </entry>
   <entry>
