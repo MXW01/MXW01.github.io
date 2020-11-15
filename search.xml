@@ -18,64 +18,56 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux指令（备忘录）</title>
-    <url>/2020/11/09/Linux%E6%8C%87%E4%BB%A4%EF%BC%88%E5%A4%87%E5%BF%98%E5%BD%95%EF%BC%89/</url>
-    <content><![CDATA[<p>Linux指令</p>
+    <title>C++复习</title>
+    <url>/2020/11/15/C-%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<p>正在复习</p>
 <a id="more"></a>
 
+<p>从上到下看到第11</p>
+<p>1.short(2) int(4) long(4) long long(8)<br>2.sizeof( 数据类型 / 变量 )<br>3.float(4) 7位有效数字 float型数据需要加f/ double(8) 15-16位有效数字    c++默认小数<strong>输出</strong>6位有效数字</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>QT学习</title>
+    <url>/2020/11/12/QT%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>安装 MS  自带编译器，部分编码与visual stdio不一样</p>
+<p>基类： QWidget（父类） QMainWindow、QDialog（子类）派生</p>
+<p>QMainWindow 多菜单栏 工具 状态栏<br>QDialog 对话框</p>
+<p>.pro - project文件<br>.cpp -</p>
+<p>窗口.cpp 和 .c</p>
+<p> QApplication a 有且只有一个<br> myWidget w；实例化窗口对象<br>w.show() 调用show函数显示窗口<br>return a.exec() 消息循环机制，代码阻塞</p>
+<p>QT       += core gui  //Qt包含模块</p>
+<p>greaterThan(QT_MAJOR_VERSION, 4): QT += widgets //大于4版本以上  widgets</p>
+<p>TARGET = 01_FirstProject    //目标 生成.exe文件 文件名称<br>TEMPLATE = app              //模板 应用程序模板</p>
+<p>SOURCES += <br>        main.cpp \      //源码<br>        mywidge.cpp</p>
+<p>HEADERS += <br>        mywidge.h         //头文件</p>
+<pre><code>QPushButton * btn2 = new QPushButton ;
+btn2-&gt;setText(&quot;关闭&quot;);
+btn2-&gt;move(100,0);
+btn2-&gt;resize(50,50);
+btn2-&gt;setParent(this);
 
-<p>grep 命令</p>
-<p>Linux grep 命令用于查找文件里符合条件的字符串。<br>grep 指令用于查找内容包含指定的范本样式的文件，如果发现某文件的内容符合所指定的范本样式，预设 grep 指令会把含有范本样式的那一列显示出来。若不指定任何文件名称，或是所给予的文件名为 <code>-</code>，则 grep 指令会从标准输入设备读取数据。</p>
-<p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grep [-abcEFGhHilLnqrsvVwxy][-A&lt;显示列数&gt;][-B&lt;显示列数&gt;][-C&lt;显示列数&gt;][-d&lt;进行动作&gt;][-e&lt;范本样式&gt;][-f&lt;范本文件&gt;][--help][范本样式][文件或目录...]</span><br></pre></td></tr></table></figure>
+connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
+<p>信号槽的优点，松散耦合，信号发送端和接收端 本身是没有关联的，通过一个connect连接，将两端 耦合在一起<br>参数1 信号的发送者 参数2 发送的信号（函数的地址） 参数3 信号的接受者 参数4 处理的槽函数（函数的地址）<br>connect( myBtn, &amp;QPushButton::clicked, this, &amp;QWidget::close );</p>
+<p>信号可以连接信号</p>
+<p>一个信号可以连接多个槽函数<br>多个信号可以连接同一个槽函数<br>信号和槽函数的参数类型必须一一对应<br>信号和槽的参数个数可以不一致  信号的个数可以多于槽个数</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>学习方法改进</title>
+    <url>/2020/11/11/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E6%94%B9%E8%BF%9B/</url>
+    <content><![CDATA[<p>学习方法</p>
+<a id="more"></a>
 
-
-<p>cat 命令<br>cat（英文全拼：concatenate）命令用于连接文件并打印到标准输出设备上。</p>
-<p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat [-AbeEnstTuv] [--help] [--version] fileName</span><br></pre></td></tr></table></figure>
-
-<p>pwd 命令 当前目录<br>cd 命令<br><code>cd /</code> 根目录<br><code>cd ..</code> 或者 <code>cd .. //</code>  往回跳一层<br><code>cd ../..</code>  往回跳两层<br><code>cd</code> 和 <code>cd ~</code> 都可进入当前用户主目录，即 <code>/root</code> 目录</p>
+<p>之前觉得看书效率还不错，在连啃几本厚书后（600+页），发现吸收较差。<br>同时，在B站和MOOC上发现很多不错的教程，计划学习方法转为看教学视频，记blog，找实例或者项目做的形式。</p>
+<h1 id="B站"><a href="#B站" class="headerlink" title="B站"></a>B站</h1><p>B站上的IT视频比较丰富，观看人数也很多，弹幕也有解答。<br>之前曾在B站看过stm32视频，之前不常在B站看教学视频因为校园网流量太少。现在多了一些，4G流量也很多，计划多看一些。<br>复习 ：<br>C++<br>数据结构与算法<br>计算机系统<br>计算机网络<br>计算机接口与组成<br>Linux</p>
+<p>学习：<br>QT<br>Opencv<br>深度学习<br>Java</p>
+<h1 id="MOOC"><a href="#MOOC" class="headerlink" title="MOOC"></a>MOOC</h1><p>数字图像处理 第四周-第六讲 灰度的形态学</p>
+<p>慕课上有一些专业的课还是很不错。<br>之前看了一个医学图像处理的课，还有ROS系统的课。</p>
 ]]></content>
       <tags>
-        <tag>linux</tag>
+        <tag>学习方法</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>git使用方法学习</title>
-    <url>/2020/11/09/git%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>计划使用github托管一部分代码</p>
-<a id="more"></a>
-
-<p>之前学过git使用，了解过一部分git指令（现在忘光了）。<br>先占一个位置，学一点再更新。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>hexo next主题持续优化</title>
-    <url>/2020/11/09/hexo-next%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<p>已做的优化，发现的bug统计，计划修改的样式记录。</p>
-<a id="more"></a>
-
-<h1 id="已做优化"><a href="#已做优化" class="headerlink" title="已做优化"></a>已做优化</h1><p>待更新</p>
-<h1 id="发现问题："><a href="#发现问题：" class="headerlink" title="发现问题："></a>发现问题：</h1><p>首行需要空两格。</p>
-<p>进度条 需要换 颜色，蓝色让人觉得没有加载完。</p>
-<p>发现问题：置顶功能有bug，取消置顶top后首页依然存在标签。</p>
-<p>每个blog中间留白太多</p>
-<h1 id="添加功能"><a href="#添加功能" class="headerlink" title="添加功能"></a>添加功能</h1><p>需要添加搜索栏功能，之前取消是因为代码上传github后出现加载现象，功能没有实现。</p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>研究方向变更</title>
-    <url>/2020/11/09/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E5%8F%98%E6%9B%B4/</url>
-    <content><![CDATA[<p>研究内容从机器人硬件改为医学图像处理</p>
-<a id="more"></a>
-
-<p>原先做了一点 机械结构设计，stm32控制。<br>现在在学医学图像处理的知识，预计这周五（11/13）做一次汇报。</p>
-<p>查了一晚上资料，医学图像处理，在技术上更接近数字图像处理，在学术前沿更多使用深度学习。</p>
-<p>医学图像处理使用VTK等软件，具体内容待学习。</p>
-]]></content>
   </entry>
   <entry>
     <title>visual studio学习</title>
@@ -133,44 +125,64 @@
       </tags>
   </entry>
   <entry>
-    <title>学习方法改进</title>
-    <url>/2020/11/11/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E6%94%B9%E8%BF%9B/</url>
-    <content><![CDATA[<p>学习方法</p>
+    <title>git使用方法学习</title>
+    <url>/2020/11/09/git%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>计划使用github托管一部分代码</p>
 <a id="more"></a>
 
-<p>之前觉得看书效率还不错，在连啃几本厚书后（600+页），发现吸收较差。<br>同时，在B站和MOOC上发现很多不错的教程，计划学习方法转为看教学视频，记blog，找实例或者项目做的形式。</p>
-<h1 id="B站"><a href="#B站" class="headerlink" title="B站"></a>B站</h1><p>B站上的IT视频比较丰富，观看人数也很多，弹幕也有解答。<br>之前曾在B站看过stm32视频，之前不常在B站看教学视频因为校园网流量太少。现在多了一些，4G流量也很多，计划多看一些。<br>复习 ：<br>C++<br>数据结构与算法<br>计算机系统<br>计算机网络<br>计算机接口与组成<br>Linux</p>
-<p>学习：<br>QT<br>Opencv<br>深度学习<br>Java</p>
-<h1 id="MOOC"><a href="#MOOC" class="headerlink" title="MOOC"></a>MOOC</h1><p>慕课上有一些专业的课还是很不错。<br>之前看了一个医学图像处理的课，还有ROS系统的课。</p>
+<p>之前学过git使用，了解过一部分git指令（现在忘光了）。<br>先占一个位置，学一点再更新。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo next主题持续优化</title>
+    <url>/2020/11/09/hexo-next%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<p>已做的优化，发现的bug统计，计划修改的样式记录。</p>
+<a id="more"></a>
+
+<h1 id="已做优化"><a href="#已做优化" class="headerlink" title="已做优化"></a>已做优化</h1><p>待更新</p>
+<h1 id="发现问题："><a href="#发现问题：" class="headerlink" title="发现问题："></a>发现问题：</h1><p>首行需要空两格。</p>
+<p>进度条 需要换 颜色，蓝色让人觉得没有加载完。</p>
+<p>发现问题：置顶功能有bug，取消置顶top后首页依然存在标签。</p>
+<p>每个blog中间留白太多</p>
+<h1 id="添加功能"><a href="#添加功能" class="headerlink" title="添加功能"></a>添加功能</h1><p>需要添加搜索栏功能，之前取消是因为代码上传github后出现加载现象，功能没有实现。</p>
 ]]></content>
       <tags>
-        <tag>学习方法</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/11/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>  
+    <title>研究方向变更</title>
+    <url>/2020/11/09/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E5%8F%98%E6%9B%B4/</url>
+    <content><![CDATA[<p>研究内容从机器人硬件改为医学图像处理</p>
+<a id="more"></a>
+
+<p>原先做了一点 机械结构设计，stm32控制。<br>现在在学医学图像处理的知识，预计这周五（11/13）做一次汇报。</p>
+<p>查了一晚上资料，医学图像处理，在技术上更接近数字图像处理，在学术前沿更多使用深度学习。</p>
+<p>医学图像处理使用VTK等软件，具体内容待学习。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Linux指令（备忘录）</title>
+    <url>/2020/11/09/Linux%E6%8C%87%E4%BB%A4%EF%BC%88%E5%A4%87%E5%BF%98%E5%BD%95%EF%BC%89/</url>
+    <content><![CDATA[<p>Linux指令</p>
+<a id="more"></a>
 
 
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>grep 命令</p>
+<p>Linux grep 命令用于查找文件里符合条件的字符串。<br>grep 指令用于查找内容包含指定的范本样式的文件，如果发现某文件的内容符合所指定的范本样式，预设 grep 指令会把含有范本样式的那一列显示出来。若不指定任何文件名称，或是所给予的文件名为 <code>-</code>，则 grep 指令会从标准输入设备读取数据。</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grep [-abcEFGhHilLnqrsvVwxy][-A&lt;显示列数&gt;][-B&lt;显示列数&gt;][-C&lt;显示列数&gt;][-d&lt;进行动作&gt;][-e&lt;范本样式&gt;][-f&lt;范本文件&gt;][--help][范本样式][文件或目录...]</span><br></pre></td></tr></table></figure>
 
 
+<p>cat 命令<br>cat（英文全拼：concatenate）命令用于连接文件并打印到标准输出设备上。</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat [-AbeEnstTuv] [--help] [--version] fileName</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h2 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h2>]]></content>
+<p>pwd 命令 当前目录<br>cd 命令<br><code>cd /</code> 根目录<br><code>cd ..</code> 或者 <code>cd .. //</code>  往回跳一层<br><code>cd ../..</code>  往回跳两层<br><code>cd</code> 和 <code>cd ~</code> 都可进入当前用户主目录，即 <code>/root</code> 目录</p>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>Markdown语法</title>
@@ -407,5 +419,30 @@
         <tag>hexo</tag>
         <tag>语法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/11/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>  
+
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h2>]]></content>
   </entry>
 </search>
