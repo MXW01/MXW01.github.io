@@ -31,7 +31,7 @@
 <meta property="og:description" content="正在复习">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-15T03:50:04.000Z">
-<meta property="article:modified_time" content="2020-11-17T09:45:02.935Z">
+<meta property="article:modified_time" content="2020-11-17T15:37:15.856Z">
 <meta property="article:author" content="MXW01">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -192,7 +192,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-17 17:45:02" itemprop="dateModified" datetime="2020-11-17T17:45:02+08:00">2020-11-17</time>
+                <time title="修改时间：2020-11-17 23:37:15" itemprop="dateModified" datetime="2020-11-17T23:37:15+08:00">2020-11-17</time>
               </span>
 
           <br>
@@ -201,14 +201,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.5k</span>
+              <span>7.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>7 分钟</span>
             </span>
           
           
@@ -254,7 +254,7 @@
 <p>24.结构体可以嵌套结构体 teacher.student.score = 100;</p>
 <p>25.结构体中 值传递，student.score访问参数，不会修改实参；地址传递 student-&gt;score访问参数，会修改实参。形参改为指针可以减少内存空间，不会复制新的副本出来</p>
 <p>26.结构体中的const， void student（const student *s）;其中const可以保证指针不改变常量，保证实参不变，防止误操作。</p>
-<p>27.内存分区：代码区，全局区（全局变量，静态变量，常量），栈区（局部变量，函数参数值），堆区（new创建的地址，程序员释放，程序结束时操作系统回收）<br>堆和栈的区别：<br>使用栈就象我们去饭馆里吃饭，只管点菜（发出申请）、付钱、和吃（使用），吃饱了就走，不必理会切菜、洗菜等准备工作和洗碗、刷锅等扫尾工作，他的好处是快捷，但是自由度小。使用堆就象是自己动手做喜欢吃的菜肴，比较麻烦，但是比较符合自己的口味，而且自由度大。(经典！)</p>
+<p>27.内存分区：代码区，全局区（全局变量，静态变量，常量），栈区（局部变量，函数参数值），堆区（new创建的地址，程序员释放，程序结束时操作系统回收）<br><strong>堆和栈的区别</strong>：<br>使用栈就象我们去饭馆里吃饭，只管点菜（发出申请）、付钱、和吃（使用），吃饱了就走，不必理会切菜、洗菜等准备工作和洗碗、刷锅等扫尾工作，他的好处是快捷，但是自由度小。使用堆就象是自己动手做喜欢吃的菜肴，比较麻烦，但是比较符合自己的口味，而且自由度大。(经典！)</p>
 <p>28.new释放数组需要加中括号 delete[] arr;</p>
 <p>29.引用 数据类型 &amp; 别名 = 原名； 给变量起别名，引用必须初始化，之后无法修改。 引用本质在c++内部实现是一个指针常量 int* const 指针指向不可修改，值可以修改</p>
 <p>30.引用传递，形参会修饰实参，发生改变，原因 引用是在起别名。优点 简化指针修改实参，效果同按地址传递一样</p>
@@ -321,10 +321,44 @@
 <p>54.this指针指向被调用的成员函数所属的对象。 大环境，每一个非静态成员函数只会诞生一份函数实例，也就是说多个同类型的对象共用一块代码。<br>this指针是隐含在每一个非静态成员函数内的一个指针，不需要定义，直接使用。<br>用途：</p>
 <ul>
 <li><strong>解决名称冲突</strong>：当形参和成员变量同名时，可用this指针来区分。</li>
-<li>*<em>返回对象本身用</em>this**：在类的非静态成员函数中返回对象本身，可使用return *this<br>链式编程思想。 </li>
+<li>*<em>返回对象本身用</em>this**：在类的非静态成员函数中返回对象本身，可使用return *this<br>链式编程思想。<br>this指针的本质是指针常量，指针的指向是不可以修改的。</li>
 </ul>
 <p>55.空指针访问成员函数<br>提高代码健壮性：if(this == NULL){return;}</p>
-<p>56.const修饰成员函数</p>
+<p>56.const修饰成员函数后这个函数成为<strong>常函数</strong>   const Person * const this;    void showPerson() const {} 这个const相当于第一个式子的第一个const，修饰this指针，让指针指向的值也不可以修改。<br>加关键字 mutable 后，参数就可以修改。<br>常对象只能调用常函数，常对象不能调用普通成员函数，因为普通成员函数可以修改属性。</p>
+<p>57.友元的关键字 friend。 声明特殊的函数和特殊的类，让另外的一些函数或者类进行访问。<br>友元的三种实现方式：</p>
+<ul>
+<li>全局函数做友元</li>
+<li>类做友元</li>
+<li>成员函数做友元</li>
+<li>*全局函数做友元**：把全局函数放在类中声明，并加上friend 关键字。函数就可以访问私有成员了。</li>
+<li>*类做友元**：friend class goodgay；</li>
+<li>*成员函数做友元**：friend void visit；</li>
+</ul>
+<p>58.运算符重载<br><strong>加号运算符重载</strong>：可以通过成员函数或者全局函数重载。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;成员函数</span><br><span class="line">Person operator+(Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	Person temp;</span><br><span class="line">	temp.m_A &#x3D; this-&gt;m_A + p.m_A;</span><br><span class="line">	temp.m_B &#x3D; this-&gt;m_B + p.m_B;</span><br><span class="line">	return temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;全局函数</span><br><span class="line">Person operator+(Person &amp;p1,Person &amp;p2)</span><br><span class="line">&#123;</span><br><span class="line">	Person temp;</span><br><span class="line">	temp.m_A &#x3D; p1.m_A + p2.m_A;</span><br><span class="line">	temp.m_B &#x3D; p1.m_B + p2.m_B;</span><br><span class="line">	return temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>成员函数调用为：Person p3 = p1.operator+(p2);简化为：Person p3 = p1 + p2;<br>全局函数调用为：Person p3 = p1.operator+(p1,p2);简化为：Person p3 = p1 + p2;<br>运算符重载也可以发生函数重载。Person operator+(Person &amp;p1,Person &amp;p2)重载为Person operator+(Person &amp;p1,int)</p>
+<p><strong>左移运算符重载</strong>:输出自定义类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;成员函数</span><br><span class="line">p.operator&lt;&lt;(cout) 简化版本为 p &lt;&lt; cout; 不符合要求</span><br><span class="line">不会利用成员函数重载&lt;&lt;运算符，因为无法实现cout在左侧。</span><br><span class="line">&#x2F;&#x2F;只能利用全局函数来重载左移运算符</span><br><span class="line">ostream operator&lt;&lt;(ostream &amp;cout,Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt;&quot;m_A &#x3D; &quot; &lt;&lt; p.m_A &lt;&lt; &quot;m_B &#x3D; &quot; &lt;&lt; p.m_B;</span><br><span class="line">	return cout;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>递增运算符重载</strong>： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;前置递增  返回引用类型可以一直对一个m_Num做处理</span><br><span class="line">MyInteger&amp; operator++()</span><br><span class="line">&#123;</span><br><span class="line">	m_Num++;</span><br><span class="line">	return *this;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;后置递增 返回值类型  int代表占位参数，用于区分前置和后置递增</span><br><span class="line">MyInteger operator++(int)</span><br><span class="line">&#123;</span><br><span class="line">	MyInteger temp &#x3D; *this;</span><br><span class="line">	m_Num++;</span><br><span class="line">	return temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>赋值运算符重载</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Person&amp; operator&#x3D;(Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	if(m_Age !&#x3D; NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		delete m_Age;</span><br><span class="line">		m_Age &#x3D; NULL;	</span><br><span class="line">	&#125;</span><br><span class="line">	m_Age &#x3D; new int(*p.m_Age);</span><br><span class="line">	return *this;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>关系运算符重载</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">bool operator&#x3D;&#x3D;(Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	if(this-&gt;m_Name &#x3D;&#x3D; p.m_Name &amp;&amp; this-&gt;m_Age &#x3D;&#x3D; p.m_Age)</span><br><span class="line">	&#123;</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line">	return false;</span><br><span class="line">&#125;</span><br><span class="line">bool operator!&#x3D;(Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	if(this-&gt;m_Name &#x3D;&#x3D; p.m_Name &amp;&amp; this-&gt;m_Age &#x3D;&#x3D; p.m_Age)</span><br><span class="line">	&#123;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>函数调用运算符重载</strong>：又叫<strong>仿函数</strong>，符号为<code>()</code>,没有固定写法，非常灵活。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void operator()(string test, , , )</span><br><span class="line">&#123;</span><br><span class="line">	&#x2F;&#x2F;内容灵活</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>cout &lt;&lt; MyAdd()(100,100) &lt;&lt; endl; //匿名函数对象，执行完释放，标志为 <code>函数名()</code>.</p>
+<p>59.继承 减少重复代码<br>语法：class 子类 ： 继承方式 父类<br>子类 也称为 派生类<br>父类 也称为 基类</p>
+<p>60.继承方式</p>
+<ul>
+<li>公共继承  public和protected继承，private不可被继承</li>
+<li>保护继承  public变为protected继承，private不可被继承</li>
+<li>私有继承  public和protected变为private私有继承，private不可被继承<br>基类的private都不可被继承</li>
+</ul>
+<p>61.继承中的对象模型<br>父类中的所有非静态成员属性都会被子类继承下去<br>父类中私有成员被编译器隐藏了，因此访问不到，但确实被继承下去了。<br>开发人员命令提示符<br>定位到CPP文件的盘符 ，然后输入： cl /d1 reportSingleClassLayout参看的类名 所属文件名</p>
+<p>62.继承中构造和析构顺序<br>先构造父类，再构造子类，析构顺序与构造顺序相反。</p>
+<p>63.父类和子类中同名成员处理方式：<br>访问子类成员属性：直接访问<br>访问父类成员属性：需要加作用域s.Base::Num;<br>访问子类成员函数：直接调用<br>访问父类成员函数：需要加作用域s.Base::func();<br>如果子类中出现和父类同名的成员函数，子类的同名成员会隐藏掉父类中的所有同名成员函数。如果想访问需要加作用域.</p>
+<p>64.继承同名静态成员处理方式<br>访问子类同名成员 直接访问即可<br>访问父类同名成员 需要加作用域<br><code>Son::Base::Num</code> 第一个::代表通过类名方式访问，第二个::代表访问父类作用域下的Num</p>
 
     </div>
 
