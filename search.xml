@@ -20,7 +20,20 @@
   <entry>
     <title>计算机图形学</title>
     <url>/2020/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>计算机图形学</p>
+<a id="more"></a>  
+
+<p>仿真，几何，渲染，图形学三大方向<br> Visualization 可视化</p>
+<p>光栅化<br>30 FPS 称为实时</p>
+<p>OpenGL DirectX VulKan  都是图形学API  </p>
+<p>Maya/3DS MAX Blender ,VR / game development using unity / Unreal Engine</p>
+<p>图形学 和 计算机视觉<br>一切需要猜测的内容是视觉研究对象，做分析，理解和猜测</p>
+<p>图形学 computer graphics(rendering)  MODEL-&gt;IMAGE<br>计算机视觉 computer vision  IMAGE-&gt;MODEL</p>
+<p>Computer Vision /Deep learning </p>
+]]></content>
+      <tags>
+        <tag>计算机基础</tag>
+      </tags>
   </entry>
   <entry>
     <title>VTK使用</title>
@@ -471,41 +484,54 @@ deque构造函数操作和vector差不多</li>
 <li>判断是否为空 — empty</li>
 <li>交换容器 — swap</li>
 <li>*map插入和删除**<br>insert(elem); //在容器中插入元素。<br>clear(); //清除所有元素<br>erase(pos); //删除pos迭代器所指的元素，返回下一个元素的迭代器。<br>erase(beg, end); //删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。<br>erase(key); //删除容器中值为key的元素。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;第一种插入方式</span><br><span class="line">	m.insert(pair&lt;int, int&gt;(1, 10));</span><br><span class="line">&#x2F;&#x2F;第二种插入方式  &#x2F;&#x2F;建议使用</span><br><span class="line">	m.insert(make_pair(2, 20));</span><br><span class="line">&#x2F;&#x2F;第三种插入方式 不建议</span><br><span class="line">	m.insert(map&lt;int, int&gt;::value_type(3, 30));</span><br><span class="line">&#x2F;&#x2F;第四种插入方式 不建议参数，用[]key找value</span><br><span class="line">	m[4] &#x3D; 40; </span><br><span class="line">	printMap(m);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+总结：</li>
+<li>map插入方式很多，记住其一即可</li>
+<li>插入 — insert</li>
+<li>删除 — erase</li>
+<li>清空 — clear</li>
+<li>*map查找和统计**<br>find(key); //查找key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end();<br>count(key); //统计key的元素个数<br>总结：<br>查找 — find （返回的是迭代器）<br>统计 — count （对于map，结果为0或者1）</li>
+<li>*map容器排序**:利用仿函数，可以改变排序规则<br>map容器默认排序规则为 按照key值进行 从小到大排序，掌握如何改变排序规则<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bool operator()(int v1, int v2) &#123;</span><br><span class="line">		return v1 &gt; v2;</span><br><span class="line">	&#125;</span><br><span class="line">for (map&lt;int, int, MyCompare&gt;::iterator it &#x3D; m.begin(); it !&#x3D; m.end(); it++) &#123;</span><br><span class="line">		cout &lt;&lt; &quot;key:&quot; &lt;&lt; it-&gt;first &lt;&lt; &quot; value:&quot; &lt;&lt; it-&gt;second &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
+</ul>
+<p>115.<strong>函数对象</strong>重载函数调用操作符的类，其对象常称为函数对象<br>函数对象使用重载的()时，行为类似函数调用，也叫仿函数<br>本质：函数对象(仿函数)是一个类，不是一个函数<br><strong>函数对象使用</strong></p>
+<ul>
+<li>函数对象在使用时，可以像普通函数那样调用, 可以有参数，可以有返回值</li>
+<li>函数对象超出普通函数的概念，函数对象可以有自己的状态</li>
+<li>函数对象可以作为参数传递</li>
+</ul>
+<p>116.<strong>谓词</strong></p>
+<ul>
+<li>返回bool类型的仿函数称为谓词</li>
+<li>如果operator()接受一个参数，那么叫做一元谓词</li>
+<li>如果operator()接受两个参数，那么叫做二元谓词<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vector&lt;int&gt;::iterator it &#x3D; find_if(v.begin(), v.end(), GreaterFive());</span><br><span class="line">&#x2F;&#x2F;使用函数对象改变算法策略，排序从大到小</span><br><span class="line">	sort(v.begin(), v.end(), MyCompare());</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>117.<strong>内建函数对象</strong><br>仿函数所产生的对象，用法和一般函数完全相同<br>使用内建函数对象，需要引入头文件 #include<functional><br><strong>算术仿函数</strong><br>实现四则运算<br>其中negate是一元运算，其他都是二元运算<br>template<class T> T plus<T> //加法仿函数<br>template<class T> T minus<T> //减法仿函数<br>template<class T> T multiplies<T> //乘法仿函数<br>template<class T> T divides<T> //除法仿函数<br>template<class T> T modulus<T> //取模仿函数<br>template<class T> T negate<T> //取反仿函数<br><strong>关系仿函数</strong><br>template<class T> bool equal_to<T> //等于<br>template<class T> bool not_equal_to<T> //不等于<br>template<class T> bool greater<T> //<strong>大于</strong><br>template<class T> bool greater_equal<T> //大于等于<br>template<class T> bool less<T> //小于<br>template<class T> bool less_equal<T> //小于等于<br><strong>逻辑仿函数</strong>逻辑仿函数实际应用较少<br>template<class T> bool logical_and<T> //逻辑与<br>template<class T> bool logical_or<T> //逻辑或<br>template<class T> bool logical_not<T> //逻辑非</p>
+<p>118.STL- 常用算法<br>算法主要是由头文件<algorithm> <functional> <numeric>组成。<br><algorithm>是所有STL头文件中最大的一个，范围涉及到比较、 交换、查找、遍历操作、复制、修改等等<br><numeric>体积很小，只包括几个在序列上面进行简单数学运算的模板函数<br><functional>定义了一些模板类,用以声明函数对象。</p>
+<p>119.常用遍历算法for_each和transform<br>for_each //遍历容器<br>transform //搬运容器到另一个容器中<br><strong>for_each</strong>(iterator beg, iterator end, _func);<br>// 遍历算法 遍历容器元素<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _func 函数或者函数对象<br><strong>transform</strong>(iterator beg1, iterator end1, iterator beg2, _func);<br>//beg1 源容器开始迭代器<br>//end1 源容器结束迭代器<br>//beg2 目标容器开始迭代器<br>//_func 函数或者函数对象<br>总结： 搬运的目标容器必须要提前开辟空间，否则无法正常搬运</p>
+<p>120.常用查找算法<br>find //查找元素  查找指定元素，找到返回指定元素的迭代器，找不到返回结束迭代器end()<br>find_if //按条件查找元素<br>adjacent_find //查找相邻重复元素<br>binary_search //二分查找法<br>count //统计元素个数<br>count_if //按条件统计元素个数<br><strong>find</strong>(iterator beg, iterator end, value);<br>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置<br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 查找的元素<br><strong>find_if</strong><br>find_if(iterator beg, iterator end, _Pred);<br>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _Pred 函数或者谓词（返回bool类型的仿函数）<br><strong>adjacent_find</strong><br>adjacent_find(iterator beg, iterator end);<br>// 查找相邻重复元素,返回相邻元素的第一个位置的迭代器<br>// beg 开始迭代器<br>// end 结束迭代器<br>总结：面试题中如果出现查找相邻重复元素，记得用STL中的adjacent_find算法<br><strong>binary_search</strong><br>bool binary_search(iterator beg, iterator end, value);<br>// 查找指定的元素，查到 返回true 否则false<br>// 注意: <strong>在无序序列中不可用</strong><br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 查找的元素<br><strong>count</strong><br>count(iterator beg, iterator end, value);<br>// 统计元素出现次数<br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 统计的元素<br><strong>count_if</strong> 按条件统计元素个数<br>count_if(iterator beg, iterator end, _Pred);<br>// 按条件统计元素出现次数<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _Pred 谓词</p>
+<p>121.常用排序算法<br>sort //对容器内元素进行排序<br>random_shuffle //洗牌 指定范围内的元素随机调整次序<br>merge // 容器元素合并，并存储到另一容器中<br>reverse // 反转指定范围的元素<br><strong>sort</strong><br>sort(iterator beg, iterator end, _Pred);<br>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _Pred 谓词<br><strong>random_shuffle</strong>  洗牌算法<br>random_shuffle(iterator beg, iterator end);<br>// 指定范围内的元素随机调整次序<br>// beg 开始迭代器<br>// end 结束迭代器<br>srand((unsigned int)time(NULL));<br><strong>merge</strong>  两个容器元素合并，并存储到另一容器中<br>merge(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);<br>// 注意: 两个容器必须是有序的<br>// beg1 容器1开始迭代器<br>// end1 容器1结束迭代器<br>// beg2 容器2开始迭代器<br>// end2 容器2结束迭代器<br>// dest 目标容器开始迭代器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;目标容器需要提前开辟空间</span><br><span class="line">vtarget.resize(v1.size() + v2.size());</span><br><span class="line">&#x2F;&#x2F;合并  需要两个有序序列</span><br><span class="line">merge(v1.begin(), v1.end(), v2.begin(), v2.end(), vtarget.begin());</span><br></pre></td></tr></table></figure>
+<p><strong>reverse</strong><br>reverse(iterator beg, iterator end);<br>// 反转指定范围的元素<br>// beg 开始迭代器<br>// end 结束迭代器</p>
+<p>122.<strong>常用拷贝和替换算法</strong><br>copy // 容器内指定范围的元素拷贝到另一容器中<br>replace // 将容器内指定范围的旧元素修改为新元素<br>replace_if // 容器内指定范围满足条件的元素替换为新元素<br>swap // 互换两个容器的元素<br><strong>copy</strong>  容器内指定范围的元素拷贝到另一容器中<br>copy(iterator beg, iterator end, iterator dest);<br>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置<br>// beg 开始迭代器<br>// end 结束迭代器<br>// dest 目标起始迭代器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vector&lt;int&gt; v2;</span><br><span class="line">v2.resize(v1.size());&#x2F;&#x2F;提前开辟</span><br><span class="line">copy(v1.begin(), v1.end(), v2.begin());</span><br></pre></td></tr></table></figure>
+<p>​<strong>replace</strong> 将容器内指定范围的旧元素修改为新元素<br>replace(iterator beg, iterator end, oldvalue, newvalue);<br>// 将区间内旧元素 替换成 新元素<br>// beg 开始迭代器<br>// end 结束迭代器<br>// oldvalue 旧元素<br>// newvalue 新元素<br><strong>replace_if</strong><br>replace_if(iterator beg, iterator end, _pred, newvalue);<br>// 按条件替换元素，满足条件的替换成指定元素<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _pred 谓词<br>// newvalue 替换的新元素<br><strong>swap</strong> 互换两个容器的元素。两个同种类型<br>swap(container c1, container c2);<br>// 互换两个容器的元素<br>// c1容器1<br>// c2容器2</p>
+<p>123.常用算术生成算法<br>算术生成算法属于小型算法，使用时包含的头文件为 #include <numeric><br>accumulate // 计算容器元素累计总和<br>fill // 向容器中添加元素<br><strong>accumulate</strong>  计算区间内 容器元素累计总和<br>accumulate(iterator beg, iterator end, value);<br>// 计算容器元素累计总和<br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 起始值<br><strong>fill</strong>   向容器中填充指定的元素<br>fill(iterator beg, iterator end, value);<br>// 向容器中填充元素<br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 填充的值</p>
+<p>124.常用集合算法<br>set_intersection // 求两个容器的交集<br>set_union // 求两个容器的并集<br>set_difference // 求两个容器的差集<br><strong>set_intersection</strong>  求两个容器的交集<br>set_intersection(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);<br>// 求两个集合的交集<br>// 注意:两个集合必须是有序序列<br>// beg1 容器1开始迭代器<br>// end1 容器1结束迭代器<br>// beg2 容器2开始迭代器<br>// end2 容器2结束迭代器<br>// dest 目标容器开始迭代器<br>总结：</p>
+<ul>
+<li>求交集的两个集合必须的有序序列</li>
+<li>目标容器开辟空间需要从两个容器中取小值</li>
+<li>set_intersection返回值既是交集中最后一个元素的位置</li>
+<li>*set_union** 求两个集合的并集<br>set_union(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);<br>// 注意:两个集合必须是有序序列<br>// beg1 容器1开始迭代器<br>// end1 容器1结束迭代器<br>// beg2 容器2开始迭代器<br>// end2 容器2结束迭代器<br>// dest 目标容器开始迭代器<br>总结：</li>
+<li>求并集的两个集合必须的有序序列</li>
+<li>目标容器开辟空间需要两个容器相加</li>
+<li>set_union返回值既是并集中最后一个元素的位置</li>
+<li>*set_difference**  // 求两个集合的差集<br>set_difference(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);<br>// 注意:两个集合必须是有序序列<br>// beg1 容器1开始迭代器<br>// end1 容器1结束迭代器<br>// beg2 容器2开始迭代器<br>// end2 容器2结束迭代器<br>// dest 目标容器开始迭代器<br>总结：</li>
+<li>求差集的两个集合必须的有序序列</li>
+<li>目标容器开辟空间需要从两个容器取较大值</li>
+<li>set_difference返回值既是差集中最后一个元素的位置</li>
 </ul>
 ]]></content>
       <tags>
@@ -579,6 +605,12 @@ connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
     <content><![CDATA[<p>English words</p>
 <a id="more"></a>
 
+<p>sub-class 子类</p>
+<p>trade off 权衡，舍弃</p>
+<p>curve 曲线</p>
+<p>rasterization 光栅化</p>
+<p>fundamental 基本的</p>
+<p>synthesize  合成</p>
 <p>parse解析</p>
 <p>registration 注册</p>
 <p>segmentation 分割</p>
@@ -666,9 +698,9 @@ connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
     <content><![CDATA[<p>研究内容从机器人硬件改为医学图像处理</p>
 <a id="more"></a>
 
-<p>原先做了一点 机械结构设计，stm32控制。<br>现在在学医学图像处理的知识，预计这周五（11/13）做一次汇报。</p>
-<p>查了一晚上资料，医学图像处理，在技术上更接近数字图像处理，在学术前沿更多使用深度学习。</p>
-<p>医学图像处理使用VTK等软件，具体内容待学习。</p>
+
+<p>目前学习了 数字图像处理，计算机图形学</p>
+<p>软件学习了VTK ITK QT </p>
 ]]></content>
   </entry>
   <entry>
