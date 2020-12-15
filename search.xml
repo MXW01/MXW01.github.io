@@ -1,209 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Purpose of my Blog</title>
-    <url>/2020/11/08/Purpose-of-my-Blog/</url>
-    <content><![CDATA[<p>MXW01的简单自我介绍，Blog的目的、目标与计划更新内容。</p>
-<a id="more"></a>
+    <title>NAS</title>
+    <url>/2020/12/12/NAS/</url>
+    <content><![CDATA[<p>NAS(Network Attached Storge)网络附属云储存</p>
+<a id="more"></a>  
 
-<h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><p>目前帝都在读研究生，学过一点机械，一点控制，一点计算机，拧过螺丝，敲过代码。总体而言，属于底层的技术工。现在以计算机为主。</p>
-<p>打工人 打工魂….</p>
-<p>开了很多Blog，慢慢填，作为笔记本，针不戳！</p>
-<h1 id="Blog的目的"><a href="#Blog的目的" class="headerlink" title="Blog的目的"></a>Blog的目的</h1><p>学习笔记</p>
-<h1 id="Blog的目标"><a href="#Blog的目标" class="headerlink" title="Blog的目标"></a>Blog的目标</h1><p>&emsp;<br>&emsp;<br>&emsp;<br>&emsp;</p>
-<h1 id="学习的计划"><a href="#学习的计划" class="headerlink" title="学习的计划"></a>学习的计划</h1><p>&emsp;<br>&emsp;<br>&emsp;<br>&emsp;</p>
+<h1 id="NAS"><a href="#NAS" class="headerlink" title="NAS"></a>NAS</h1><p>存储概念：<br>RAID 磁盘阵列（Redundant Arrays of Independent Disks，RAID）</p>
+<p>付费NAS：群晖，威联通，铁威马  提供NAS系统</p>
+<p>免费NAS：FreeNAS，OpenMediaVault，需要自己集成内网穿透  U-NAS</p>
+<p>组件NAS时，需要选CPU，主板，</p>
+<p>CPU常选：入门级：J1900，J3160,J3355 </p>
+<p>主板选择：千兆网口，SATA 3接口，内存条接口(DDR3,DDR4,笔记本台式机内存)</p>
+<p>电源：瓦数</p>
+<p>机箱</p>
+<h1 id="RAID"><a href="#RAID" class="headerlink" title="RAID"></a>RAID</h1><p>2盘位只能上raid1备份 有效容量1/2<br>3盘位可以上raid5 有效容量2/3</p>
+<p>raid0（至少两块硬盘）存储空间大，读写速度是单个硬盘的两倍，但数据丢失风险大</p>
+<p>raid1（两块硬盘）速度为两倍，存储空间为一半，数据有保障</p>
+<p>raid5（至少三块硬盘）为raid0的优化版，多了一个奇偶校检信息，  单块磁盘容量*（n-1）</p>
+<p>raid10（四块硬盘） 先组成两个raid1，再把两个（raid1组）组成一个raid0</p>
+<h1 id="SMR叠瓦式硬盘"><a href="#SMR叠瓦式硬盘" class="headerlink" title="SMR叠瓦式硬盘"></a>SMR叠瓦式硬盘</h1><p>之前的硬盘使用的普遍是PMR-CMR，垂直磁记录技术-常规磁记录方式</p>
+<p>SMR，叠瓦式磁记录技术，把一部分闲置区域进行重叠。如果我们只进行一次性写入，自然就啥事没有的一直写下去了。但是如果我们要对数据进行修改，或者用久了之后就会出现影响后面的文件的情况。</p>
+<p>PMR硬盘只需要原地覆写就行。而SMR硬盘，当你遇到需要修改某一区域的数据的时候，覆写会影响后面的数据。所以在覆写之前，需要先将被影响的数据转移。</p>
+<p>这也就是为啥SMR硬盘需要大缓存，为啥越用越慢。</p>
+<h1 id="硬盘缓存，转速的影响"><a href="#硬盘缓存，转速的影响" class="headerlink" title="硬盘缓存，转速的影响"></a>硬盘缓存，转速的影响</h1><p>如果读写是持续的，那么是转速影响大</p>
+<p>如果读写是偶尔且少量的话，缓存影响大</p>
+<p>另外，数据在盘片的位置、存储密度、算法等等都有很大的影响</p>
+<p>缓存与速度无关，机械硬盘的速度由转速、磁头设计及数量，盘片密度决定</p>
+<p>缓存的作用：<br>“缓存”是为了平衡高速设备和低速设备之间的速度不一样而存在的。举个最简单的例子，内存中的数据要写入机械硬盘保存，由于机械硬盘相比内存要缓慢许多，理论上就需要很长的时间才能完成任务，体现出来的结果就是写入超级慢。</p>
+<h1 id="My-Choice"><a href="#My-Choice" class="headerlink" title="My Choice"></a>My Choice</h1><p>NAS买蜗牛星际，买回来要换固态和电源，如果风扇太吵，还要换风扇。<br>机械硬盘选择在淘宝买拆机，买1T硬盘，选择RAID5，空间大+速度块，只要不同时坏两个盘，数据就可救。</p>
+<h1 id="备份含义"><a href="#备份含义" class="headerlink" title="备份含义"></a>备份含义</h1><p>1&gt; 冷备份 : 备份系统未安装或未配置成与当前使用的系统相同或相似的运行环境，应用系统数据没有及时装入备份系统。一旦发生灾难，需安装配置所需的运行环境，用数据备份介质(磁带或光盘) 恢复应用数据，手工逐笔或自动批量追补孤立数据，将终端用户通过通讯线路切换到备份系统，恢复业务运行<br>     优点 : 设备投资较少，节省通信费用，通信环境要求不高<br>     缺点 : 恢复时间较长，一般要数天至1周，数据完整性与一致性较差</p>
+<p>2&gt; 温备份 : 将备份系统已安装配置成与当前使用的系统相同或相似的系统和网络运行环境，安装应用系统业务定期备份数据。一旦发生灾难，直接使用定期备份数据，手工逐笔或自动批量追补孤立数据或将终端用户通过通讯线路切换到备份系统，恢复业务运行<br>     优点 : 设备投资较少，通信环境要求不高<br>     缺点 : 恢复时间长，一般要十几个小时至数天，数据完整性与一致性较差</p>
+<p>3&gt; 热备份 : 备份处于联机状态，当前应用系统通过高速通信线路将数据实时传送到备份系统，保持备份系统与当前应用系统数据的同步；也可定时在备份系统上恢复应用系统的数据。一旦发生灾难，不用追补或只需追补很少的孤立数据，备份系统可快速接替生产系统运行，恢复营业<br>     优点 : 恢复时间短，一般几十分钟到数小时，数据完整性与一致性最好，数据丢失可能性最小<br>     缺点 : 设备投资大，通信费用高，通信环境要求高，平时运行管理较复杂</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>计算机图形学</title>
+    <url>/2020/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/</url>
+    <content><![CDATA[<p>计算机图形学</p>
+<a id="more"></a>  
+
+<p>仿真，几何，渲染，图形学三大方向<br> Visualization 可视化</p>
+<p>光栅化<br>30 FPS 称为实时</p>
+<p>OpenGL DirectX VulKan  都是图形学API  </p>
+<p>Maya/3DS MAX Blender ,VR / game development using unity / Unreal Engine</p>
+<p>图形学 和 计算机视觉<br>一切需要猜测的内容是视觉研究对象，做分析，理解和猜测</p>
+<p>图形学 computer graphics(rendering)  MODEL-&gt;IMAGE<br>计算机视觉 computer vision  IMAGE-&gt;MODEL</p>
+<p>Computer Vision /Deep learning </p>
 ]]></content>
       <tags>
-        <tag>唯一</tag>
+        <tag>计算机基础</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Linux指令（备忘录）</title>
-    <url>/2020/11/09/Linux%E6%8C%87%E4%BB%A4%EF%BC%88%E5%A4%87%E5%BF%98%E5%BD%95%EF%BC%89/</url>
-    <content><![CDATA[<p>Linux指令</p>
-<a id="more"></a>
-
-
-<p>grep 命令</p>
-<p>Linux grep 命令用于查找文件里符合条件的字符串。<br>grep 指令用于查找内容包含指定的范本样式的文件，如果发现某文件的内容符合所指定的范本样式，预设 grep 指令会把含有范本样式的那一列显示出来。若不指定任何文件名称，或是所给予的文件名为 <code>-</code>，则 grep 指令会从标准输入设备读取数据。</p>
-<p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grep [-abcEFGhHilLnqrsvVwxy][-A&lt;显示列数&gt;][-B&lt;显示列数&gt;][-C&lt;显示列数&gt;][-d&lt;进行动作&gt;][-e&lt;范本样式&gt;][-f&lt;范本文件&gt;][--help][范本样式][文件或目录...]</span><br></pre></td></tr></table></figure>
-
-
-<p>cat 命令<br>cat（英文全拼：concatenate）命令用于连接文件并打印到标准输出设备上。</p>
-<p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat [-AbeEnstTuv] [--help] [--version] fileName</span><br></pre></td></tr></table></figure>
-
-<p>pwd 命令 当前目录<br>cd 命令<br><code>cd /</code> 根目录<br><code>cd ..</code> 或者 <code>cd .. //</code>  往回跳一层<br><code>cd ../..</code>  往回跳两层<br><code>cd</code> 和 <code>cd ~</code> 都可进入当前用户主目录，即 <code>/root</code> 目录</p>
-]]></content>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo next主题持续优化</title>
-    <url>/2020/11/09/hexo-next%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<p>已做的优化，发现的bug统计，计划修改的样式记录。</p>
-<a id="more"></a>
-
-<h1 id="已做优化"><a href="#已做优化" class="headerlink" title="已做优化"></a>已做优化</h1><p>待更新</p>
-<h1 id="发现问题："><a href="#发现问题：" class="headerlink" title="发现问题："></a>发现问题：</h1><p>首行需要空两格。</p>
-<p>进度条 需要换 颜色，蓝色让人觉得没有加载完。</p>
-<p>发现问题：置顶功能有bug，取消置顶top后首页依然存在标签。</p>
-<p>每个blog中间留白太多</p>
-<h1 id="添加功能"><a href="#添加功能" class="headerlink" title="添加功能"></a>添加功能</h1><p>需要添加搜索栏功能，之前取消是因为代码上传github后出现加载现象，功能没有实现。</p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git使用方法学习</title>
-    <url>/2020/11/09/git%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>计划使用github托管一部分代码</p>
-<a id="more"></a>
-
-<p>之前学过git使用，了解过一部分git指令（现在忘光了）。<br>先占一个位置，学一点再更新。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>研究方向变更</title>
-    <url>/2020/11/09/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E5%8F%98%E6%9B%B4/</url>
-    <content><![CDATA[<p>研究内容从机器人硬件改为医学图像处理</p>
-<a id="more"></a>
-
-
-<p>目前学习了 数字图像处理，计算机图形学</p>
-<p>软件学习了VTK ITK QT </p>
-]]></content>
-  </entry>
-  <entry>
-    <title>English words</title>
-    <url>/2020/11/10/English-words-in-IT/</url>
-    <content><![CDATA[<p>English words</p>
-<a id="more"></a>
-
-<p>sub-class 子类</p>
-<p>trade off 权衡，舍弃</p>
-<p>curve 曲线</p>
-<p>rasterization 光栅化</p>
-<p>fundamental 基本的</p>
-<p>synthesize  合成</p>
-<p>parse解析</p>
-<p>registration 注册</p>
-<p>segmentation 分割</p>
-<p>digest 消化</p>
-<p>workflow 工作流</p>
-<p>spatial 空间的</p>
-<p>polyline 多叉线，多段线</p>
-<p>topology 拓扑学</p>
-<p>customize 定制</p>
-<p>mesh 网格</p>
-<p>wrap 包，缠绕，掩护</p>
-<p>scalar 标量的</p>
-<p>opacity 不透明度</p>
-<p>filter 滤波器</p>
-<p>Renderer 渲染，描绘</p>
-<p>Mapper 绘图</p>
-<p>backwards compatibility 向后兼容</p>
-<p>toolkit 工具箱</p>
-<p>dashboard 仪表盘</p>
-<p>binaries 二进制</p>
-<p>cross-platform 跨平台</p>
-<p>inheritance and collaboration  继承和协作</p>
-<p>capture dependencies 获取依赖项</p>
-<p>invoke  调用   invocation</p>
-<p>extract 提取</p>
-<p>executables 可执行文件</p>
-<p>customize 定制</p>
-<p>Rendering Engine  绘制/渲染引擎</p>
-<p>dialog 对话</p>
-<p>cache  缓存</p>
-<p>scroll down 向下滚动</p>
-<p>toggle 切换/开关</p>
-<p>makefile 生成文件</p>
-<p>prompt 提示</p>
-<p>batch script 批处理脚本</p>
-<p>shortcut 快捷方式</p>
-<p>drag-and-drop 拖放</p>
-<p>modify the properties of the shortcut  修改属性</p>
-<p>System Architecture 系统架构</p>
-<p>manipulate 操纵</p>
-<p>remainder 剩余的</p>
-<p>raw 原始的</p>
-<p>annotation 标注</p>
-<p>opacity 透明度 ambient, diffuse, and specular coefficient 环境系数、漫射系数和镜面系数</p>
-<p>clip  剪裁</p>
-<p>focal  焦点的 stereo, anti-aliasing, motion blur 立体，抗锯齿，运动模糊</p>
-<p>derivative 派生的</p>
-<p>inheritance 继承</p>
-<p>spheres and cylinders  球体和圆柱体</p>
-<p>dataset 数据集</p>
-]]></content>
-      <tags>
-        <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>软件使用</title>
-    <url>/2020/11/10/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>待更新</p>
-<a id="more"></a>
-
-
-<h1 id="visual-studio"><a href="#visual-studio" class="headerlink" title="visual studio"></a>visual studio</h1><p>一个vs窗口只能打开一个解决方案，一个解决方案可以包括多个工程项目。<br>ctrol + K + C 快速注释<br>ctrol + K + U 快速取消注释</p>
-<h1 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h1><p>windows + E 快速打开资源管理器</p>
-<p>windows + R input control can open 控制面板</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>学习方法改进</title>
-    <url>/2020/11/11/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E6%94%B9%E8%BF%9B/</url>
-    <content><![CDATA[<p>学习方法</p>
-<a id="more"></a>
-
-<p>之前觉得看书效率还不错，在连啃几本厚书后（600+页），发现吸收较差。<br>同时，在B站和MOOC上发现很多不错的教程，计划学习方法转为看教学视频，记blog，找实例或者项目做的形式。</p>
-<h1 id="B站"><a href="#B站" class="headerlink" title="B站"></a>B站</h1><p>B站上的IT视频比较丰富，观看人数也很多，弹幕也有解答。<br>之前曾在B站看过stm32视频，之前不常在B站看教学视频因为校园网流量太少。现在多了一些，4G流量也很多，计划多看一些。<br>复习 ：<br>C++<br>数据结构与算法<br>计算机系统<br>计算机网络<br>计算机接口与组成<br>Linux</p>
-<p>学习：<br>QT<br>Opencv<br>深度学习<br>Java</p>
-<h1 id="MOOC"><a href="#MOOC" class="headerlink" title="MOOC"></a>MOOC</h1><p>数字图像处理 第四周-第六讲 灰度的形态学</p>
-<p>慕课上有一些专业的课还是很不错。<br>之前看了一个医学图像处理的课，还有ROS系统的课。</p>
-]]></content>
-      <tags>
-        <tag>学习方法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>QT学习</title>
-    <url>/2020/11/12/QT%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>已看完一部教学视频，待总结。</p>
-<a id="more"></a>
-
-
-<p>安装 MS  自带编译器，部分编码与visual stdio不一样</p>
-<p>基类： QWidget（父类） QMainWindow、QDialog（子类）派生</p>
-<p>QMainWindow 多菜单栏 工具 状态栏<br>QDialog 对话框</p>
-<p>.pro - project文件<br>.cpp -</p>
-<p>窗口.cpp 和 .c</p>
-<p> QApplication a 有且只有一个<br> myWidget w；实例化窗口对象<br>w.show() 调用show函数显示窗口<br>return a.exec() 消息循环机制，代码阻塞</p>
-<p>QT       += core gui  //Qt包含模块</p>
-<p>greaterThan(QT_MAJOR_VERSION, 4): QT += widgets //大于4版本以上  widgets</p>
-<p>TARGET = 01_FirstProject    //目标 生成.exe文件 文件名称<br>TEMPLATE = app              //模板 应用程序模板</p>
-<p>SOURCES += <br>        main.cpp \      //源码<br>        mywidge.cpp</p>
-<p>HEADERS += <br>        mywidge.h         //头文件</p>
-<pre><code>QPushButton * btn2 = new QPushButton ;
-btn2-&gt;setText(&quot;关闭&quot;);
-btn2-&gt;move(100,0);
-btn2-&gt;resize(50,50);
-btn2-&gt;setParent(this);
-
-connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
-<p>信号槽的优点，松散耦合，信号发送端和接收端 本身是没有关联的，通过一个connect连接，将两端 耦合在一起<br>参数1 信号的发送者 参数2 发送的信号（函数的地址） 参数3 信号的接受者 参数4 处理的槽函数（函数的地址）<br>connect( myBtn, &amp;QPushButton::clicked, this, &amp;QWidget::close );</p>
-<p>信号可以连接信号</p>
-<p>一个信号可以连接多个槽函数<br>多个信号可以连接同一个槽函数<br>信号和槽函数的参数类型必须一一对应<br>信号和槽的参数个数可以不一致  信号的个数可以多于槽个数</p>
-<p>QDialog</p>
-<p>事件过滤器</p>
-<p>1，给控件安装事件过滤器<br>2. 重写事件</p>
-]]></content>
   </entry>
   <entry>
     <title>VTK使用</title>
@@ -230,6 +77,10 @@ connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
 <p>using<br>1命名空间的使用<br>using namespace android;<br>2在子类中引用基类的成员<br>using T5Base::test1;<br>3别名指定<br>using Vec = MyVector&lt;T, MyAlloc<T>&gt;;</p>
 <hr>
 <p>inline是C++关键字，在函数声明或定义中，函数返回类型前加上关键字inline，即可以把函数指定为内联函数。这样可以解决一些频繁调用的函数大量消耗栈空间（栈内存）的问题。关键字inline必须与函数定义放在一起才能使函数成为内联函数，仅仅将inline放在函数声明前面不起任何作用。inline是一种“用于实现”的关键字，而不是一种“用于声明”的关键字。</p>
+<hr>
+<p>ITK中使用<br>try{<br> // 可能会导致错误的代码<br>} catch(error){<br> // 在错误发生时怎么处理<br>} </p>
+<hr>
+<p>C 库函数 int atoi(const char *str) 把参数 str 所指向的字符串转换为一个整数（类型为 int 型）。</p>
 ]]></content>
   </entry>
   <entry>
@@ -246,285 +97,6 @@ connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
 <h1 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h1><p>Android  Java Kotin<br>ios    Object-C </p>
 <h1 id="mini-b-s"><a href="#mini-b-s" class="headerlink" title="mini b/s"></a>mini b/s</h1><p>mini program<br>小程序<br>uniapp  Taro</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/11/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>  
-
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h2 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h2>]]></content>
-  </entry>
-  <entry>
-    <title>Markdown语法</title>
-    <url>/2020/11/06/hexo-markdown-%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<p>Markdown 是一种轻量级标记语言，文本后缀为 .md, .markdown，广泛用来撰写帮助文档或用于论坛上发表消息。</p>
-<a id="more"></a>
-
-<!-- 注释 -->
-<hr>
-<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>使用 # 号可表示 1-6 级标题<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">## 这是二级标题</span><br><span class="line">### 这是三级标题</span><br><span class="line">#### 这是四级标题</span><br><span class="line">##### 这是五级标题</span><br><span class="line">###### 这是六级标题</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h3 id="这是三级标题"><a href="#这是三级标题" class="headerlink" title="这是三级标题"></a>这是三级标题</h3><h4 id="这是四级标题"><a href="#这是四级标题" class="headerlink" title="这是四级标题"></a>这是四级标题</h4><h5 id="这是五级标题"><a href="#这是五级标题" class="headerlink" title="这是五级标题"></a>这是五级标题</h5><h6 id="这是六级标题"><a href="#这是六级标题" class="headerlink" title="这是六级标题"></a>这是六级标题</h6><hr>
-<h1 id="段落格式"><a href="#段落格式" class="headerlink" title="段落格式"></a>段落格式</h1><h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><p><code>&amp;emsp;</code>和<code>&amp;nbsp;</code>，注意加<code>;</code><strong>分号</strong>。<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">空格：&amp;emsp;空格</span><br><span class="line">&amp;nbsp;</span><br><span class="line">空格</span><br></pre></td></tr></table></figure>
-<p>效果：<br>空格：&emsp;空格<br>&nbsp;<br>空格 </p>
-<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><table>
-<thead>
-<tr>
-<th>字体</th>
-<th>语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>斜体</td>
-<td>左右分别加一个<code>*</code>或<code>_</code>号</td>
-</tr>
-<tr>
-<td>加粗</td>
-<td>左右分别加两个<code>*</code>号</td>
-</tr>
-<tr>
-<td>斜体加粗</td>
-<td>左右分别加三个<code>*</code>号</td>
-</tr>
-<tr>
-<td>删除线</td>
-<td>左右分别加两个<code>~~</code>号</td>
-</tr>
-<tr>
-<td>下划线</td>
-<td>通过HTML 的<code>&lt;u&gt;</code> 标签</td>
-</tr>
-</tbody></table>
-<p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体文本*        _斜体文本_</span><br><span class="line">**粗体文本**      __粗体文本__</span><br><span class="line">***粗斜体文本***  ___粗斜体文本___</span><br><span class="line">~~加删除线文本~~</span><br><span class="line">&lt;u&gt;带下划线文本&lt;&#x2F;u&gt;</span><br></pre></td></tr></table></figure>
-<p>效果：<br><em>斜体文本</em>        <em>斜体文本</em><br><strong>粗体文本</strong>      <strong>粗体文本</strong><br><strong><em>粗斜体文本</em></strong>  <strong><em>粗斜体文本</em></strong><br><del>加删除线文本</del><br><u>带下划线文本</u></p>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西，星号或是减号中间可以插入空格。<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">* * *</span><br><span class="line">_   _   _</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<hr>
-<hr>
-<hr>
-<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>无序列表使用星号<code>*</code>、加号<code>+</code>或是减号<code>-</code>作为列表标记，标记后面要添加一个<strong>空格</strong>。<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">+ 第二项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<ul>
-<li>第一项</li>
-</ul>
-<ul>
-<li>第二项</li>
-</ul>
-<ul>
-<li>第三项</li>
-</ul>
-<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>数字并加上<code>.</code>号来表示。<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 第一项</span><br><span class="line">2. 第二项</span><br><span class="line">3. 第三项</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<ol>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ol>
-<h2 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h2><p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 第一项：</span><br><span class="line">    - 第一篇博客</span><br><span class="line">    - 第二篇博客</span><br><span class="line">2. 第二项：</span><br><span class="line">    - 第三篇博客</span><br><span class="line">    - 第四篇博客</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<ol>
-<li>第一项：<ul>
-<li>第一篇博客</li>
-<li>第二篇博客</li>
-</ul>
-</li>
-<li>第二项：<ul>
-<li>第三篇博客</li>
-<li>第四篇博客</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h1 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h1><p>区块引用是在段落开头使用<code>&gt;</code>符号 ，然后后面紧跟一个<strong>空格</strong>符号：<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块引用</span><br><span class="line">&gt; MXW&#39;s Blog</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<blockquote>
-<p>区块引用<br>MXW’s Blog</p>
-</blockquote>
-<h2 id="区块嵌套"><a href="#区块嵌套" class="headerlink" title="区块嵌套"></a>区块嵌套</h2><p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 最外层</span><br><span class="line">&gt; &gt; 第一层嵌套</span><br><span class="line">&gt; &gt; &gt; &gt; &gt; 第四层嵌套</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<blockquote>
-<p>最外层</p>
-<blockquote>
-<p>第一层嵌套</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>第四层嵌套</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="列表-区块"><a href="#列表-区块" class="headerlink" title="列表+区块"></a>列表+区块</h2><p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块1</span><br><span class="line">&gt; + 列表2</span><br><span class="line"></span><br><span class="line">+ 列表1</span><br><span class="line">+ &gt; 区块2</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<blockquote>
-<p>区块1</p>
-<ul>
-<li>列表2</li>
-</ul>
-</blockquote>
-<ul>
-<li>列表1</li>
-<li><blockquote>
-<p>区块2</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><p>表格使用 <code>|</code> 来分隔不同的单元格，使用 <code>-</code> 来分隔表头和其他行,表格前后需要<strong>空一行</strong>。<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">|  表头   | 表头  |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<table>
-<thead>
-<tr>
-<th>表头</th>
-<th>表头</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>单元格</td>
-<td>单元格</td>
-</tr>
-<tr>
-<td>单元格</td>
-<td>单元格</td>
-</tr>
-</tbody></table>
-<p><strong>对齐方式：</strong><br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :-----| ----: | :----: |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<table>
-<thead>
-<tr>
-<th align="left">左对齐</th>
-<th align="right">右对齐</th>
-<th align="center">居中对齐</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-<tr>
-<td align="left">单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>段落中的代码或者函数可以用（`）包起来。<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;printf()&#96; 函数</span><br></pre></td></tr></table></figure>
-<p>效果：<br><code>printf()</code> 函数</p>
-<h2 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h2><p>代码区块使用```包裹一段代码，并指定一种语言（也可以不指定）。</p>
-<hr>
-<h1 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h1><p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[超链接名](超链接地址 &quot;超链接title&quot;)</span><br><span class="line">不加title:[超链接名](超链接地址)</span><br><span class="line">直接使用链接地址&lt;超链接地址&gt;</span><br></pre></td></tr></table></figure>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MXW01&#39;s Blog](http:&#x2F;&#x2F;MXW01.github.io)</span><br><span class="line">[Baidu](http:&#x2F;&#x2F;baidu.com)</span><br><span class="line">直接使用链接地址&lt;http:&#x2F;&#x2F;mxw01.github.io&gt;</span><br></pre></td></tr></table></figure>
-<p>效果：<br><a href="http://mxw01.github.io/">MXW01’s Blog</a><br><a href="http://baidu.com/">Baidu</a><br>直接使用链接地址<a href="http://mxw01.github.io/">http://mxw01.github.io</a></p>
-<hr>
-<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p>！+[图片替代文字]+(图片地址”title”)<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![天使](https:&#x2F;&#x2F;ss1.bdstatic.com&#x2F;70cFvXSh_Q1YnxGkpoWK1HF6hhy&#x2F;it&#x2F;u&#x3D;3065461735,3257830606&amp;fm&#x3D;26&amp;gp&#x3D;0.jpg &quot;angel&quot;)</span><br></pre></td></tr></table></figure>
-<p>效果：<br><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3065461735,3257830606&fm=26&gp=0.jpg" alt="天使" title="angel"></p>
-<h2 id="改变图片大小"><a href="#改变图片大小" class="headerlink" title="改变图片大小"></a>改变图片大小</h2><p>使用<code>&lt;img&gt;</code>标签。<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;https:&#x2F;&#x2F;ss1.bdstatic.com&#x2F;70cFvXSh_Q1YnxGkpoWK1HF6hhy&#x2F;it&#x2F;u&#x3D;3065461735,3257830606&amp;fm&#x3D;26&amp;gp&#x3D;0.jpg&quot; width&#x3D;&quot;30%&quot;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>效果：<br><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3065461735,3257830606&fm=26&gp=0.jpg" width="30%"></p>
-<hr>
-<h1 id="hexo标签插件"><a href="#hexo标签插件" class="headerlink" title="hexo标签插件"></a>hexo标签插件</h1><p>hexo标签插件（Tag Plugins）可以修改引用块，代码块，图片，链接，视频等等。</p>
-<h2 id="引用块加颜色"><a href="#引用块加颜色" class="headerlink" title="引用块加颜色"></a>引用块加颜色</h2><p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note [class_name] %&#125;  content  &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>[class_name]可以替换为<code>default</code>，<code>primary</code>，<code>success</code>，<code>info</code>，<code>warning</code>，<code>danger</code></li>
-<li>content写你需要写的内容</li>
-</ul>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note default %&#125;  default  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note primary %&#125;  primary  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note success %&#125;  success  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note info %&#125;  info  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note warning %&#125;  warning  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note danger %&#125;  danger  &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<div class="note default">
-            <p>default  </p>
-          </div>
-
-<div class="note primary">
-            <p>primary  </p>
-          </div>
-
-<div class="note success">
-            <p>success  </p>
-          </div>
-
-<div class="note info">
-            <p>info  </p>
-          </div>
-
-<div class="note warning">
-            <p>warning  </p>
-          </div>
-
-<div class="note danger">
-            <p>danger  </p>
-          </div>
-<hr>
-<h1 id="其它技巧"><a href="#其它技巧" class="headerlink" title="其它技巧"></a>其它技巧</h1><p><strong>转义</strong><br>示例：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">**文本加粗**</span><br><span class="line">\*\*显示星星\*\*</span><br></pre></td></tr></table></figure>
-<p>效果：<br><strong>文本加粗</strong><br>**显示星星**</p>
-<p><strong>支持的 HTML 元素</strong></p>
-<h1 id="本文参考"><a href="#本文参考" class="headerlink" title="本文参考"></a>本文参考</h1><p>菜鸟教程——<a href="https://www.runoob.com/markdown/md-tutorial.html">Markdown教程</a></p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机图形学</title>
-    <url>/2020/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/</url>
-    <content><![CDATA[<p>计算机图形学</p>
-<a id="more"></a>  
-
-<p>仿真，几何，渲染，图形学三大方向<br> Visualization 可视化</p>
-<p>光栅化<br>30 FPS 称为实时</p>
-<p>OpenGL DirectX VulKan  都是图形学API  </p>
-<p>Maya/3DS MAX Blender ,VR / game development using unity / Unreal Engine</p>
-<p>图形学 和 计算机视觉<br>一切需要猜测的内容是视觉研究对象，做分析，理解和猜测</p>
-<p>图形学 computer graphics(rendering)  MODEL-&gt;IMAGE<br>计算机视觉 computer vision  IMAGE-&gt;MODEL</p>
-<p>Computer Vision /Deep learning </p>
-]]></content>
-      <tags>
-        <tag>计算机基础</tag>
-      </tags>
   </entry>
   <entry>
     <title>C++复习</title>
@@ -986,5 +558,482 @@ deque构造函数操作和vector差不多</li>
       <tags>
         <tag>C++</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>QT学习</title>
+    <url>/2020/11/12/QT%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>已看完一部教学视频，待总结。</p>
+<a id="more"></a>
+
+
+<p>安装 MS  自带编译器，部分编码与visual stdio不一样</p>
+<p>基类： QWidget（父类） QMainWindow、QDialog（子类）派生</p>
+<p>QMainWindow 多菜单栏 工具 状态栏<br>QDialog 对话框</p>
+<p>.pro - project文件<br>.cpp -</p>
+<p>窗口.cpp 和 .c</p>
+<p> QApplication a 有且只有一个<br> myWidget w；实例化窗口对象<br>w.show() 调用show函数显示窗口<br>return a.exec() 消息循环机制，代码阻塞</p>
+<p>QT       += core gui  //Qt包含模块</p>
+<p>greaterThan(QT_MAJOR_VERSION, 4): QT += widgets //大于4版本以上  widgets</p>
+<p>TARGET = 01_FirstProject    //目标 生成.exe文件 文件名称<br>TEMPLATE = app              //模板 应用程序模板</p>
+<p>SOURCES += <br>        main.cpp \      //源码<br>        mywidge.cpp</p>
+<p>HEADERS += <br>        mywidge.h         //头文件</p>
+<pre><code>QPushButton * btn2 = new QPushButton ;
+btn2-&gt;setText(&quot;关闭&quot;);
+btn2-&gt;move(100,0);
+btn2-&gt;resize(50,50);
+btn2-&gt;setParent(this);
+
+connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
+<p>信号槽的优点，松散耦合，信号发送端和接收端 本身是没有关联的，通过一个connect连接，将两端 耦合在一起<br>参数1 信号的发送者 参数2 发送的信号（函数的地址） 参数3 信号的接受者 参数4 处理的槽函数（函数的地址）<br>connect( myBtn, &amp;QPushButton::clicked, this, &amp;QWidget::close );</p>
+<p>信号可以连接信号</p>
+<p>一个信号可以连接多个槽函数<br>多个信号可以连接同一个槽函数<br>信号和槽函数的参数类型必须一一对应<br>信号和槽的参数个数可以不一致  信号的个数可以多于槽个数</p>
+<p>QDialog</p>
+<p>事件过滤器</p>
+<p>1，给控件安装事件过滤器<br>2. 重写事件</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>学习方法改进</title>
+    <url>/2020/11/11/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E6%94%B9%E8%BF%9B/</url>
+    <content><![CDATA[<p>学习方法</p>
+<a id="more"></a>
+
+<p>之前觉得看书效率还不错，在连啃几本厚书后（600+页），发现吸收较差。<br>同时，在B站和MOOC上发现很多不错的教程，计划学习方法转为看教学视频，记blog，找实例或者项目做的形式。</p>
+<h1 id="B站"><a href="#B站" class="headerlink" title="B站"></a>B站</h1><p>B站上的IT视频比较丰富，观看人数也很多，弹幕也有解答。<br>之前曾在B站看过stm32视频，之前不常在B站看教学视频因为校园网流量太少。现在多了一些，4G流量也很多，计划多看一些。<br>复习 ：<br>C++<br>数据结构与算法<br>计算机系统<br>计算机网络<br>计算机接口与组成<br>Linux</p>
+<p>学习：<br>QT<br>Opencv<br>深度学习<br>Java</p>
+<h1 id="MOOC"><a href="#MOOC" class="headerlink" title="MOOC"></a>MOOC</h1><p>数字图像处理 第四周-第六讲 灰度的形态学</p>
+<p>慕课上有一些专业的课还是很不错。<br>之前看了一个医学图像处理的课，还有ROS系统的课。</p>
+]]></content>
+      <tags>
+        <tag>学习方法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件使用</title>
+    <url>/2020/11/10/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>待更新</p>
+<a id="more"></a>
+
+
+<h1 id="visual-studio"><a href="#visual-studio" class="headerlink" title="visual studio"></a>visual studio</h1><p>一个vs窗口只能打开一个解决方案，一个解决方案可以包括多个工程项目。<br>ctrol + K + C 快速注释<br>ctrol + K + U 快速取消注释</p>
+<h1 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h1><p>windows + E 快速打开资源管理器</p>
+<p>windows + R input control can open 控制面板</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>English words</title>
+    <url>/2020/11/10/English-words-in-IT/</url>
+    <content><![CDATA[<p>English words</p>
+<a id="more"></a>
+
+<p>exempt 免除，豁免</p>
+<p>contour 轮廓的</p>
+<p>geodesic 测量的</p>
+<p>diffusion 扩散，传播</p>
+<p>conductance 导率，电导</p>
+<p>deprecated 弃用</p>
+<p>undo 取消</p>
+<p>annotation 注释</p>
+<p>crop 修剪</p>
+<p>pulmonary arteries 肺 动脉</p>
+<p>Dilatation 扩张</p>
+<p>sub-class 子类</p>
+<p>trade off 权衡，舍弃</p>
+<p>curve 曲线</p>
+<p>rasterization 光栅化</p>
+<p>fundamental 基本的</p>
+<p>synthesize  合成</p>
+<p>parse解析</p>
+<p>registration 注册</p>
+<p>segmentation 分割</p>
+<p>digest 消化</p>
+<p>workflow 工作流</p>
+<p>spatial 空间的</p>
+<p>polyline 多叉线，多段线</p>
+<p>topology 拓扑学</p>
+<p>customize 定制</p>
+<p>mesh 网格</p>
+<p>wrap 包，缠绕，掩护</p>
+<p>scalar 标量的</p>
+<p>opacity 不透明度</p>
+<p>filter 滤波器</p>
+<p>Renderer 渲染，描绘</p>
+<p>Mapper 绘图</p>
+<p>backwards compatibility 向后兼容</p>
+<p>toolkit 工具箱</p>
+<p>dashboard 仪表盘</p>
+<p>binaries 二进制</p>
+<p>cross-platform 跨平台</p>
+<p>inheritance and collaboration  继承和协作</p>
+<p>capture dependencies 获取依赖项</p>
+<p>invoke  调用   invocation</p>
+<p>extract 提取</p>
+<p>executables 可执行文件</p>
+<p>customize 定制</p>
+<p>Rendering Engine  绘制/渲染引擎</p>
+<p>dialog 对话</p>
+<p>cache  缓存</p>
+<p>scroll down 向下滚动</p>
+<p>toggle 切换/开关</p>
+<p>makefile 生成文件</p>
+<p>prompt 提示</p>
+<p>batch script 批处理脚本</p>
+<p>shortcut 快捷方式</p>
+<p>drag-and-drop 拖放</p>
+<p>modify the properties of the shortcut  修改属性</p>
+<p>System Architecture 系统架构</p>
+<p>manipulate 操纵</p>
+<p>remainder 剩余的</p>
+<p>raw 原始的</p>
+<p>annotation 标注</p>
+<p>opacity 透明度 ambient, diffuse, and specular coefficient 环境系数、漫射系数和镜面系数</p>
+<p>clip  剪裁</p>
+<p>focal  焦点的 stereo, anti-aliasing, motion blur 立体，抗锯齿，运动模糊</p>
+<p>derivative 派生的</p>
+<p>inheritance 继承</p>
+<p>spheres and cylinders  球体和圆柱体</p>
+<p>dataset 数据集</p>
+]]></content>
+      <tags>
+        <tag>English</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git使用方法学习</title>
+    <url>/2020/11/09/git%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>计划使用github托管一部分代码</p>
+<a id="more"></a>
+
+<p>之前学过git使用，了解过一部分git指令（现在忘光了）。<br>先占一个位置，学一点再更新。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo next主题持续优化</title>
+    <url>/2020/11/09/hexo-next%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<p>已做的优化，发现的bug统计，计划修改的样式记录。</p>
+<a id="more"></a>
+
+<h1 id="已做优化"><a href="#已做优化" class="headerlink" title="已做优化"></a>已做优化</h1><p>待更新</p>
+<h1 id="发现问题："><a href="#发现问题：" class="headerlink" title="发现问题："></a>发现问题：</h1><p>首行需要空两格。</p>
+<p>进度条 需要换 颜色，蓝色让人觉得没有加载完。</p>
+<p>发现问题：置顶功能有bug，取消置顶top后首页依然存在标签。</p>
+<p>每个blog中间留白太多</p>
+<h1 id="添加功能"><a href="#添加功能" class="headerlink" title="添加功能"></a>添加功能</h1><p>需要添加搜索栏功能，之前取消是因为代码上传github后出现加载现象，功能没有实现。</p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>研究方向变更</title>
+    <url>/2020/11/09/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E5%8F%98%E6%9B%B4/</url>
+    <content><![CDATA[<p>研究内容从机器人硬件改为医学图像处理</p>
+<a id="more"></a>
+
+
+<p>目前学习了 数字图像处理，计算机图形学</p>
+<p>软件学习了VTK ITK QT </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Linux指令（备忘录）</title>
+    <url>/2020/11/09/Linux%E6%8C%87%E4%BB%A4%EF%BC%88%E5%A4%87%E5%BF%98%E5%BD%95%EF%BC%89/</url>
+    <content><![CDATA[<p>Linux指令</p>
+<a id="more"></a>
+
+
+<p>grep 命令</p>
+<p>Linux grep 命令用于查找文件里符合条件的字符串。<br>grep 指令用于查找内容包含指定的范本样式的文件，如果发现某文件的内容符合所指定的范本样式，预设 grep 指令会把含有范本样式的那一列显示出来。若不指定任何文件名称，或是所给予的文件名为 <code>-</code>，则 grep 指令会从标准输入设备读取数据。</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grep [-abcEFGhHilLnqrsvVwxy][-A&lt;显示列数&gt;][-B&lt;显示列数&gt;][-C&lt;显示列数&gt;][-d&lt;进行动作&gt;][-e&lt;范本样式&gt;][-f&lt;范本文件&gt;][--help][范本样式][文件或目录...]</span><br></pre></td></tr></table></figure>
+
+
+<p>cat 命令<br>cat（英文全拼：concatenate）命令用于连接文件并打印到标准输出设备上。</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat [-AbeEnstTuv] [--help] [--version] fileName</span><br></pre></td></tr></table></figure>
+
+<p>pwd 命令 当前目录<br>cd 命令<br><code>cd /</code> 根目录<br><code>cd ..</code> 或者 <code>cd .. //</code>  往回跳一层<br><code>cd ../..</code>  往回跳两层<br><code>cd</code> 和 <code>cd ~</code> 都可进入当前用户主目录，即 <code>/root</code> 目录</p>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Purpose of my Blog</title>
+    <url>/2020/11/08/Purpose-of-my-Blog/</url>
+    <content><![CDATA[<p>MXW01的简单自我介绍，Blog的目的、目标与计划更新内容。</p>
+<a id="more"></a>
+
+<h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><p>目前帝都在读研究生，学过一点机械，一点控制，一点计算机，拧过螺丝，敲过代码。总体而言，属于底层的技术工。现在以计算机为主。</p>
+<p>打工人 打工魂….</p>
+<p>开了很多Blog，慢慢填，作为笔记本，针不戳！</p>
+<h1 id="Blog的目的"><a href="#Blog的目的" class="headerlink" title="Blog的目的"></a>Blog的目的</h1><p>学习笔记</p>
+<h1 id="Blog的目标"><a href="#Blog的目标" class="headerlink" title="Blog的目标"></a>Blog的目标</h1><p>&emsp;<br>&emsp;<br>&emsp;<br>&emsp;</p>
+<h1 id="学习的计划"><a href="#学习的计划" class="headerlink" title="学习的计划"></a>学习的计划</h1><p>&emsp;<br>&emsp;<br>&emsp;<br>&emsp;</p>
+]]></content>
+      <tags>
+        <tag>唯一</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown语法</title>
+    <url>/2020/11/06/hexo-markdown-%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p>Markdown 是一种轻量级标记语言，文本后缀为 .md, .markdown，广泛用来撰写帮助文档或用于论坛上发表消息。</p>
+<a id="more"></a>
+
+<!-- 注释 -->
+<hr>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>使用 # 号可表示 1-6 级标题<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">## 这是二级标题</span><br><span class="line">### 这是三级标题</span><br><span class="line">#### 这是四级标题</span><br><span class="line">##### 这是五级标题</span><br><span class="line">###### 这是六级标题</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h3 id="这是三级标题"><a href="#这是三级标题" class="headerlink" title="这是三级标题"></a>这是三级标题</h3><h4 id="这是四级标题"><a href="#这是四级标题" class="headerlink" title="这是四级标题"></a>这是四级标题</h4><h5 id="这是五级标题"><a href="#这是五级标题" class="headerlink" title="这是五级标题"></a>这是五级标题</h5><h6 id="这是六级标题"><a href="#这是六级标题" class="headerlink" title="这是六级标题"></a>这是六级标题</h6><hr>
+<h1 id="段落格式"><a href="#段落格式" class="headerlink" title="段落格式"></a>段落格式</h1><h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><p><code>&amp;emsp;</code>和<code>&amp;nbsp;</code>，注意加<code>;</code><strong>分号</strong>。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">空格：&amp;emsp;空格</span><br><span class="line">&amp;nbsp;</span><br><span class="line">空格</span><br></pre></td></tr></table></figure>
+<p>效果：<br>空格：&emsp;空格<br>&nbsp;<br>空格 </p>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><table>
+<thead>
+<tr>
+<th>字体</th>
+<th>语法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>斜体</td>
+<td>左右分别加一个<code>*</code>或<code>_</code>号</td>
+</tr>
+<tr>
+<td>加粗</td>
+<td>左右分别加两个<code>*</code>号</td>
+</tr>
+<tr>
+<td>斜体加粗</td>
+<td>左右分别加三个<code>*</code>号</td>
+</tr>
+<tr>
+<td>删除线</td>
+<td>左右分别加两个<code>~~</code>号</td>
+</tr>
+<tr>
+<td>下划线</td>
+<td>通过HTML 的<code>&lt;u&gt;</code> 标签</td>
+</tr>
+</tbody></table>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体文本*        _斜体文本_</span><br><span class="line">**粗体文本**      __粗体文本__</span><br><span class="line">***粗斜体文本***  ___粗斜体文本___</span><br><span class="line">~~加删除线文本~~</span><br><span class="line">&lt;u&gt;带下划线文本&lt;&#x2F;u&gt;</span><br></pre></td></tr></table></figure>
+<p>效果：<br><em>斜体文本</em>        <em>斜体文本</em><br><strong>粗体文本</strong>      <strong>粗体文本</strong><br><strong><em>粗斜体文本</em></strong>  <strong><em>粗斜体文本</em></strong><br><del>加删除线文本</del><br><u>带下划线文本</u></p>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西，星号或是减号中间可以插入空格。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">* * *</span><br><span class="line">_   _   _</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<hr>
+<hr>
+<hr>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>无序列表使用星号<code>*</code>、加号<code>+</code>或是减号<code>-</code>作为列表标记，标记后面要添加一个<strong>空格</strong>。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">+ 第二项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<ul>
+<li>第一项</li>
+</ul>
+<ul>
+<li>第二项</li>
+</ul>
+<ul>
+<li>第三项</li>
+</ul>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>数字并加上<code>.</code>号来表示。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 第一项</span><br><span class="line">2. 第二项</span><br><span class="line">3. 第三项</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+<h2 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h2><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 第一项：</span><br><span class="line">    - 第一篇博客</span><br><span class="line">    - 第二篇博客</span><br><span class="line">2. 第二项：</span><br><span class="line">    - 第三篇博客</span><br><span class="line">    - 第四篇博客</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<ol>
+<li>第一项：<ul>
+<li>第一篇博客</li>
+<li>第二篇博客</li>
+</ul>
+</li>
+<li>第二项：<ul>
+<li>第三篇博客</li>
+<li>第四篇博客</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h1><p>区块引用是在段落开头使用<code>&gt;</code>符号 ，然后后面紧跟一个<strong>空格</strong>符号：<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块引用</span><br><span class="line">&gt; MXW&#39;s Blog</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<blockquote>
+<p>区块引用<br>MXW’s Blog</p>
+</blockquote>
+<h2 id="区块嵌套"><a href="#区块嵌套" class="headerlink" title="区块嵌套"></a>区块嵌套</h2><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 最外层</span><br><span class="line">&gt; &gt; 第一层嵌套</span><br><span class="line">&gt; &gt; &gt; &gt; &gt; 第四层嵌套</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<blockquote>
+<p>最外层</p>
+<blockquote>
+<p>第一层嵌套</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>第四层嵌套</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="列表-区块"><a href="#列表-区块" class="headerlink" title="列表+区块"></a>列表+区块</h2><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块1</span><br><span class="line">&gt; + 列表2</span><br><span class="line"></span><br><span class="line">+ 列表1</span><br><span class="line">+ &gt; 区块2</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<blockquote>
+<p>区块1</p>
+<ul>
+<li>列表2</li>
+</ul>
+</blockquote>
+<ul>
+<li>列表1</li>
+<li><blockquote>
+<p>区块2</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><p>表格使用 <code>|</code> 来分隔不同的单元格，使用 <code>-</code> 来分隔表头和其他行,表格前后需要<strong>空一行</strong>。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">|  表头   | 表头  |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody></table>
+<p><strong>对齐方式：</strong><br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :-----| ----: | :----: |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="right">右对齐</th>
+<th align="center">居中对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+<tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>段落中的代码或者函数可以用（`）包起来。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;printf()&#96; 函数</span><br></pre></td></tr></table></figure>
+<p>效果：<br><code>printf()</code> 函数</p>
+<h2 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h2><p>代码区块使用```包裹一段代码，并指定一种语言（也可以不指定）。</p>
+<hr>
+<h1 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h1><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[超链接名](超链接地址 &quot;超链接title&quot;)</span><br><span class="line">不加title:[超链接名](超链接地址)</span><br><span class="line">直接使用链接地址&lt;超链接地址&gt;</span><br></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MXW01&#39;s Blog](http:&#x2F;&#x2F;MXW01.github.io)</span><br><span class="line">[Baidu](http:&#x2F;&#x2F;baidu.com)</span><br><span class="line">直接使用链接地址&lt;http:&#x2F;&#x2F;mxw01.github.io&gt;</span><br></pre></td></tr></table></figure>
+<p>效果：<br><a href="http://mxw01.github.io/">MXW01’s Blog</a><br><a href="http://baidu.com/">Baidu</a><br>直接使用链接地址<a href="http://mxw01.github.io/">http://mxw01.github.io</a></p>
+<hr>
+<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p>！+[图片替代文字]+(图片地址”title”)<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![天使](https:&#x2F;&#x2F;ss1.bdstatic.com&#x2F;70cFvXSh_Q1YnxGkpoWK1HF6hhy&#x2F;it&#x2F;u&#x3D;3065461735,3257830606&amp;fm&#x3D;26&amp;gp&#x3D;0.jpg &quot;angel&quot;)</span><br></pre></td></tr></table></figure>
+<p>效果：<br><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3065461735,3257830606&fm=26&gp=0.jpg" alt="天使" title="angel"></p>
+<h2 id="改变图片大小"><a href="#改变图片大小" class="headerlink" title="改变图片大小"></a>改变图片大小</h2><p>使用<code>&lt;img&gt;</code>标签。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;https:&#x2F;&#x2F;ss1.bdstatic.com&#x2F;70cFvXSh_Q1YnxGkpoWK1HF6hhy&#x2F;it&#x2F;u&#x3D;3065461735,3257830606&amp;fm&#x3D;26&amp;gp&#x3D;0.jpg&quot; width&#x3D;&quot;30%&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>效果：<br><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3065461735,3257830606&fm=26&gp=0.jpg" width="30%"></p>
+<hr>
+<h1 id="hexo标签插件"><a href="#hexo标签插件" class="headerlink" title="hexo标签插件"></a>hexo标签插件</h1><p>hexo标签插件（Tag Plugins）可以修改引用块，代码块，图片，链接，视频等等。</p>
+<h2 id="引用块加颜色"><a href="#引用块加颜色" class="headerlink" title="引用块加颜色"></a>引用块加颜色</h2><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note [class_name] %&#125;  content  &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>[class_name]可以替换为<code>default</code>，<code>primary</code>，<code>success</code>，<code>info</code>，<code>warning</code>，<code>danger</code></li>
+<li>content写你需要写的内容</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note default %&#125;  default  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note primary %&#125;  primary  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note success %&#125;  success  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note info %&#125;  info  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note warning %&#125;  warning  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note danger %&#125;  danger  &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<div class="note default">
+            <p>default  </p>
+          </div>
+
+<div class="note primary">
+            <p>primary  </p>
+          </div>
+
+<div class="note success">
+            <p>success  </p>
+          </div>
+
+<div class="note info">
+            <p>info  </p>
+          </div>
+
+<div class="note warning">
+            <p>warning  </p>
+          </div>
+
+<div class="note danger">
+            <p>danger  </p>
+          </div>
+<hr>
+<h1 id="其它技巧"><a href="#其它技巧" class="headerlink" title="其它技巧"></a>其它技巧</h1><p><strong>转义</strong><br>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">**文本加粗**</span><br><span class="line">\*\*显示星星\*\*</span><br></pre></td></tr></table></figure>
+<p>效果：<br><strong>文本加粗</strong><br>**显示星星**</p>
+<p><strong>支持的 HTML 元素</strong></p>
+<h1 id="本文参考"><a href="#本文参考" class="headerlink" title="本文参考"></a>本文参考</h1><p>菜鸟教程——<a href="https://www.runoob.com/markdown/md-tutorial.html">Markdown教程</a></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/11/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>  
+
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h2>]]></content>
   </entry>
 </search>
