@@ -1,624 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>NAS</title>
-    <url>/2020/12/12/NAS/</url>
-    <content><![CDATA[<p>NAS(Network Attached Storge)网络附属云储存</p>
-<a id="more"></a>  
+    <title>Purpose of my Blog</title>
+    <url>/2020/11/08/Purpose-of-my-Blog/</url>
+    <content><![CDATA[<p>MXW01的简单自我介绍，Blog的目的、目标与计划更新内容。</p>
+<a id="more"></a>
 
-<h1 id="NAS"><a href="#NAS" class="headerlink" title="NAS"></a>NAS</h1><p>存储概念：<br>RAID 磁盘阵列（Redundant Arrays of Independent Disks，RAID）</p>
-<p>付费NAS：群晖，威联通，铁威马  提供NAS系统</p>
-<p>免费NAS：FreeNAS，OpenMediaVault，需要自己集成内网穿透  U-NAS</p>
-<p>组件NAS时，需要选CPU，主板，</p>
-<p>CPU常选：入门级：J1900，J3160,J3355 </p>
-<p>主板选择：千兆网口，SATA 3接口，内存条接口(DDR3,DDR4,笔记本台式机内存)</p>
-<p>电源：瓦数</p>
-<p>机箱</p>
-<h1 id="RAID"><a href="#RAID" class="headerlink" title="RAID"></a>RAID</h1><p>2盘位只能上raid1备份 有效容量1/2<br>3盘位可以上raid5 有效容量2/3</p>
-<p>raid0（至少两块硬盘）存储空间大，读写速度是单个硬盘的两倍，但数据丢失风险大</p>
-<p>raid1（两块硬盘）速度为两倍，存储空间为一半，数据有保障</p>
-<p>raid5（至少三块硬盘）为raid0的优化版，多了一个奇偶校检信息，  单块磁盘容量*（n-1）</p>
-<p>raid10（四块硬盘） 先组成两个raid1，再把两个（raid1组）组成一个raid0</p>
-<h1 id="SMR叠瓦式硬盘"><a href="#SMR叠瓦式硬盘" class="headerlink" title="SMR叠瓦式硬盘"></a>SMR叠瓦式硬盘</h1><p>之前的硬盘使用的普遍是PMR-CMR，垂直磁记录技术-常规磁记录方式</p>
-<p>SMR，叠瓦式磁记录技术，把一部分闲置区域进行重叠。如果我们只进行一次性写入，自然就啥事没有的一直写下去了。但是如果我们要对数据进行修改，或者用久了之后就会出现影响后面的文件的情况。</p>
-<p>PMR硬盘只需要原地覆写就行。而SMR硬盘，当你遇到需要修改某一区域的数据的时候，覆写会影响后面的数据。所以在覆写之前，需要先将被影响的数据转移。</p>
-<p>这也就是为啥SMR硬盘需要大缓存，为啥越用越慢。</p>
-<h1 id="硬盘缓存，转速的影响"><a href="#硬盘缓存，转速的影响" class="headerlink" title="硬盘缓存，转速的影响"></a>硬盘缓存，转速的影响</h1><p>如果读写是持续的，那么是转速影响大</p>
-<p>如果读写是偶尔且少量的话，缓存影响大</p>
-<p>另外，数据在盘片的位置、存储密度、算法等等都有很大的影响</p>
-<p>缓存与速度无关，机械硬盘的速度由转速、磁头设计及数量，盘片密度决定</p>
-<p>缓存的作用：<br>“缓存”是为了平衡高速设备和低速设备之间的速度不一样而存在的。举个最简单的例子，内存中的数据要写入机械硬盘保存，由于机械硬盘相比内存要缓慢许多，理论上就需要很长的时间才能完成任务，体现出来的结果就是写入超级慢。</p>
-<h1 id="My-Choice"><a href="#My-Choice" class="headerlink" title="My Choice"></a>My Choice</h1><p>NAS买蜗牛星际，买回来要换固态和电源，如果风扇太吵，还要换风扇。<br>机械硬盘选择在淘宝买拆机，买1T硬盘，选择RAID5，空间大+速度块，只要不同时坏两个盘，数据就可救。</p>
-<h1 id="备份含义"><a href="#备份含义" class="headerlink" title="备份含义"></a>备份含义</h1><p>1&gt; 冷备份 : 备份系统未安装或未配置成与当前使用的系统相同或相似的运行环境，应用系统数据没有及时装入备份系统。一旦发生灾难，需安装配置所需的运行环境，用数据备份介质(磁带或光盘) 恢复应用数据，手工逐笔或自动批量追补孤立数据，将终端用户通过通讯线路切换到备份系统，恢复业务运行<br>     优点 : 设备投资较少，节省通信费用，通信环境要求不高<br>     缺点 : 恢复时间较长，一般要数天至1周，数据完整性与一致性较差</p>
-<p>2&gt; 温备份 : 将备份系统已安装配置成与当前使用的系统相同或相似的系统和网络运行环境，安装应用系统业务定期备份数据。一旦发生灾难，直接使用定期备份数据，手工逐笔或自动批量追补孤立数据或将终端用户通过通讯线路切换到备份系统，恢复业务运行<br>     优点 : 设备投资较少，通信环境要求不高<br>     缺点 : 恢复时间长，一般要十几个小时至数天，数据完整性与一致性较差</p>
-<p>3&gt; 热备份 : 备份处于联机状态，当前应用系统通过高速通信线路将数据实时传送到备份系统，保持备份系统与当前应用系统数据的同步；也可定时在备份系统上恢复应用系统的数据。一旦发生灾难，不用追补或只需追补很少的孤立数据，备份系统可快速接替生产系统运行，恢复营业<br>     优点 : 恢复时间短，一般几十分钟到数小时，数据完整性与一致性最好，数据丢失可能性最小<br>     缺点 : 设备投资大，通信费用高，通信环境要求高，平时运行管理较复杂</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>计算机图形学</title>
-    <url>/2020/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/</url>
-    <content><![CDATA[<p>计算机图形学</p>
-<a id="more"></a>  
-
-<p>仿真，几何，渲染，图形学三大方向<br> Visualization 可视化</p>
-<p>光栅化<br>30 FPS 称为实时</p>
-<p>OpenGL DirectX VulKan  都是图形学API  </p>
-<p>Maya/3DS MAX Blender ,VR / game development using unity / Unreal Engine</p>
-<p>图形学 和 计算机视觉<br>一切需要猜测的内容是视觉研究对象，做分析，理解和猜测</p>
-<p>图形学 computer graphics(rendering)  MODEL-&gt;IMAGE<br>计算机视觉 computer vision  IMAGE-&gt;MODEL</p>
-<p>Computer Vision /Deep learning </p>
+<h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><p>目前帝都在读研究生，学过一点机械，一点控制，一点计算机，拧过螺丝，敲过代码。总体而言，属于底层的技术工。现在以计算机为主。</p>
+<p>打工人 打工魂….</p>
+<p>开了很多Blog，慢慢填，作为笔记本，针不戳！</p>
+<h1 id="Blog的目的"><a href="#Blog的目的" class="headerlink" title="Blog的目的"></a>Blog的目的</h1><p>学习笔记</p>
+<h1 id="Blog的目标"><a href="#Blog的目标" class="headerlink" title="Blog的目标"></a>Blog的目标</h1><p>&emsp;<br>&emsp;<br>&emsp;<br>&emsp;</p>
+<h1 id="学习的计划"><a href="#学习的计划" class="headerlink" title="学习的计划"></a>学习的计划</h1><p>&emsp;<br>&emsp;<br>&emsp;<br>&emsp;</p>
 ]]></content>
       <tags>
-        <tag>计算机基础</tag>
+        <tag>唯一</tag>
       </tags>
   </entry>
   <entry>
-    <title>VTK使用</title>
-    <url>/2020/11/20/VTK%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>Study_VTK_Together 第一节26.05</p>
-<a id="more"></a>  
-<p>VTK ITK Qt VisualStudio</p>
-<p>怎么判断图像好不好，简单点就是图像亮不亮</p>
-<h1 id="VTK-Observer-command-设计模式"><a href="#VTK-Observer-command-设计模式" class="headerlink" title="VTK Observer/command 设计模式"></a>VTK Observer/command 设计模式</h1><p>适合交互使用</p>
-<p>Observer模式是一种行为模式，这一模式主要针对两个 对象，Object和Observer。一个Object可以有多个Observer，它定义对象间的一种一对多的依赖关系。当一个object的状态发生改变时，所有依赖于它的observer对象都得到通知并被自动更新。</p>
-<p>command属于对象行为模式，command模式将一个请求封装成一个对象，并提供一致性请求接口。事件调用者只是和接口打交道。不和具体实现交互。</p>
-<h1 id="VTK中的代码"><a href="#VTK中的代码" class="headerlink" title="VTK中的代码"></a>VTK中的代码</h1><p><strong>snprintf()</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int snprintf ( char * str, size_t size, const char * format, ... );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char buffer[50];</span><br><span class="line">    char* s &#x3D; &quot;runoobcom&quot;;</span><br><span class="line"> </span><br><span class="line">    &#x2F;&#x2F; 读取字符串并存储在 buffer 中</span><br><span class="line">    int j &#x3D; snprintf(buffer, 6, &quot;%s\n&quot;, s);</span><br><span class="line"> </span><br><span class="line">    &#x2F;&#x2F; 输出 buffer及字符数</span><br><span class="line">    printf(&quot;string:\n%s\ncharacter count &#x3D; %d\n&quot;, buffer, j);</span><br><span class="line"> </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>返回值<br>(1) 如果格式化后的字符串长度小于等于 size，则会把字符串全部复制到 str 中，并给其后添加一个字符串结束符 \0；<br>(2) 如果格式化后的字符串长度大于 size，超过 size 的部分会被截断，只将其中的 (size-1) 个字符复制到 str 中，并给其后添加一个字符串结束符 \0，返回值为欲写入的字符串长度。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string:</span><br><span class="line">runoo</span><br><span class="line">character count &#x3D; 10</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>atof()</strong><br>C 库函数 double atof(const char *str) 把参数 str 所指向的字符串转换为一个浮点数（类型为 double 型）。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   float val;</span><br><span class="line">   char str[20];</span><br><span class="line">   </span><br><span class="line">   strcpy(str, &quot;98993489&quot;);</span><br><span class="line">   val &#x3D; atof(str);</span><br><span class="line">   printf(&quot;字符串值 &#x3D; %s, 浮点值 &#x3D; %f\n&quot;, str, val);</span><br><span class="line"> </span><br><span class="line">   strcpy(str, &quot;runoob&quot;);</span><br><span class="line">   val &#x3D; atof(str);</span><br><span class="line">   printf(&quot;字符串值 &#x3D; %s, 浮点值 &#x3D; %f\n&quot;, str, val);</span><br><span class="line"> </span><br><span class="line">   return(0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">字符串值 &#x3D; 98993489, 浮点值 &#x3D; 98993488.000000</span><br><span class="line">字符串值 &#x3D; runoob, 浮点值 &#x3D; 0.000000</span><br></pre></td></tr></table></figure>
-<hr>
-<p>//固定点的映射<br>vtkFixedPointVolumeRayCastMappe：A fixed point mapper for volumes</p>
-<hr>
-<p>using<br>1命名空间的使用<br>using namespace android;<br>2在子类中引用基类的成员<br>using T5Base::test1;<br>3别名指定<br>using Vec = MyVector&lt;T, MyAlloc<T>&gt;;</p>
-<hr>
-<p>inline是C++关键字，在函数声明或定义中，函数返回类型前加上关键字inline，即可以把函数指定为内联函数。这样可以解决一些频繁调用的函数大量消耗栈空间（栈内存）的问题。关键字inline必须与函数定义放在一起才能使函数成为内联函数，仅仅将inline放在函数声明前面不起任何作用。inline是一种“用于实现”的关键字，而不是一种“用于声明”的关键字。</p>
-<hr>
-<p>ITK中使用<br>try{<br> // 可能会导致错误的代码<br>} catch(error){<br> // 在错误发生时怎么处理<br>} </p>
-<hr>
-<p>C 库函数 int atoi(const char *str) 把参数 str 所指向的字符串转换为一个整数（类型为 int 型）。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>软件架构</title>
-    <url>/2020/11/20/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/</url>
-    <content><![CDATA[<p>常见软件架构</p>
-<a id="more"></a>  
-
-<h1 id="系统软件"><a href="#系统软件" class="headerlink" title="系统软件"></a>系统软件</h1><p>驱动软件等等 用C/C++</p>
-<h1 id="C-S-架构软件"><a href="#C-S-架构软件" class="headerlink" title="C/S 架构软件"></a>C/S 架构软件</h1><p>client 客户端<br>server 服务端<br>LOL</p>
-<p>C/C++ C# sharp  Qt:Adobe LOL </p>
-<h1 id="B-S网站"><a href="#B-S网站" class="headerlink" title="B/S网站"></a>B/S网站</h1><p>B browser浏览器<br>taobao jd bilibili baidu…</p>
-<p>(1)前端：HTML CSS JS(javascript)  -&gt;  React  Vue…<br>(2)后端: Java PHP Nde  Golang Python Mysql Redis</p>
-<h1 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h1><p>Android  Java Kotin<br>ios    Object-C </p>
-<h1 id="mini-b-s"><a href="#mini-b-s" class="headerlink" title="mini b/s"></a>mini b/s</h1><p>mini program<br>小程序<br>uniapp  Taro</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>C++复习</title>
-    <url>/2020/11/15/Cpp-%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<p>正在复习</p>
+    <title>Linux指令（备忘录）</title>
+    <url>/2020/11/09/Linux%E6%8C%87%E4%BB%A4%EF%BC%88%E5%A4%87%E5%BF%98%E5%BD%95%EF%BC%89/</url>
+    <content><![CDATA[<p>Linux指令</p>
 <a id="more"></a>
 
-<p>视频从上到下看到第97</p>
-<p>1.short(2) int(4) long(4) long long(8)</p>
-<p>2.sizeof( 数据类型 / 变量 )</p>
-<p>3.float(4) 7位有效数字 float型数据需要加f/ double(8) 15-16位有效数字    c++默认小数<strong>输出</strong>6位有效数字</p>
-<p>4.字符型变量对应ASCII码值 a-97 A-65</p>
-<p>5.转义字符 \n 换行   \斜杠   \t 水平制表（多行对齐，整齐的输出字符）</p>
-<p>6.string 变量名 = “字符串值” (#include <string>)  C风格字符串char str[] = “hello world”;</p>
-<p>7.布尔数据类型bool true false 1个字节大小</p>
-<p>8.只有整型变量才可以进行取模运算 %   取余数</p>
-<p>9.++和–前置变量先变，然后表达式运算，后置先表达式再变量</p>
-<p>10.三目运算符  c = a &gt; b ? a : b   a&gt;b返回a,即c = a；</p>
-<p>11.if和switch区别  switch缺点判断时候只能是整型或者字符型，不可以是区间，switch 优点，结构清晰，执行效率高。</p>
-<p>12.随机数种子 ，利用当前系统时间生成随机数。srand((unsigned int)time(NULL)); #include <ctime>  int random = rand() %61 + 40 //40~100取值</p>
-<p>13.(int)&amp;arr[1]  取地址+转为整型 arr为地址 arr[1]为元素，相同的二维数组 arr[1]为第二行首地址，arr[1][0]为第二行第一个元素，取地址符&amp;</p>
-<p>14.冒泡排序<br>排序总轮数 = 元素个数 - 1<br>每轮对比次数 = 元素个数 - 排序轮数 - 1；</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">   for (int i &#x3D; 0; i &lt; 9 - 1; i++)</span><br><span class="line">&#123;</span><br><span class="line">	for (int j &#x3D; 0; j &lt; 9 - i - 1; j++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (arr[j] &gt; arr[j + 1])</span><br><span class="line">		&#123;</span><br><span class="line">		int temp &#x3D; arr[j];</span><br><span class="line">		arr[j] &#x3D; arr[j+1];</span><br><span class="line">		arr[j+1] &#x3D; temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>15.二维数组：数据类型 数组名[行数][列数]  先横排后竖排</p>
-<p>16，解引用符号为* 找 指针指向方向的内存，指针定义 int * p = &amp; a； 数组名称就是地址 int * p =  arr;</p>
-<p>17.x86系统下 指针长度为 4，sizeof（int *）=4；同理，x64下指针地址长度为8</p>
-<p>18.int *p = NULL; 空指针不可访问；int * p = （int *）0x1100; 野指针，尽量避免出现野指针//野指针和空指针都不是申请的空间，不要访问</p>
-<p>19.const修饰指针，常量指针 const int * p = &amp; a；指针指向可以修改，值不可以修改。    int * const p = &amp; a ;指针常量 指针指向不可以改，指针指向的值可以改。 const int * const p = &amp; a;都不可以修改；是指针就是常量指针，是常量就算指针常量</p>
-<p>20.取数组长度 int len = sizeof(arr) / sizeof(arr[0]);</p>
-<p>20.地址传递：函数中处理的也是值，*p解引用后处理，改变实参，值传递不改变实参</p>
-<p>21.自定义数据类型：struct 结构体名 {结构体列表}；通过.访问元素//struct关键字可以省略</p>
-<p>22.string类型在输出输出时，需要包含头文件 #include<string></p>
-<p>23.结构体指针访问结构体属性，需要使用-&gt;符号</p>
-<p>24.结构体可以嵌套结构体 teacher.student.score = 100;</p>
-<p>25.结构体中 值传递，student.score访问参数，不会修改实参；地址传递 student-&gt;score访问参数，会修改实参。形参改为指针可以减少内存空间，不会复制新的副本出来</p>
-<p>26.结构体中的const， void student（const student *s）;其中const可以保证指针不改变常量，保证实参不变，防止误操作。</p>
-<p>27.内存分区：代码区，全局区（全局变量，静态变量，常量），栈区（局部变量，函数参数值），堆区（new创建的地址，程序员释放，程序结束时操作系统回收）<br><strong>堆和栈的区别</strong>：<br>使用栈就象我们去饭馆里吃饭，只管点菜（发出申请）、付钱、和吃（使用），吃饱了就走，不必理会切菜、洗菜等准备工作和洗碗、刷锅等扫尾工作，他的好处是快捷，但是自由度小。使用堆就象是自己动手做喜欢吃的菜肴，比较麻烦，但是比较符合自己的口味，而且自由度大。(经典！)</p>
-<p>28.new释放数组需要加中括号 delete[] arr;</p>
-<p>29.引用 数据类型 &amp; 别名 = 原名； 给变量起别名，引用必须初始化，之后无法修改。 引用本质在c++内部实现是一个指针常量 int* const 指针指向不可修改，值可以修改</p>
-<p>30.引用传递，形参会修饰实参，发生改变，原因 引用是在起别名。优点 简化指针修改实参，效果同按地址传递一样</p>
-<p>31.int&amp; test(){return a;}; test() = 1000; 引用的函数调用可以作为左值。 不要返回局部变量引用。</p>
-<p>32.常量引用（防止误操作）  cost int &amp; ref = 10；等价于  int temp = 10； const  int &amp; ref = temp；</p>
-<p>33.函数的形参，可以有默认参数。从第一个开始从左向右都得有。函数声明和实现，不能都有默认参数，不然出现二义性，报错。</p>
-<p>34.函数占位参数，void func（int a,int）{；}  占位参数也可以有默认参数</p>
-<p>35.函数重载  函数名可以相同，提高函数复用性<br>满足条件：</p>
-<blockquote>
-<p>1 在同一个作用域之下<br>2 函数名相同<br>3 函数参数(形参)<strong>类型不同</strong>，或者<strong>个数不同</strong> 或者<strong>顺序不同</strong><br>4 返回类型不可以作为函数重载的条件！</p>
-</blockquote>
-<p>注意事项：</p>
-<blockquote>
-<p>1、引用作为重载条件，（引用要放在一个合法内存空间，10是放在常量区，要用const int &amp;a 引用）<br>2、当函数重载遇到默认参数，出现二义性，报错</p>
-</blockquote>
-<p>36.C++面对对象的三大特性：封装、继承、多态。 对象有属性和行为。具有相同性质的对象，抽象为类，比如 人类 ，车类</p>
-<p>37.封装  class 类名{属性 + 行为} 通过类创建对象（实例化），对象用<code>.</code>来访问成员。</p>
-<p>38.属性和行为共称成员，属性也叫 成员属性，成员<strong>变量</strong>，行为又叫成员<strong>函数</strong>，成员方法</p>
-<p>39.类的访问权限</p>
-<blockquote>
-<p>public 公共权限  成员类内类外都可以访问<br>protected 保护权限 类内可以访问，类外不可以访问。儿子也可以访问父亲中的保护内容<br>private 私有权限 类内可以访问，类外不可以访问  儿子不可以访问父亲的私有内容</p>
-</blockquote>
-<p>40.struct和class唯一区别在于 默认访问权限不同，struct默认权限为公共，class默认权限为私有。</p>
-<p>41.成员属性设为私有，可以自己控制读写权限，private的内容在public里读写，具体读写代码自己编写从而控制读写权限，可以检测数据有效性，在public中写的接口可以判断传入的数据是否合理。</p>
-<p>42.在类中可以让另一个类作为成员。.h和.cpp头文件和源文件中需要include。</p>
-<p>43.构造函数和析构函数的函数名和类名一样。构造函数为初始化，析构函数为清理。构造和析构都是必须实现的，如果不提供，编译器会提供一个空实现。<br>构造函数：</p>
-<ul>
-<li>没有返回值 不用写void</li>
-<li>函数名与类名相同</li>
-<li>构造函数可以有参数，可以发生重载</li>
-<li>创建对象的时候，构造函数会<strong>自动调用</strong>，而且只调用一次<br>析构函数：</li>
-<li>没有返回值 不用写void</li>
-<li>函数名与类名相同 在名称前加~</li>
-<li>析构函数不可以有参数，不可以发生重载</li>
-<li>对象在销毁前，会自动调用析构函数，而且只会调用一次。</li>
-</ul>
-<p>44.c++中开方，使用<code>pow(，0.5)</code>平方：<code>pow(，2)</code>,需要#include&lt;math.h&gt;</p>
-<p>45.构造函数<br>两种分类方式：按参数分：有参构造和无参构造。按类型分：普通构造和拷贝构造<br>三种调用方式：括号法，显示法，隐式转换法</p>
-<p>46.拷贝构造函数，不能改变原函数，需要加const，还要按照引用方式构造。将传入人身上的所有属性拷贝到我身上。 写法：person(const person &amp; p){}<br>调用默认构造函数时候，不要加（）。加括号后编译器认为这是函数的声明<br>调用：常用括号法<br>默认构造： 括号法：Person p1;     显示法： Person p1;<br>有参构造： 括号法：Person p2(10); 显示法： Person p2 = person(10); 隐式法：Person p4 = 10;<br>拷贝构造:  括号法：Person p3(p2); 显示法： Person p3 = person(p2); 隐式法：Person p5 = p4;<br>Person(10);单独写为匿名对象，当前行结束之后，马上析构。</p>
-<p>47.拷贝构造函数的调用时机</p>
-<ul>
-<li>使用一个已经创建完毕的对象来初始化一个新对象。 复制，克隆Person p3(p2);</li>
-<li>值传递的方式给函数参数传值。</li>
-<li>以值方式返回局部对象。</li>
-</ul>
-<p>48.构造函数调用规则<br>创建一个类，c++编译器给每个类添加3个函数</p>
-<ul>
-<li>默认构造函数（空实现）</li>
-<li>默认析构函数（空实现）</li>
-<li>默认拷贝构造函数，对属性进行值拷贝（值拷贝）等号=进行赋值操作<br>调用规则：</li>
-<li>如果用户定义有参构造函数，c++不在提供默认无参构造，但是提供默认拷贝构造</li>
-<li>如果用户定义拷贝构造函数，c++不会再提供其他构造函数。</li>
-</ul>
-<p>49.深拷贝和浅拷贝<br>浅拷贝：简单的赋值拷贝操作<br>深拷贝：在堆区重新申请空间，进行拷贝操作</p>
-<p>析构函数作用：将堆区开辟的数据做释放操作，<br>利用编译器提供的拷贝构造函数会做浅拷贝操作，浅拷贝带来的问题是：堆区的内存重复释放。这个问题需要深拷贝来解决。<br>如果属性有在堆区开辟的，一定要自己提供拷贝构造函数，防止浅拷贝带来的问题。</p>
-<p>50.初始化列表<br>语法：构造函数():属性1(值1),属性2(值2)…{}<br>Person(int a,int b, int c) :m_A(a), m_B(b), m_C(c){}</p>
-<p>51.当其他类对象作为类成员，构造时候先构造类对象，再构造自身。析构的顺序与构造相反</p>
-<p>52.静态成员函数 static void func(){}，也可以放在private下，设置访问权限</p>
-<ul>
-<li>所有对象共享同一个函数</li>
-<li>静态成员函数只能访问静态成员变量<br>静态成员函数不能访问非静态的变量，因为每个对象都有一个对应变量，静态成员函数无法区分哪个对象对应的变量<br>访问方式，通过创建对象来访问或者直接通过类名::函数名来访问</li>
-</ul>
-<p>53.成员变量和成员函数分开存储，结论：只有非静态成员变量才属于类的对象上。 静态成员函数，静态成员对象，非静态成员函数都不属于。<br>c++编译器会给每个空对象也分配一个字节空间，是为了区分空对象占内存的位置。<br>每个空对象也应该有一个独一无二的内存地址。<br>静态成员变量需要初始化一个值。</p>
-<p>54.this指针指向被调用的成员函数所属的对象。 大环境，每一个非静态成员函数只会诞生一份函数实例，也就是说多个同类型的对象共用一块代码。<br>this指针是隐含在每一个非静态成员函数内的一个指针，不需要定义，直接使用。<br>用途：</p>
-<ul>
-<li><strong>解决名称冲突</strong>：当形参和成员变量同名时，可用this指针来区分。</li>
-<li>*<em>返回对象本身用</em>this**：在类的非静态成员函数中返回对象本身，可使用return *this<br>链式编程思想。<br>this指针的本质是指针常量，指针的指向是不可以修改的。</li>
-</ul>
-<p>55.空指针访问成员函数<br>提高代码健壮性：if(this == NULL){return;}</p>
-<p>56.const修饰成员函数后这个函数成为<strong>常函数</strong>   const Person * const this;    void showPerson() const {} 这个const相当于第一个式子的第一个const，修饰this指针，让指针指向的值也不可以修改。<br>加关键字 mutable 后，参数就可以修改。<br>常对象只能调用常函数，常对象不能调用普通成员函数，因为普通成员函数可以修改属性。</p>
-<p>57.友元的关键字 friend。 声明特殊的函数和特殊的类，让另外的一些函数或者类进行访问。<br>友元的三种实现方式：</p>
-<ul>
-<li>全局函数做友元</li>
-<li>类做友元</li>
-<li>成员函数做友元</li>
-<li>*全局函数做友元**：把全局函数放在类中声明，并加上friend 关键字。函数就可以访问私有成员了。</li>
-<li>*类做友元**：friend class goodgay；</li>
-<li>*成员函数做友元**：friend void visit；</li>
-</ul>
-<p>58.运算符重载<br><strong>加号运算符重载</strong>：可以通过成员函数或者全局函数重载。 </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;成员函数</span><br><span class="line">Person operator+(Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	Person temp;</span><br><span class="line">	temp.m_A &#x3D; this-&gt;m_A + p.m_A;</span><br><span class="line">	temp.m_B &#x3D; this-&gt;m_B + p.m_B;</span><br><span class="line">	return temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;全局函数</span><br><span class="line">Person operator+(Person &amp;p1,Person &amp;p2)</span><br><span class="line">&#123;</span><br><span class="line">	Person temp;</span><br><span class="line">	temp.m_A &#x3D; p1.m_A + p2.m_A;</span><br><span class="line">	temp.m_B &#x3D; p1.m_B + p2.m_B;</span><br><span class="line">	return temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>成员函数调用为：Person p3 = p1.operator+(p2);简化为：Person p3 = p1 + p2;<br>全局函数调用为：Person p3 = p1.operator+(p1,p2);简化为：Person p3 = p1 + p2;<br>运算符重载也可以发生函数重载。Person operator+(Person &amp;p1,Person &amp;p2)重载为Person operator+(Person &amp;p1,int)</p>
-<p><strong>左移运算符重载</strong>:输出自定义类型</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;成员函数</span><br><span class="line">p.operator&lt;&lt;(cout) 简化版本为 p &lt;&lt; cout; 不符合要求</span><br><span class="line">不会利用成员函数重载&lt;&lt;运算符，因为无法实现cout在左侧。</span><br><span class="line">&#x2F;&#x2F;只能利用全局函数来重载左移运算符</span><br><span class="line">ostream operator&lt;&lt;(ostream &amp;cout,Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt;&quot;m_A &#x3D; &quot; &lt;&lt; p.m_A &lt;&lt; &quot;m_B &#x3D; &quot; &lt;&lt; p.m_B;</span><br><span class="line">	return cout;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>递增运算符重载</strong>： </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;前置递增  返回引用类型可以一直对一个m_Num做处理</span><br><span class="line">MyInteger&amp; operator++()</span><br><span class="line">&#123;</span><br><span class="line">	m_Num++;</span><br><span class="line">	return *this;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;后置递增 返回值类型  int代表占位参数，用于区分前置和后置递增</span><br><span class="line">MyInteger operator++(int)</span><br><span class="line">&#123;</span><br><span class="line">	MyInteger temp &#x3D; *this;</span><br><span class="line">	m_Num++;</span><br><span class="line">	return temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>赋值运算符重载</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Person&amp; operator&#x3D;(Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	if(m_Age !&#x3D; NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		delete m_Age;</span><br><span class="line">		m_Age &#x3D; NULL;	</span><br><span class="line">	&#125;</span><br><span class="line">	m_Age &#x3D; new int(*p.m_Age);</span><br><span class="line">	return *this;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>关系运算符重载</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bool operator&#x3D;&#x3D;(Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	if(this-&gt;m_Name &#x3D;&#x3D; p.m_Name &amp;&amp; this-&gt;m_Age &#x3D;&#x3D; p.m_Age)</span><br><span class="line">	&#123;</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line">	return false;</span><br><span class="line">&#125;</span><br><span class="line">bool operator!&#x3D;(Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	if(this-&gt;m_Name &#x3D;&#x3D; p.m_Name &amp;&amp; this-&gt;m_Age &#x3D;&#x3D; p.m_Age)</span><br><span class="line">	&#123;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>函数调用运算符重载</strong>：又叫<strong>仿函数</strong>，符号为<code>()</code>,没有固定写法，非常灵活。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void operator()(string test, , , )</span><br><span class="line">&#123;</span><br><span class="line">	&#x2F;&#x2F;内容灵活</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>cout &lt;&lt; MyAdd()(100,100) &lt;&lt; endl; //匿名函数对象，执行完释放，标志为 <code>函数名()</code>.</p>
-<p>59.继承 减少重复代码<br>语法：class 子类 ： 继承方式 父类<br>子类 也称为 派生类<br>父类 也称为 基类</p>
-<p>60.继承方式</p>
-<ul>
-<li>公共继承  public和protected继承，private不可被继承</li>
-<li>保护继承  public变为protected继承，private不可被继承</li>
-<li>私有继承  public和protected变为private私有继承，private不可被继承<br>基类的private都不可被继承</li>
-</ul>
-<p>61.继承中的对象模型<br>父类中的所有非静态成员属性都会被子类继承下去<br>父类中私有成员被编译器隐藏了，因此访问不到，但确实被继承下去了。<br>开发人员命令提示符<br>定位到CPP文件的盘符 ，然后输入： cl /d1 reportSingleClassLayout参看的类名 所属文件名</p>
-<p>62.继承中构造和析构顺序<br>先构造父类，再构造子类，析构顺序与构造顺序相反。</p>
-<p>63.父类和子类中同名成员处理方式：<br>访问子类成员属性：直接访问<br>访问父类成员属性：需要加作用域s.Base::Num;<br>访问子类成员函数：直接调用<br>访问父类成员函数：需要加作用域s.Base::func();<br>如果子类中出现和父类同名的成员函数，子类的同名成员会隐藏掉父类中的所有同名成员函数。如果想访问需要加作用域.</p>
-<p>64.继承同名静态成员处理方式<br>访问子类同名成员 直接访问即可<br>访问父类同名成员 需要加作用域<br><code>Son::Base::Num</code> 第一个::代表通过类名方式访问，第二个::代表访问父类作用域下的Num</p>
-<p>65.多继承语法，一个儿子可以有多个爹，实际开发中不太建议使用<br>语法：class 子类 ： 继承方式 父类1，继承方式 父类2 …，同名调用时，需要加作用域</p>
-<p>66.菱形继承：（钻石继承）利用虚继承可以解决菱形继承的问题。只会继承最后一次修改的值。<br>两个派生类继承用一个基类，又有某个类继承两个派生类.<br>某份数据只要一份，菱形继承导致有两份，资源浪费。<br>虚继承：在继承以前加上关键字 virtual 变成虚继承：class Sheep : virtual public Animal{};Animal类变为虚基类。<br>使用开发人员命令提示符，查看 vbptr，virtual base pointer ,指针指向vbtable 虚基类表。</p>
-<p>67.多态 多指动态多态，通过父类调用子类，父类的指针或者引用执行子类对象</p>
-<ul>
-<li>静态多态：函数重载 和 运算符重载属于静态多态，复用函数名。  函数地址早绑定，编译阶段确定函数地址。</li>
-<li><strong>动态多态</strong>：派生类和虚函数实现运行时多态。 函数地址晚绑定，运行阶段确定函数地址。<br>在函数名前加，virtual 变成虚函数。父类必须写，子类可不写。</li>
-</ul>
-<ol>
-<li>继承关系</li>
-<li>子类重写父类的虚函数。重写  函数返回值类型，函数名，参数列表，完全相同</li>
-</ol>
-<p>68.多态<br>当子类重写父类的虚函数，子类的虚函数表内部会替换成子类的虚函数地址<br>加virtual后，产生vfptr，virtual function pointer和vftable<br>多态优点：</p>
-<ul>
-<li>代码组织结构清晰</li>
-<li>可读性强</li>
-<li>利于前期和后期的扩展以及维护</li>
-</ul>
-<p>69.如果想扩展新的功能，需求修改源码，提倡 开闭原则<br>开闭原则：对扩展进行开发，对修改进行关闭。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;父类，计算器类，抽象类</span><br><span class="line">class AbstractCalculator</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual int getResult() &#x2F;&#x2F;虚函数</span><br><span class="line">	&#123;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	int m_Num1;</span><br><span class="line">	 int m_Num2;</span><br><span class="line">&#125;;</span><br><span class="line">&#x2F;&#x2F;子类，加法类</span><br><span class="line">class AddCalculator : public AbstractCalculator</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	int getResult()</span><br><span class="line">	&#123;</span><br><span class="line">		return m_Num1+ m_Num2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">&#x2F;&#x2F;子类，减法类</span><br><span class="line">class SubCalculator : public AbstractCalculator</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	int getResult()</span><br><span class="line">	&#123;</span><br><span class="line">		return m_Num1 - m_Num2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">&#x2F;&#x2F;子类，乘法类</span><br><span class="line">class MulCalculator : public AbstractCalculator</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	int getResult()</span><br><span class="line">	&#123;</span><br><span class="line">		return m_Num1 * m_Num2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>在上述代码基础上，增加除法功能，不需要改动其他功能，且每个功能相互独立。</p>
-<p>70.纯虚函数和抽象类<br>纯虚函数语法：virtual 返回值类型 函数名 （参数列表） = 0；<br>当类中有了纯虚函数，这个类也成为<strong>抽象类</strong>。<br>抽象类特点：</p>
-<ul>
-<li>抽象类无法实例化对象</li>
-<li>子类必须重写抽象类中的纯虚函数，否则也是抽象类<br>多态必须重写抽象类中的纯虚函数<br>Base * base = new Son; 父类指针调用子类对象。</li>
-</ul>
-<p>71.虚析构和纯虚析构：解决子类析构函数无法调用问题,通过父类指针释放子类对象<br>多态使用时，如果子类中有属性开辟到堆区，那么父类指针在释放时无法调用到子类的析构代码<br>解决方法：将父类的析构函数改为虚析构或者纯虚析构。<br>如果子类中没有堆区数据，可以不写虚析构或纯虚析构。<br>虚析构和纯虚析构共性：</p>
-<ul>
-<li>可以解决父类指针释放子类对象</li>
-<li>都需要有具体的函数实现<br>虚析构和纯虚析构区别：</li>
-<li>如果是纯虚析构，该类属于<strong>抽象类</strong>，无法实例化</li>
-</ul>
-<p>父类调用子类时，释放堆区内存需要虚析构<br>虚析构实现：子类的析构函数 加上 virtual<br>语法：<code>virtual ~类名()&#123;&#125;</code><br>纯虚析构：需要声明也需要实现，在类内声明，在类外实现。<br>语法：virtual <del>类名() = 0; 类名::</del>类名(){};</p>
-<p>72.对文件操作需要包含头文件<fstream></p>
-<ul>
-<li>ofstream :写操作 output file输出</li>
-<li>ifstream :读操作 input </li>
-<li>fstream  :读写操作<br>读文件五步：<strong>1.**包含头文件#include<fstream>**2.**创建流对象ofstream ofs;**3.**打开文件ofs.open(“文件路径”,打开方式)；</strong>4.<strong>写数据 ofs&lt;&lt;”写入的数据”;**5.**关闭文件 ofs.close();<br>写文件五部：**1.**包含头文件#include<fstream>**2.**创建流对象ifstream ifs;**3.**打开文件ifs.open(“文件路径”,打开方式)；</strong>4.<strong>读数据 四种方式读取</strong>5.**关闭文件 ifs.close();<br>文件打开方式：<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ios::in</td>
-<td>为读文件而打开文件</td>
-</tr>
-<tr>
-<td>ios::out</td>
-<td>为写文件而打开文件</td>
-</tr>
-<tr>
-<td>ios::ate</td>
-<td>初始位置：文件尾</td>
-</tr>
-<tr>
-<td>ios::app</td>
-<td>追加方式写文件</td>
-</tr>
-<tr>
-<td>ios::trunc</td>
-<td>如果文件已经存在先删除，再创建</td>
-</tr>
-<tr>
-<td>ios::binary</td>
-<td>二进制方式</td>
-</tr>
-<tr>
-<td>打开方式可以多个，例如用二进制方式写文件： `ios::binary</td>
-<td>ios::out`</td>
-</tr>
-<tr>
-<td>不指定路径，保存在cpp同文件夹下。</td>
-<td></td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<p>73.读文件<br>四个方法</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;第一种</span><br><span class="line">	char buf[1024] &#x3D; &#123; 0 &#125;;</span><br><span class="line">	while ( ifs&gt;&gt;buf)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; buf &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#x2F;&#x2F;第二种</span><br><span class="line">	char buf[1024] &#x3D; &#123; 0 &#125;;</span><br><span class="line">	while ( ifs.getline(buf,sizeof(buf)))</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; buf &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#x2F;&#x2F;第三种</span><br><span class="line">	string buf;</span><br><span class="line">	while (getline(ifs,buf))</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; buf &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#x2F;&#x2F;第四种</span><br><span class="line">	char c;</span><br><span class="line">	while ( (c&#x3D;ifs.get())!&#x3D;EOF ) &#x2F;&#x2F;EOF end of line</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; c;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>利用is_open函数可以判断文件是否打开成功</p>
-<p>74.二进制写文件，打开方式指定ios::binary<br>函数原型：<code>ostream&amp; write(const char * buffer,int len);</code> buffer为字符指针，len为读写字节数</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Person p &#x3D; &#123;&quot;张三&quot;,18&#125;;</span><br><span class="line">ofs.write((const char *)&amp;p,sizeof(Person) );</span><br></pre></td></tr></table></figure>
 
-<p>二进制读文件，<code>istream&amp; read(char * buffer,int len);</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Person p;</span><br><span class="line">ifs.read((char *)&amp;p,sizeof(Person));</span><br></pre></td></tr></table></figure>
+<p>grep 命令</p>
+<p>Linux grep 命令用于查找文件里符合条件的字符串。<br>grep 指令用于查找内容包含指定的范本样式的文件，如果发现某文件的内容符合所指定的范本样式，预设 grep 指令会把含有范本样式的那一列显示出来。若不指定任何文件名称，或是所给予的文件名为 <code>-</code>，则 grep 指令会从标准输入设备读取数据。</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grep [-abcEFGhHilLnqrsvVwxy][-A&lt;显示列数&gt;][-B&lt;显示列数&gt;][-C&lt;显示列数&gt;][-d&lt;进行动作&gt;][-e&lt;范本样式&gt;][-f&lt;范本文件&gt;][--help][范本样式][文件或目录...]</span><br></pre></td></tr></table></figure>
 
-<p>75.泛式编程，模板就是建立通用模具，大大提高复用性。模板不可以直接使用，它只是一个框架。<br>c++提供两种模板机制，函数模板和类模板</p>
-<p>76.函数模板，函数返回值和形参类型可以不具体制定，用一个虚拟的类型来表示。<br>语法<code>template&lt;typename T&gt;</code>typename可以替换为class<br>解释：<br>template — 声明创建模板<br>typename — 表明其后面的符号是一种数据类型，可以用class代替<br>T — 通用的数据类型，名称可以替换，通常为大写</p>
-<p>77.使用函数模板有两种方式：自动类型推导、显示指定类型</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mySwap(a,b);</span><br><span class="line">mySwap&lt;int&gt;(a, b);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>自动类型推导必须推导出一致的数据类型T，才可以使用。</li>
-<li>模板必须要确定出T的数据类型，才可以使用<br>建议使用显示指定类型方式，调用函数模板，因为可以自己确定通用类型T；可以发生隐式类型转换。</li>
-</ul>
-<p>78.普通函数与函数模板调用规则</p>
-<ol>
-<li>如果函数模板和普通函数都可以调用，优先调用普通函数</li>
-<li>可以通过空模板参数列表 强制调用 函数模板</li>
-<li>函数模板可以发生函数重载</li>
-<li>如果函数模板可以产生更好的匹配，优先调用函数模板<br>空函数模板：myPrint&lt;&gt;(a,b);<br>总结：既然提供了函数模板，最好就不要提供普通函数，否则容易出现二义性。</li>
-</ol>
-<p>79.具体化的模板，可以解决自定义类型的通用化。<br>template&lt;&gt; bool myCompare(Person &amp;p1,Person &amp;p2){return;}<br>学习模板并不是为了写模板，而是在STL中能够运用系统提供的模板。</p>
-<p>80.类模板 ，建立通用类</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">template&lt;class NameType,class AgeType&gt;</span><br><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Person(NameType name,AgeType age)</span><br><span class="line">	&#123;</span><br><span class="line">		this-&gt;m_Name &#x3D; name;</span><br><span class="line">		this-&gt;m_Age &#x3D; age;</span><br><span class="line">	&#125;</span><br><span class="line">	NameType m_Name;</span><br><span class="line">	AgeType m_Age;</span><br><span class="line">&#125;</span><br><span class="line">调用：Person&lt;string,int&gt;p1(&quot;孙悟空&quot;,999)</span><br></pre></td></tr></table></figure>
-<p>调用时，先给模板 参数类型，在给实参赋值。</p>
-<p>81.类模板与函数模板区别</p>
-<ol>
-<li>类模板没有自动类型推导的</li>
-<li>类模板在模板参数列表中可以有默认参数<br>Person(NameType name = string,AgeType age = int)</li>
-</ol>
-<p>82.类模板中的成员函数在调用时候才创立。因为类模板一开始无法确定数据类型。</p>
-<p>83.类模板对象做函数参数<br>三种传入方式：</p>
-<ol>
-<li>指定传入类型  –直接显示对象的数据类型   Person&lt;string,int&gt;p1(“孙悟空”,999)</li>
-<li>参数模板化   –将对象中的参数变为模板进行传递</li>
-<li>整个类模板化 –将这个对象类型 模板化进行传递</li>
-</ol>
-<p>84.查看数据类型：cout &lt;&lt; “T的数据类型： “ &lt;&lt; typeid(T1).name() &lt;&lt; endl;</p>
-<p>85.类模板与继承</p>
-<ol>
-<li>子类继承类模板的父类，子类在声明时，要指定出父类中T的类型。</li>
-<li>如果不指定，编译器无法给子类分配内存</li>
-<li>如果想灵活指定出父类中T的类型，子类也需编程类模板 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">template&lt;clasee T&gt;</span><br><span class="line">class Base   &#x2F;&#x2F;父类</span><br><span class="line">&#123;</span><br><span class="line">	T m;</span><br><span class="line">&#125;;</span><br><span class="line">class Son:public Base&lt;int&gt; &#x2F;&#x2F;子类继承，指定数据类型int</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">&#x2F;&#x2F;子类模板</span><br><span class="line">template&lt;class T1,class T2&gt;  &#x2F;&#x2F;T1为子类模板类型，T2为父类模板类型</span><br><span class="line">class Son2 :public Base&lt;T2&gt;</span><br><span class="line">&#123;</span><br><span class="line">	T1 obj;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-</li>
-</ol>
-<p>86.类模板成员函数类外实现</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;构造函数的类外实现</span><br><span class="line">template&lt;class T1,class T2&gt;</span><br><span class="line">Person&lt;T1,T2&gt;::person(T1 name,T2 age) &#x2F;&#x2F;加了作用域和模板类型</span><br><span class="line">&#123;</span><br><span class="line">	this-&gt;m_Name &#x3D; name;</span><br><span class="line">	this-&gt;m_Age &#x3D; age;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;成员函数类外实现</span><br><span class="line">template&lt;class T1,class T2&gt;</span><br><span class="line">void Person&lt;T1,T2&gt;::showPerson</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>调用时候需要通过模板建立实例。  </p>
-<p>87.类模板分文件编写 </p>
-<ul>
-<li>第一种解决方式，直接包含源文件，因为父类模板在执行时，不会初始化内容，头文件模板内容不会被识别，这是创建时机的问题，类模板的成员创建是在调用阶段。</li>
-<li>第二种解决方式，将.h和.cpp中的内容写到一起，将后缀名改为.hpp文件<br>主流使用第二种。</li>
-</ul>
-<p>88.类模板与友元：类内和类外实现<br>全局函数类内实现-直接在类内声明友元<br>全局函数类外实现-需要提前让编译器知道全局函数的存在,提前声明，如果全局函数使用模板，还需要提前声明模板<br>总结：建议使用全局函数做类内实现，用法简单，而且编译器可以直接识别。</p>
-<p>89.STL(Standard Template Library,标准模板库),分为容器(container)算法(algorithm)迭代器(iterator)</p>
-<ul>
-<li>容器和算法之间通过迭代器进行无缝连接</li>
-<li>STL几乎所有的代码都采用了模板类或者模板函数</li>
-</ul>
-<p>90.STL大体分为六大组件，分别是：容器、算法、迭代器、仿函数、适配器（配接器）、空间配置器。</p>
-<ol>
-<li>容器：各种数据结构，如vector、list、deque、set、map等，用来<strong>存放数据</strong>。</li>
-<li>算法：各种常用的算法，如sort排序、find查找、copy拷贝、for_each遍历等</li>
-<li>迭代器：扮演了容器与算法之间的胶合剂。</li>
-<li>仿函数：行为类似函数，可作为算法的某种策略。</li>
-<li>适配器：一种用来修饰容器或者仿函数或迭代器接口的东西。</li>
-<li>空间适配器：负责空间的配置与管理。 </li>
-</ol>
-<p><strong>容器</strong> ： 数组，链表，树，栈，队列，集合，映射表。<br>序列式容器：强调值的排序，序列式容器中的每个元素均有固定的位置<br>关联式容器：二叉树结构，各元素之间没有严格的物理意义上的顺序关系。<br><strong>算法</strong>：<br>质变算法：是指运算过程中会更改区间内的元素的内容。例如拷贝，替换，删除等等<br>非质变算法：是指运算过程中不会更改区间内的元素内容，例如查找，计数，遍历，寻找极值等等<br><strong>迭代器</strong>：容器和算法之间粘合剂<br>算法通过迭代器才可以访问容器中的数据。<br>每个容器都有自己的迭代器。<br>迭代器种类：<br>|  种类   | 功能  | 支持运算 |<br>|  —-  | —-  | —-  |<br>| 输入迭代器       | 对数据的只读访问                        | 只读，支持++、++、！= |<br>| 输出迭代器       | 对数据的只写访问                        | 只写，支持++ |<br>| 前向迭代器       | 读写操作，并能向前推进迭代器             | 读写，支持++、==、！= |<br>|双向迭代器        | 读写操作，并能向前和向后操作             | 读写，支持++、– |<br>| 随机访问迭代器   | 读写操作，可以以跳跃的方式访问任意数据，功能最强的迭代器 | 读写，支持++、–、[n]、-n、&lt;、&lt;=、&gt;、&gt;= |<br>常用迭代器为双向迭代器和随机访问迭代器</p>
-<p>91.vector容器遍历方法：<br>for_each遍历算法：for_each(v.begin(), v.end(), myPrint);<br>for循环：for (vector<int>::iterator it = v.begin(); it &lt; v.end(); it++)  //常用<br>while循环：<br>vector<int>::iterator itBegin = v.begin(); //起始迭代器，指向容器中第一个元素<br>vector<int>::iterator itEnd = v.end();//结束迭代器，指向容器中最后一个元素的下一个位置<br>while (itBegin!= itEnd)<br>{<br>    cout &lt;&lt; *itBegin &lt;&lt; endl;<br>    itBegin++;<br>}</p>
-<p>92.vector容器嵌套容器<br>vector&lt; vector<int>&gt;v;<br>vector<int>v1;<br>vector<int>v2;</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(vector&lt; vector&lt;int&gt;&gt;::iterator it &#x3D; v.begin();it&lt;v.end();it++)</span><br><span class="line">&#123;</span><br><span class="line">	for(vector&lt;int&gt;::iterator vit &#x3D; (*it).begin();vit&lt;(*it).end();vit++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; *vit &lt;&lt;&quot; &quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>string容器<br>93.string本质是类。<br>string和char <em>的区别：<br>char</em>是一个指针<br>string是一个类，类内封装了char<em>，管理这个字符串，是一个char</em>型容器<br>特点：<br>string类内部封装了很多成员方法：查找find，拷贝copy，删除delete，替换replace，插入insert<br>string构造函数：<br>string()；//创建一个空的字符串，例如string str；<br>string(const char*s);//使用字符串s初始化<br>string(const string &amp; str);//使用一个string对象初始化另一个string对象<br>string(int n , char c); //使用n个字符c初始化</p>
-<p>94.string赋值操作<code>=</code>或者<code>.assign</code><br>string&amp; operator=(const char <em>s); //char</em>类型字符串赋值给当前的字符串<br>string&amp; operator=(const string &amp;s); //把字符串s赋给当前的字符串<br>string&amp; operator=(char c);//字符赋值给当前的字符串；<br>string&amp; assign(const char *s)；//把字符串s赋值给当前的字符串<br>string&amp; assign(const char *s,int n);//把字符串的前n个字符赋给当前的字符串<br>string&amp; assign(const string &amp;s); //把字符串s赋给当前字符串<br>string&amp; assign(int n,char c); //用n个字符c赋给当前字符串</p>
-<p>95.string字符串拼接 <code>+=</code>或者<code>.append</code><br>string&amp; operator+=(const char* str)或者(const char c)或者(const string&amp; str)<br>string&amp; append(const char *s)或者(const char *s,int n)或者(const string &amp;s)或者(const string &amp;s,int pos,int n)</p>
-<p>96.string查找和替换 <code>find</code>或者<code>.rfind</code>或者<code>replace</code><br>    int rfind(const string&amp; str,int pos = 0) const；//rfind是从右往左，find是从左往右查<br>替换：string&amp; replace(int pos,int n,const string&amp; str); //替换从pos开始n个字符为字符串str。</p>
-<p>97.string字符串比较<code>.compare</code><br>主要用来判断是否相等</p>
-<p>98.string字符存取，使用<code>[]</code>或者<code>at</code>方式<br>for(int i = 0;i &lt; str.size();i++)<br>{<br>    cout&lt;&lt;str[i]&lt;&lt;” “;<br>    //或者cout&lt;&lt;str.at(i)&lt;&lt;” “;<br>}</p>
-<p>99.string插入和删除 <code>insert</code>和<code>erase</code><br>string&amp; insert(int pos,const char* s);<br>string&amp; erase(int pos,int n = npos);//删除从pos开始的n个字符</p>
-<p>100.string子串 <code>.substr</code><br>string substr(int pos = 0,int m = npos ) const;//返回由pos开始的n个字符组成的字符串<br>str.substr(1,3);</p>
-<p>101.vector容器，又叫单端数组。<br>和普通数组不同之处在于数组是静态空间，vector可以动态扩展。动态扩展，并不是在原空间后续接新空间，而是找更大的内存空间，然后将原数据拷贝新空间，释放原空间。<br>vector的迭代器支持随机访问<br>vector构造函数<br>vector<T>v; |vector(v.begin(),v.end());| vector(n,elem);n个elem构造|vector(const vector &amp;vec);</p>
-<p>102.vector赋值操作</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;operator&#x3D;</span><br><span class="line">vector&lt;int&gt;v2;</span><br><span class="line">v2 &#x3D; v1;</span><br><span class="line">&#x2F;&#x2F;assign</span><br><span class="line">vector&lt;int&gt;v3;</span><br><span class="line">v3.assign(v1.begin(),v1.end());</span><br><span class="line">&#x2F;&#x2F;n个elem方式</span><br><span class="line">vector&lt;int&gt;v4;</span><br><span class="line">v4.assign(10,100);</span><br></pre></td></tr></table></figure>
+<p>cat 命令<br>cat（英文全拼：concatenate）命令用于连接文件并打印到标准输出设备上。</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat [-AbeEnstTuv] [--help] [--version] fileName</span><br></pre></td></tr></table></figure>
 
-<p>103.vector容量和大小<br>empty();//判断是否为空|||capacity();//容量|||size();//返回容器中的元素个数|||resize(int num);//重新指定容器长度|||resize(int num ,elem);//重新指定容器长度,超过长度的元素被删除</p>
-<p>104.vector插入和删除<br>push_back(ele);//从尾部插入<br>pop_back();//删除最后一个元素<br>insert(const_iterator pos,ele);//迭代器指向位置pos插入元素<br>insert(const_iterator pos,int count,ele);//迭代器指向位置pos插入count个元素<br>erase(const_iterator pos); //删除迭代器指向的元素<br>erase(const_iterator start,const_iterator end);//删除从start到end之间的元素<br>clear();//删除容器中所有内容</p>
-<p>105.vector数据存取<br>at(int idx); //返回索引|idx所指的数据<br>operator[];//返回索引|idx所指的数据<br>front();//返回容器中的第一个数据元素<br>back();//返回容器中的最后一个数据元素</p>
-<p>106.vector互换容器  swap(vec);//将vec与本身的元素互换。<br>实际用途：巧用swap可以收缩内存空间<br>vector<int>(v).swap(v);<br>vector<int>(v)为匿名对象</p>
-<p>107.vector预留空间：减少vector在动态扩展容量时的扩展次数<br>reserve(int len);//容器预留len个元素长度，预留位置不初始化，元素不可访问</p>
-<p>108.deque容器，又叫双端数组，可以对头端进行插入删除操作，中控器，支持随机访问<br>deque与vector区别</p>
-<ul>
-<li>vector对于头部的插入删除效率低，数据量越大，效率越低。</li>
-<li>deque相对而言插入删除速度会比vector快。</li>
-<li>vector访问元素时的速度会比deque快，这和两者内部实现有关。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void printDeque(const deque&lt;int&gt;&amp;d) &#x2F;&#x2F;只读容器</span><br><span class="line">&#123;</span><br><span class="line">	for(deque&lt;int&gt;::const_iterator it &#x3D; d.begin();it !&#x3D; d.end();it++)</span><br><span class="line">	&#123;</span><br><span class="line">		&#x2F;&#x2F;*it &#x3D; 100; 容器不可修改</span><br><span class="line">		cout&lt;&lt;*it&lt;&lt;&quot; &quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-deque构造函数操作和vector差不多</li>
-</ul>
-<p>109.<strong>deque赋值操作</strong><br>operator=方式，(beg,end);方式，assign方式<br>deque容量大小操作 和vector比没有capacity操作，其他一样<br>两端插入操作：<br>push_back(elem); //在容器尾部添加一个数据<br>push_front(elem); //在容器头部插入一个数据<br>pop_back(); //删除容器最后一个数据<br>pop_front(); //删除容器第一个数据<br>指定位置操作：<br>insert(pos,elem); //在pos位置插入一个elem元素的拷贝，返回新数据的位置。<br>insert(pos,n,elem); //在pos位置插入n个elem数据，无返回值。<br>insert(pos,beg,end); //在pos位置插入[beg,end]区间的数据，无返回值。<br>clear(); //清空容器的所有数据<br>erase(beg,end); //删除[beg,end)区间的数据，返回下一个数据的位置。<br>erase(pos); //删除pos位置的数据，返回下一个数据的位置。<br><strong>deque数据存取</strong><br>at(int idx); //返回索引idx所指的数据<br>operator[]; //返回索引idx所指的数据<br>front(); //返回容器中第一个数据元素<br>back(); //返回容器中最后一个数据元素<br><strong>deque 排序</strong><br>#include <algorithm><br>sort(iterator beg, iterator end) //对beg和end区间内元素进行排序<br>sort(d.begin(), d.end());</p>
-<p>110.<strong>stack容器</strong>栈容器常用的对外接口<br>stack是一种<strong>先进后出(First In Last Out,FILO)**的数据结构，它只有一个出口<br>栈中只有顶端的元素才可以被外界使用，因此</strong>栈不允许有遍历行为**<br>栈中进入数据称为 — 入栈 push,栈中弹出数据称为 — 出栈 pop<br><strong>stack 常用接口</strong><br>构造函数：<br>stack<T> stk; //stack采用模板类实现， stack对象的默认构造形式<br>stack(const stack &amp;stk); //拷贝构造函数<br>赋值操作：<br>stack&amp; operator=(const stack &amp;stk); //重载等号操作符<br>数据存取：<br>push(elem); //向栈顶添加元素<br>pop(); //从栈顶移除第一个元素<br>top(); //返回栈顶元素<br>大小操作：<br>empty(); //判断堆栈是否为空<br>size(); //返回栈的大小<br>常用五个接口：</p>
-<ul>
-<li>入栈 — push</li>
-<li>出栈 — pop</li>
-<li>返回栈顶 — top</li>
-<li>判断栈是否为空 — empty</li>
-<li>返回栈大小 — size</li>
-</ul>
-<p>111.<strong>queue容器</strong>，Queue是一种<strong>先进先出(First In First Out,FIFO)**的数据结构，它有两个出口。<br>队列容器允许从一端新增元素，从另一端移除元素<br>队列中只有队头和队尾才可以被外界使用，因此队列不允许有遍历行为<br>队列中进数据称为 — 入队 push，队列中出数据称为 — 出队 pop<br>**queue常用接口</strong><br>构造函数：<br>queue<T> que; //queue采用模板类实现，queue对象的默认构造形式<br>queue(const queue &amp;que); //拷贝构造函数<br>赋值操作：<br>queue&amp; operator=(const queue &amp;que); //重载等号操作符<br>数据存取：<br>push(elem); //往队尾添加元素<br>pop(); //从队头移除第一个元素<br>back(); //返回最后一个元素<br>front(); //返回第一个元素<br>大小操作：<br>empty(); //判断堆栈是否为空<br>size(); //返回栈的大小<br>常用接口：</p>
-<ul>
-<li>入队 — push</li>
-<li>出队 — pop</li>
-<li>返回队头元素 — front</li>
-<li>返回队尾元素 — back</li>
-<li>判断队是否为空 — empty</li>
-<li>返回队列大小 — size</li>
-</ul>
-<p>112.<strong>list容器</strong> 将数据进行链式存储<br>链表（list）是一种物理存储单元上非连续的存储结构，数据元素的逻辑顺序是通过链表中的指针链接实现的<br>链表的组成：链表由一系列结点组成<br>结点的组成：一个是存储数据元素的数据域，另一个是存储下一个结点地址的指针域<br>STL中的链表是一个双向循环链表<br>由于链表的存储方式并不是连续的内存空间，因此链表list中的迭代器只支持前移和后移，属于<strong>双向迭代器</strong><br>list的优点：</p>
-<ul>
-<li>采用动态存储分配，不会造成内存浪费和溢出</li>
-<li>链表执行插入和删除操作十分方便，修改指针即可，不需要移动大量元素<br>list的缺点：</li>
-<li>链表灵活，但是空间(指针域) 和 时间（遍历）额外耗费较大<br>List有一个重要的性质，插入操作和删除操作都不会造成原有list迭代器的失效，这在vector是不成立的。<br>总结：STL中List和vector是两个最常被使用的容器，各有优缺点</li>
-<li>*list构造函数**<br>list<T> lst; //list采用采用模板类实现,对象的默认构造形式：<br>list(beg,end); //构造函数将[beg, end)区间中的元素拷贝给本身。<br>list(n,elem); //构造函数将n个elem拷贝给本身。<br>list(const list &amp;lst); //拷贝构造函数。<br>总结：list构造方式同其他几个STL常用容器，熟练掌握即可</li>
-<li>*list赋值和交换**<br>assign(beg, end); //将[beg, end)区间中的数据拷贝赋值给本身。<br>assign(n, elem); //将n个elem拷贝赋值给本身。<br>list&amp; operator=(const list &amp;lst); //重载等号操作符<br>swap(lst); //将lst与本身的元素互换。<br>总结：list赋值和交换操作能够灵活运用即可</li>
-<li>*list大小操作**<br>size(); //返回容器中元素的个数<br>empty(); //判断容器是否为空<br>resize(num); //重新指定容器的长度为num，若容器变长，则以默认值填充新位置。<br>​ //如果容器变短，则末尾超出容器长度的元素被删除。<br>resize(num, elem); //重新指定容器的长度为num，若容器变长，则以elem值填充新位置。</li>
-<li>*list插入和删除**<br>push_back(elem);//在容器尾部加入一个元素<br>pop_back();//删除容器中最后一个元素<br>push_front(elem);//在容器开头插入一个元素<br>pop_front();//从容器开头移除第一个元素<br>insert(pos,elem);//在pos位置插elem元素的拷贝，返回新数据的位置。<br>insert(pos,n,elem);//在pos位置插入n个elem数据，无返回值。<br>insert(pos,beg,end);//在pos位置插入[beg,end)区间的数据，无返回值。<br>clear();//移除容器的所有数据<br>erase(beg,end);//删除[beg,end)区间的数据，返回下一个数据的位置。<br>erase(pos);//删除pos位置的数据，返回下一个数据的位置。</li>
-<li>*remove(elem);**//删除容器中所有与elem值匹配的元素。</li>
-<li>尾插 — push_back</li>
-<li>尾删 — pop_back</li>
-<li>头插 — push_front</li>
-<li>头删 — pop_front</li>
-<li>插入 — insert</li>
-<li>删除 — erase</li>
-<li>移除 — remove</li>
-<li>清空 — clear</li>
-<li>*list数据存取**<br>front(); //返回第一个元素。<br>back(); //返回最后一个元素。<br>总结：</li>
-<li>list容器中不可以通过[]或者at方式访问数据</li>
-<li>返回第一个元素 — front</li>
-<li>返回最后一个元素 — back</li>
-<li>*list反转和排序**<br>reverse(); //反转链表<br>sort(); //链表排序<br>总结：</li>
-<li>反转 — reverse</li>
-<li>排序 — sort （成员函数）<br>//所有不支持随机访问迭代器的容器，不可以用标准算法<br>//不支持随机访问迭代器的容器，内部会提供对应一些算法。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bool myCompare(int val1 , int val2)</span><br><span class="line">&#123;</span><br><span class="line">	return val1 &gt; val2;</span><br><span class="line">&#125;</span><br><span class="line">L.sort(myCompare); &#x2F;&#x2F;指定规则，从大到小</span><br></pre></td></tr></table></figure>
-总结：</li>
-<li>对于自定义数据类型，必须要指定排序规则，否则编译器不知道如何进行排序</li>
-<li>高级排序只是在排序规则上再进行一次逻辑规则制定，并不复杂</li>
-</ul>
-<p>113.<strong>set/multiset 容器</strong>:所有元素都会在插入时自动被排序#include <set><br>set/multiset属于关联式容器，底层结构是用二叉树实现。<br>set和multiset区别：</p>
-<ul>
-<li>set不允许容器中有重复的元素</li>
-<li>multiset允许容器中有重复的元素</li>
-<li>*set构造和赋值**<br>构造：<br>set<T> st; //默认构造函数：<br>set(const set &amp;st); //拷贝构造函数<br>赋值：<br>set&amp; operator=(const set &amp;st); //重载等号操作符<br>总结：</li>
-<li>set容器插入数据时用insert</li>
-<li>set容器插入数据的数据会自动排序</li>
-<li>*set大小和交换**<br>size(); //返回容器中元素的数目<br>empty(); //判断容器是否为空<br>swap(st); //交换两个集合容器<br>总结：</li>
-<li>统计大小 — size</li>
-<li>判断是否为空 — empty</li>
-<li>交换容器 — swap</li>
-<li>*set插入和删除**<br>insert(elem); //在容器中插入元素。<br>clear(); //清除所有元素<br>erase(pos); //删除pos迭代器所指的元素，返回下一个元素的迭代器。<br>erase(beg, end); //删除区间[beg,end]的所有元素 ，返回下一个元素的迭代器。<br>erase(elem); //删除容器中值为elem的元素。<br>总结：</li>
-<li>插入 — insert</li>
-<li>删除 — erase</li>
-<li>清空 — clear</li>
-<li>*set查找和统计**<br>find(key); //查找key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end();<br>count(key); //统计key的元素个数<br>总结：</li>
-<li>查找 — find （返回的是迭代器）</li>
-<li>统计 — count （对于set，结果为0或者1）</li>
-<li>*set和multiset区别**<br>区别：</li>
-<li>set不可以插入重复数据，而multiset可以</li>
-<li>set插入数据的同时会返回插入结果，表示插入是否成功</li>
-<li>multiset不会检测数据，因此可以插入重复数据<br>pair&lt;set<int>::iterator, bool&gt;  ret = s.insert(10);//插入结果的返回值<br>总结：</li>
-<li>如果不允许插入重复数据可以利用set</li>
-<li>如果需要插入重复数据利用multiset</li>
-<li>*pair对组创建** 成对出现的数据，利用对组可以返回两个数据<br>两种创建方式：<br>pair&lt;type, type&gt; p ( value1, value2 );<br>pair&lt;type, type&gt; p = make_pair( value1, value2 );<br>访问：p2.first   p2.second </li>
-<li>*set容器排序**默认排序规则为从小到大，改变排序规则<br>主要技术点：<br>示例一 利用仿函数，可以改变排序规则<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;仿函数</span><br><span class="line">class MyCompare </span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	bool operator()(int v1, int v2) &#123;</span><br><span class="line">		return v1 &gt; v2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">set&lt;int,MyCompare&gt; s2;</span><br></pre></td></tr></table></figure>
-示例二 set存放自定义数据类型,都会指定排序规程<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class comparePerson</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	bool operator()(const Person&amp; p1, const Person &amp;p2)</span><br><span class="line">	&#123;</span><br><span class="line">		return p1.m_Age &gt; p2.m_Age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">set&lt;Person, comparePerson&gt; s;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>114.<strong>map/multimap容器</strong></p>
-<ul>
-<li>map中所有元素都是pair</li>
-<li>pair中第一个元素为key（键值），起到索引作用，第二个元素为value（实值）</li>
-<li>所有元素都会根据元素的键值自动排序<br>本质：map/multimap属于关联式容器，底层结构是用二叉树实现。</li>
-<li>map和multimap区别：</li>
-<li>map不允许容器中有重复key值元素</li>
-<li>multimap允许容器中有重复key值元素</li>
-<li>*map构造和赋值**<br>构造：两个<br>map&lt;T1, T2&gt; mp; //map默认构造函数:<br>map(const map &amp;mp); //拷贝构造函数<br>赋值：<br>map&amp; operator=(const map &amp;mp); //重载等号操作符<br>总结：map中所有元素都是成对出现，插入数据时候要使用对组</li>
-<li>*map大小和交换**<br>size(); //返回容器中元素的数目<br>empty(); //判断容器是否为空<br>swap(st); //交换两个集合容器<br>总结：</li>
-<li>统计大小 — size</li>
-<li>判断是否为空 — empty</li>
-<li>交换容器 — swap</li>
-<li>*map插入和删除**<br>insert(elem); //在容器中插入元素。<br>clear(); //清除所有元素<br>erase(pos); //删除pos迭代器所指的元素，返回下一个元素的迭代器。<br>erase(beg, end); //删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。<br>erase(key); //删除容器中值为key的元素。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;第一种插入方式</span><br><span class="line">	m.insert(pair&lt;int, int&gt;(1, 10));</span><br><span class="line">&#x2F;&#x2F;第二种插入方式  &#x2F;&#x2F;建议使用</span><br><span class="line">	m.insert(make_pair(2, 20));</span><br><span class="line">&#x2F;&#x2F;第三种插入方式 不建议</span><br><span class="line">	m.insert(map&lt;int, int&gt;::value_type(3, 30));</span><br><span class="line">&#x2F;&#x2F;第四种插入方式 不建议参数，用[]key找value</span><br><span class="line">	m[4] &#x3D; 40; </span><br><span class="line">	printMap(m);</span><br></pre></td></tr></table></figure>
-总结：</li>
-<li>map插入方式很多，记住其一即可</li>
-<li>插入 — insert</li>
-<li>删除 — erase</li>
-<li>清空 — clear</li>
-<li>*map查找和统计**<br>find(key); //查找key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end();<br>count(key); //统计key的元素个数<br>总结：<br>查找 — find （返回的是迭代器）<br>统计 — count （对于map，结果为0或者1）</li>
-<li>*map容器排序**:利用仿函数，可以改变排序规则<br>map容器默认排序规则为 按照key值进行 从小到大排序，掌握如何改变排序规则<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bool operator()(int v1, int v2) &#123;</span><br><span class="line">		return v1 &gt; v2;</span><br><span class="line">	&#125;</span><br><span class="line">for (map&lt;int, int, MyCompare&gt;::iterator it &#x3D; m.begin(); it !&#x3D; m.end(); it++) &#123;</span><br><span class="line">		cout &lt;&lt; &quot;key:&quot; &lt;&lt; it-&gt;first &lt;&lt; &quot; value:&quot; &lt;&lt; it-&gt;second &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>115.<strong>函数对象</strong>重载函数调用操作符的类，其对象常称为函数对象<br>函数对象使用重载的()时，行为类似函数调用，也叫仿函数<br>本质：函数对象(仿函数)是一个类，不是一个函数<br><strong>函数对象使用</strong></p>
-<ul>
-<li>函数对象在使用时，可以像普通函数那样调用, 可以有参数，可以有返回值</li>
-<li>函数对象超出普通函数的概念，函数对象可以有自己的状态</li>
-<li>函数对象可以作为参数传递</li>
-</ul>
-<p>116.<strong>谓词</strong></p>
-<ul>
-<li>返回bool类型的仿函数称为谓词</li>
-<li>如果operator()接受一个参数，那么叫做一元谓词</li>
-<li>如果operator()接受两个参数，那么叫做二元谓词<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vector&lt;int&gt;::iterator it &#x3D; find_if(v.begin(), v.end(), GreaterFive());</span><br><span class="line">&#x2F;&#x2F;使用函数对象改变算法策略，排序从大到小</span><br><span class="line">	sort(v.begin(), v.end(), MyCompare());</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>117.<strong>内建函数对象</strong><br>仿函数所产生的对象，用法和一般函数完全相同<br>使用内建函数对象，需要引入头文件 #include<functional><br><strong>算术仿函数</strong><br>实现四则运算<br>其中negate是一元运算，其他都是二元运算<br>template<class T> T plus<T> //加法仿函数<br>template<class T> T minus<T> //减法仿函数<br>template<class T> T multiplies<T> //乘法仿函数<br>template<class T> T divides<T> //除法仿函数<br>template<class T> T modulus<T> //取模仿函数<br>template<class T> T negate<T> //取反仿函数<br><strong>关系仿函数</strong><br>template<class T> bool equal_to<T> //等于<br>template<class T> bool not_equal_to<T> //不等于<br>template<class T> bool greater<T> //<strong>大于</strong><br>template<class T> bool greater_equal<T> //大于等于<br>template<class T> bool less<T> //小于<br>template<class T> bool less_equal<T> //小于等于<br><strong>逻辑仿函数</strong>逻辑仿函数实际应用较少<br>template<class T> bool logical_and<T> //逻辑与<br>template<class T> bool logical_or<T> //逻辑或<br>template<class T> bool logical_not<T> //逻辑非</p>
-<p>118.STL- 常用算法<br>算法主要是由头文件<algorithm> <functional> <numeric>组成。<br><algorithm>是所有STL头文件中最大的一个，范围涉及到比较、 交换、查找、遍历操作、复制、修改等等<br><numeric>体积很小，只包括几个在序列上面进行简单数学运算的模板函数<br><functional>定义了一些模板类,用以声明函数对象。</p>
-<p>119.常用遍历算法for_each和transform<br>for_each //遍历容器<br>transform //搬运容器到另一个容器中<br><strong>for_each</strong>(iterator beg, iterator end, _func);<br>// 遍历算法 遍历容器元素<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _func 函数或者函数对象<br><strong>transform</strong>(iterator beg1, iterator end1, iterator beg2, _func);<br>//beg1 源容器开始迭代器<br>//end1 源容器结束迭代器<br>//beg2 目标容器开始迭代器<br>//_func 函数或者函数对象<br>总结： 搬运的目标容器必须要提前开辟空间，否则无法正常搬运</p>
-<p>120.常用查找算法<br>find //查找元素  查找指定元素，找到返回指定元素的迭代器，找不到返回结束迭代器end()<br>find_if //按条件查找元素<br>adjacent_find //查找相邻重复元素<br>binary_search //二分查找法<br>count //统计元素个数<br>count_if //按条件统计元素个数<br><strong>find</strong>(iterator beg, iterator end, value);<br>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置<br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 查找的元素<br><strong>find_if</strong><br>find_if(iterator beg, iterator end, _Pred);<br>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _Pred 函数或者谓词（返回bool类型的仿函数）<br><strong>adjacent_find</strong><br>adjacent_find(iterator beg, iterator end);<br>// 查找相邻重复元素,返回相邻元素的第一个位置的迭代器<br>// beg 开始迭代器<br>// end 结束迭代器<br>总结：面试题中如果出现查找相邻重复元素，记得用STL中的adjacent_find算法<br><strong>binary_search</strong><br>bool binary_search(iterator beg, iterator end, value);<br>// 查找指定的元素，查到 返回true 否则false<br>// 注意: <strong>在无序序列中不可用</strong><br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 查找的元素<br><strong>count</strong><br>count(iterator beg, iterator end, value);<br>// 统计元素出现次数<br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 统计的元素<br><strong>count_if</strong> 按条件统计元素个数<br>count_if(iterator beg, iterator end, _Pred);<br>// 按条件统计元素出现次数<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _Pred 谓词</p>
-<p>121.常用排序算法<br>sort //对容器内元素进行排序<br>random_shuffle //洗牌 指定范围内的元素随机调整次序<br>merge // 容器元素合并，并存储到另一容器中<br>reverse // 反转指定范围的元素<br><strong>sort</strong><br>sort(iterator beg, iterator end, _Pred);<br>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _Pred 谓词<br><strong>random_shuffle</strong>  洗牌算法<br>random_shuffle(iterator beg, iterator end);<br>// 指定范围内的元素随机调整次序<br>// beg 开始迭代器<br>// end 结束迭代器<br>srand((unsigned int)time(NULL));<br><strong>merge</strong>  两个容器元素合并，并存储到另一容器中<br>merge(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);<br>// 注意: 两个容器必须是有序的<br>// beg1 容器1开始迭代器<br>// end1 容器1结束迭代器<br>// beg2 容器2开始迭代器<br>// end2 容器2结束迭代器<br>// dest 目标容器开始迭代器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;目标容器需要提前开辟空间</span><br><span class="line">vtarget.resize(v1.size() + v2.size());</span><br><span class="line">&#x2F;&#x2F;合并  需要两个有序序列</span><br><span class="line">merge(v1.begin(), v1.end(), v2.begin(), v2.end(), vtarget.begin());</span><br></pre></td></tr></table></figure>
-<p><strong>reverse</strong><br>reverse(iterator beg, iterator end);<br>// 反转指定范围的元素<br>// beg 开始迭代器<br>// end 结束迭代器</p>
-<p>122.<strong>常用拷贝和替换算法</strong><br>copy // 容器内指定范围的元素拷贝到另一容器中<br>replace // 将容器内指定范围的旧元素修改为新元素<br>replace_if // 容器内指定范围满足条件的元素替换为新元素<br>swap // 互换两个容器的元素<br><strong>copy</strong>  容器内指定范围的元素拷贝到另一容器中<br>copy(iterator beg, iterator end, iterator dest);<br>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置<br>// beg 开始迭代器<br>// end 结束迭代器<br>// dest 目标起始迭代器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vector&lt;int&gt; v2;</span><br><span class="line">v2.resize(v1.size());&#x2F;&#x2F;提前开辟</span><br><span class="line">copy(v1.begin(), v1.end(), v2.begin());</span><br></pre></td></tr></table></figure>
-<p>​<strong>replace</strong> 将容器内指定范围的旧元素修改为新元素<br>replace(iterator beg, iterator end, oldvalue, newvalue);<br>// 将区间内旧元素 替换成 新元素<br>// beg 开始迭代器<br>// end 结束迭代器<br>// oldvalue 旧元素<br>// newvalue 新元素<br><strong>replace_if</strong><br>replace_if(iterator beg, iterator end, _pred, newvalue);<br>// 按条件替换元素，满足条件的替换成指定元素<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _pred 谓词<br>// newvalue 替换的新元素<br><strong>swap</strong> 互换两个容器的元素。两个同种类型<br>swap(container c1, container c2);<br>// 互换两个容器的元素<br>// c1容器1<br>// c2容器2</p>
-<p>123.常用算术生成算法<br>算术生成算法属于小型算法，使用时包含的头文件为 #include <numeric><br>accumulate // 计算容器元素累计总和<br>fill // 向容器中添加元素<br><strong>accumulate</strong>  计算区间内 容器元素累计总和<br>accumulate(iterator beg, iterator end, value);<br>// 计算容器元素累计总和<br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 起始值<br><strong>fill</strong>   向容器中填充指定的元素<br>fill(iterator beg, iterator end, value);<br>// 向容器中填充元素<br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 填充的值</p>
-<p>124.常用集合算法<br>set_intersection // 求两个容器的交集<br>set_union // 求两个容器的并集<br>set_difference // 求两个容器的差集<br><strong>set_intersection</strong>  求两个容器的交集<br>set_intersection(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);<br>// 求两个集合的交集<br>// 注意:两个集合必须是有序序列<br>// beg1 容器1开始迭代器<br>// end1 容器1结束迭代器<br>// beg2 容器2开始迭代器<br>// end2 容器2结束迭代器<br>// dest 目标容器开始迭代器<br>总结：</p>
-<ul>
-<li>求交集的两个集合必须的有序序列</li>
-<li>目标容器开辟空间需要从两个容器中取小值</li>
-<li>set_intersection返回值既是交集中最后一个元素的位置</li>
-<li>*set_union** 求两个集合的并集<br>set_union(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);<br>// 注意:两个集合必须是有序序列<br>// beg1 容器1开始迭代器<br>// end1 容器1结束迭代器<br>// beg2 容器2开始迭代器<br>// end2 容器2结束迭代器<br>// dest 目标容器开始迭代器<br>总结：</li>
-<li>求并集的两个集合必须的有序序列</li>
-<li>目标容器开辟空间需要两个容器相加</li>
-<li>set_union返回值既是并集中最后一个元素的位置</li>
-<li>*set_difference**  // 求两个集合的差集<br>set_difference(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);<br>// 注意:两个集合必须是有序序列<br>// beg1 容器1开始迭代器<br>// end1 容器1结束迭代器<br>// beg2 容器2开始迭代器<br>// end2 容器2结束迭代器<br>// dest 目标容器开始迭代器<br>总结：</li>
-<li>求差集的两个集合必须的有序序列</li>
-<li>目标容器开辟空间需要从两个容器取较大值</li>
-<li>set_difference返回值既是差集中最后一个元素的位置</li>
-</ul>
+<p>pwd 命令 当前目录<br>cd 命令<br><code>cd /</code> 根目录<br><code>cd ..</code> 或者 <code>cd .. //</code>  往回跳一层<br><code>cd ../..</code>  往回跳两层<br><code>cd</code> 和 <code>cd ~</code> 都可进入当前用户主目录，即 <code>/root</code> 目录</p>
 ]]></content>
       <tags>
-        <tag>C++</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
-    <title>QT学习</title>
-    <url>/2020/11/12/QT%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>已看完一部教学视频，待总结。</p>
+    <title>git使用方法学习</title>
+    <url>/2020/11/09/git%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>计划使用github托管一部分代码</p>
 <a id="more"></a>
 
-
-<p>安装 MS  自带编译器，部分编码与visual stdio不一样</p>
-<p>基类： QWidget（父类） QMainWindow、QDialog（子类）派生</p>
-<p>QMainWindow 多菜单栏 工具 状态栏<br>QDialog 对话框</p>
-<p>.pro - project文件<br>.cpp -</p>
-<p>窗口.cpp 和 .c</p>
-<p> QApplication a 有且只有一个<br> myWidget w；实例化窗口对象<br>w.show() 调用show函数显示窗口<br>return a.exec() 消息循环机制，代码阻塞</p>
-<p>QT       += core gui  //Qt包含模块</p>
-<p>greaterThan(QT_MAJOR_VERSION, 4): QT += widgets //大于4版本以上  widgets</p>
-<p>TARGET = 01_FirstProject    //目标 生成.exe文件 文件名称<br>TEMPLATE = app              //模板 应用程序模板</p>
-<p>SOURCES += <br>        main.cpp \      //源码<br>        mywidge.cpp</p>
-<p>HEADERS += <br>        mywidge.h         //头文件</p>
-<pre><code>QPushButton * btn2 = new QPushButton ;
-btn2-&gt;setText(&quot;关闭&quot;);
-btn2-&gt;move(100,0);
-btn2-&gt;resize(50,50);
-btn2-&gt;setParent(this);
-
-connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
-<p>信号槽的优点，松散耦合，信号发送端和接收端 本身是没有关联的，通过一个connect连接，将两端 耦合在一起<br>参数1 信号的发送者 参数2 发送的信号（函数的地址） 参数3 信号的接受者 参数4 处理的槽函数（函数的地址）<br>connect( myBtn, &amp;QPushButton::clicked, this, &amp;QWidget::close );</p>
-<p>信号可以连接信号</p>
-<p>一个信号可以连接多个槽函数<br>多个信号可以连接同一个槽函数<br>信号和槽函数的参数类型必须一一对应<br>信号和槽的参数个数可以不一致  信号的个数可以多于槽个数</p>
-<p>QDialog</p>
-<p>事件过滤器</p>
-<p>1，给控件安装事件过滤器<br>2. 重写事件</p>
+<p>之前学过git使用，了解过一部分git指令（现在忘光了）。<br>先占一个位置，学一点再更新。</p>
 ]]></content>
   </entry>
   <entry>
-    <title>学习方法改进</title>
-    <url>/2020/11/11/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E6%94%B9%E8%BF%9B/</url>
-    <content><![CDATA[<p>学习方法</p>
+    <title>hexo next主题持续优化</title>
+    <url>/2020/11/09/hexo-next%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<p>已做的优化，发现的bug统计，计划修改的样式记录。</p>
 <a id="more"></a>
 
-<p>之前觉得看书效率还不错，在连啃几本厚书后（600+页），发现吸收较差。<br>同时，在B站和MOOC上发现很多不错的教程，计划学习方法转为看教学视频，记blog，找实例或者项目做的形式。</p>
-<h1 id="B站"><a href="#B站" class="headerlink" title="B站"></a>B站</h1><p>B站上的IT视频比较丰富，观看人数也很多，弹幕也有解答。<br>之前曾在B站看过stm32视频，之前不常在B站看教学视频因为校园网流量太少。现在多了一些，4G流量也很多，计划多看一些。<br>复习 ：<br>C++<br>数据结构与算法<br>计算机系统<br>计算机网络<br>计算机接口与组成<br>Linux</p>
-<p>学习：<br>QT<br>Opencv<br>深度学习<br>Java</p>
-<h1 id="MOOC"><a href="#MOOC" class="headerlink" title="MOOC"></a>MOOC</h1><p>数字图像处理 第四周-第六讲 灰度的形态学</p>
-<p>慕课上有一些专业的课还是很不错。<br>之前看了一个医学图像处理的课，还有ROS系统的课。</p>
+<h1 id="已做优化"><a href="#已做优化" class="headerlink" title="已做优化"></a>已做优化</h1><p>待更新</p>
+<h1 id="发现问题："><a href="#发现问题：" class="headerlink" title="发现问题："></a>发现问题：</h1><p>首行需要空两格。</p>
+<p>进度条 需要换 颜色，蓝色让人觉得没有加载完。</p>
+<p>发现问题：置顶功能有bug，取消置顶top后首页依然存在标签。</p>
+<p>每个blog中间留白太多</p>
+<h1 id="添加功能"><a href="#添加功能" class="headerlink" title="添加功能"></a>添加功能</h1><p>需要添加搜索栏功能，之前取消是因为代码上传github后出现加载现象，功能没有实现。</p>
+<h2 id="添加本地图片测试"><a href="#添加本地图片测试" class="headerlink" title="添加本地图片测试"></a>添加本地图片测试</h2><p>首先是在 _posts 文件夹下建立一个博文文件，比如 1.md，在建立一个同名的文件夹 1.md。这篇文章要引用的图片就放在该文件夹下。</p>
+<p>比如我就在该目录下放一个图片localimagintroduce.png。</p>
+<p><img src="/2020/11/09/hexo-next%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96/localimagintroduce.png"><br>然后在博文 MarkDown 文件里引用该图片，怎么引用呢？用下面这种方式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![](1.png)</span><br></pre></td></tr></table></figure>
+
+<p><strong>为什么引用的时候不用加文件夹的路径呢？</strong></p>
+<p>这是因为 hexo 在渲染的时候，会把 1.md 渲染为 下的 index.html 网页文件，而把对应文件夹下的静态资源，比如图片 1.png也拷贝到public 下!</p>
 ]]></content>
       <tags>
-        <tag>学习方法</tag>
+        <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>软件使用</title>
-    <url>/2020/11/10/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>待更新</p>
-<a id="more"></a>
-
-
-<h1 id="visual-studio"><a href="#visual-studio" class="headerlink" title="visual studio"></a>visual studio</h1><p>一个vs窗口只能打开一个解决方案，一个解决方案可以包括多个工程项目。<br>ctrol + K + C 快速注释<br>ctrol + K + U 快速取消注释</p>
-<h1 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h1><p>windows + E 快速打开资源管理器</p>
-<p>windows + R input control can open 控制面板</p>
-]]></content>
   </entry>
   <entry>
     <title>English words</title>
@@ -699,29 +152,31 @@ connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>git使用方法学习</title>
-    <url>/2020/11/09/git%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>计划使用github托管一部分代码</p>
+    <title>软件使用</title>
+    <url>/2020/11/10/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>待更新</p>
 <a id="more"></a>
 
-<p>之前学过git使用，了解过一部分git指令（现在忘光了）。<br>先占一个位置，学一点再更新。</p>
+
+<h1 id="visual-studio"><a href="#visual-studio" class="headerlink" title="visual studio"></a>visual studio</h1><p>一个vs窗口只能打开一个解决方案，一个解决方案可以包括多个工程项目。<br>ctrol + K + C 快速注释<br>ctrol + K + U 快速取消注释</p>
+<h1 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h1><p>windows + E 快速打开资源管理器</p>
+<p>windows + R input control can open 控制面板</p>
 ]]></content>
   </entry>
   <entry>
-    <title>hexo next主题持续优化</title>
-    <url>/2020/11/09/hexo-next%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<p>已做的优化，发现的bug统计，计划修改的样式记录。</p>
+    <title>学习方法改进</title>
+    <url>/2020/11/11/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E6%94%B9%E8%BF%9B/</url>
+    <content><![CDATA[<p>学习方法</p>
 <a id="more"></a>
 
-<h1 id="已做优化"><a href="#已做优化" class="headerlink" title="已做优化"></a>已做优化</h1><p>待更新</p>
-<h1 id="发现问题："><a href="#发现问题：" class="headerlink" title="发现问题："></a>发现问题：</h1><p>首行需要空两格。</p>
-<p>进度条 需要换 颜色，蓝色让人觉得没有加载完。</p>
-<p>发现问题：置顶功能有bug，取消置顶top后首页依然存在标签。</p>
-<p>每个blog中间留白太多</p>
-<h1 id="添加功能"><a href="#添加功能" class="headerlink" title="添加功能"></a>添加功能</h1><p>需要添加搜索栏功能，之前取消是因为代码上传github后出现加载现象，功能没有实现。</p>
+<p>之前觉得看书效率还不错，在连啃几本厚书后（600+页），发现吸收较差。<br>同时，在B站和MOOC上发现很多不错的教程，计划学习方法转为看教学视频，记blog，找实例或者项目做的形式。</p>
+<h1 id="B站"><a href="#B站" class="headerlink" title="B站"></a>B站</h1><p>B站上的IT视频比较丰富，观看人数也很多，弹幕也有解答。<br>之前曾在B站看过stm32视频，之前不常在B站看教学视频因为校园网流量太少。现在多了一些，4G流量也很多，计划多看一些。<br>复习 ：<br>C++<br>数据结构与算法<br>计算机系统<br>计算机网络<br>计算机接口与组成<br>Linux</p>
+<p>学习：<br>QT<br>Opencv<br>深度学习<br>Java</p>
+<h1 id="MOOC"><a href="#MOOC" class="headerlink" title="MOOC"></a>MOOC</h1><p>数字图像处理 第四周-第六讲 灰度的形态学</p>
+<p>慕课上有一些专业的课还是很不错。<br>之前看了一个医学图像处理的课，还有ROS系统的课。</p>
 ]]></content>
       <tags>
-        <tag>hexo</tag>
+        <tag>学习方法</tag>
       </tags>
   </entry>
   <entry>
@@ -736,44 +191,160 @@ connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
 ]]></content>
   </entry>
   <entry>
-    <title>Linux指令（备忘录）</title>
-    <url>/2020/11/09/Linux%E6%8C%87%E4%BB%A4%EF%BC%88%E5%A4%87%E5%BF%98%E5%BD%95%EF%BC%89/</url>
-    <content><![CDATA[<p>Linux指令</p>
+    <title>QT学习</title>
+    <url>/2020/11/12/QT%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>已看完一部教学视频，待总结。</p>
 <a id="more"></a>
 
 
-<p>grep 命令</p>
-<p>Linux grep 命令用于查找文件里符合条件的字符串。<br>grep 指令用于查找内容包含指定的范本样式的文件，如果发现某文件的内容符合所指定的范本样式，预设 grep 指令会把含有范本样式的那一列显示出来。若不指定任何文件名称，或是所给予的文件名为 <code>-</code>，则 grep 指令会从标准输入设备读取数据。</p>
-<p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grep [-abcEFGhHilLnqrsvVwxy][-A&lt;显示列数&gt;][-B&lt;显示列数&gt;][-C&lt;显示列数&gt;][-d&lt;进行动作&gt;][-e&lt;范本样式&gt;][-f&lt;范本文件&gt;][--help][范本样式][文件或目录...]</span><br></pre></td></tr></table></figure>
+<p>安装 MS  自带编译器，部分编码与visual stdio不一样</p>
+<p>基类： QWidget（父类） QMainWindow、QDialog（子类）派生</p>
+<p>QMainWindow 多菜单栏 工具 状态栏<br>QDialog 对话框</p>
+<p>.pro - project文件<br>.cpp -</p>
+<p>窗口.cpp 和 .c</p>
+<p> QApplication a 有且只有一个<br> myWidget w；实例化窗口对象<br>w.show() 调用show函数显示窗口<br>return a.exec() 消息循环机制，代码阻塞</p>
+<p>QT       += core gui  //Qt包含模块</p>
+<p>greaterThan(QT_MAJOR_VERSION, 4): QT += widgets //大于4版本以上  widgets</p>
+<p>TARGET = 01_FirstProject    //目标 生成.exe文件 文件名称<br>TEMPLATE = app              //模板 应用程序模板</p>
+<p>SOURCES += <br>        main.cpp \      //源码<br>        mywidge.cpp</p>
+<p>HEADERS += <br>        mywidge.h         //头文件</p>
+<pre><code>QPushButton * btn2 = new QPushButton ;
+btn2-&gt;setText(&quot;关闭&quot;);
+btn2-&gt;move(100,0);
+btn2-&gt;resize(50,50);
+btn2-&gt;setParent(this);
 
+connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
+<p>信号槽的优点，松散耦合，信号发送端和接收端 本身是没有关联的，通过一个connect连接，将两端 耦合在一起<br>参数1 信号的发送者 参数2 发送的信号（函数的地址） 参数3 信号的接受者 参数4 处理的槽函数（函数的地址）<br>connect( myBtn, &amp;QPushButton::clicked, this, &amp;QWidget::close );</p>
+<p>信号可以连接信号</p>
+<p>一个信号可以连接多个槽函数<br>多个信号可以连接同一个槽函数<br>信号和槽函数的参数类型必须一一对应<br>信号和槽的参数个数可以不一致  信号的个数可以多于槽个数</p>
+<p>QDialog</p>
+<p>事件过滤器</p>
+<p>1，给控件安装事件过滤器<br>2. 重写事件</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>VTK使用</title>
+    <url>/2020/11/20/VTK%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>Study_VTK_Together 第一节26.05</p>
+<a id="more"></a>  
+<p>VTK ITK Qt VisualStudio</p>
+<p>怎么判断图像好不好，简单点就是图像亮不亮</p>
+<h1 id="VTK-Observer-command-设计模式"><a href="#VTK-Observer-command-设计模式" class="headerlink" title="VTK Observer/command 设计模式"></a>VTK Observer/command 设计模式</h1><p>适合交互使用</p>
+<p>Observer模式是一种行为模式，这一模式主要针对两个 对象，Object和Observer。一个Object可以有多个Observer，它定义对象间的一种一对多的依赖关系。当一个object的状态发生改变时，所有依赖于它的observer对象都得到通知并被自动更新。</p>
+<p>command属于对象行为模式，command模式将一个请求封装成一个对象，并提供一致性请求接口。事件调用者只是和接口打交道。不和具体实现交互。</p>
+<h1 id="VTK中的代码"><a href="#VTK中的代码" class="headerlink" title="VTK中的代码"></a>VTK中的代码</h1><p><strong>snprintf()</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int snprintf ( char * str, size_t size, const char * format, ... );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char buffer[50];</span><br><span class="line">    char* s &#x3D; &quot;runoobcom&quot;;</span><br><span class="line"> </span><br><span class="line">    &#x2F;&#x2F; 读取字符串并存储在 buffer 中</span><br><span class="line">    int j &#x3D; snprintf(buffer, 6, &quot;%s\n&quot;, s);</span><br><span class="line"> </span><br><span class="line">    &#x2F;&#x2F; 输出 buffer及字符数</span><br><span class="line">    printf(&quot;string:\n%s\ncharacter count &#x3D; %d\n&quot;, buffer, j);</span><br><span class="line"> </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>返回值<br>(1) 如果格式化后的字符串长度小于等于 size，则会把字符串全部复制到 str 中，并给其后添加一个字符串结束符 \0；<br>(2) 如果格式化后的字符串长度大于 size，超过 size 的部分会被截断，只将其中的 (size-1) 个字符复制到 str 中，并给其后添加一个字符串结束符 \0，返回值为欲写入的字符串长度。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string:</span><br><span class="line">runoo</span><br><span class="line">character count &#x3D; 10</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>atof()</strong><br>C 库函数 double atof(const char *str) 把参数 str 所指向的字符串转换为一个浮点数（类型为 double 型）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   float val;</span><br><span class="line">   char str[20];</span><br><span class="line">   </span><br><span class="line">   strcpy(str, &quot;98993489&quot;);</span><br><span class="line">   val &#x3D; atof(str);</span><br><span class="line">   printf(&quot;字符串值 &#x3D; %s, 浮点值 &#x3D; %f\n&quot;, str, val);</span><br><span class="line"> </span><br><span class="line">   strcpy(str, &quot;runoob&quot;);</span><br><span class="line">   val &#x3D; atof(str);</span><br><span class="line">   printf(&quot;字符串值 &#x3D; %s, 浮点值 &#x3D; %f\n&quot;, str, val);</span><br><span class="line"> </span><br><span class="line">   return(0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">字符串值 &#x3D; 98993489, 浮点值 &#x3D; 98993488.000000</span><br><span class="line">字符串值 &#x3D; runoob, 浮点值 &#x3D; 0.000000</span><br></pre></td></tr></table></figure>
+<hr>
+<p>//固定点的映射<br>vtkFixedPointVolumeRayCastMappe：A fixed point mapper for volumes</p>
+<hr>
+<p>using<br>1命名空间的使用<br>using namespace android;<br>2在子类中引用基类的成员<br>using T5Base::test1;<br>3别名指定<br>using Vec = MyVector&lt;T, MyAlloc<T>&gt;;</T></p>
+<hr>
+<p>inline是C++关键字，在函数声明或定义中，函数返回类型前加上关键字inline，即可以把函数指定为内联函数。这样可以解决一些频繁调用的函数大量消耗栈空间（栈内存）的问题。关键字inline必须与函数定义放在一起才能使函数成为内联函数，仅仅将inline放在函数声明前面不起任何作用。inline是一种“用于实现”的关键字，而不是一种“用于声明”的关键字。</p>
+<hr>
+<p>ITK中使用<br>try{<br> // 可能会导致错误的代码<br>} catch(error){<br> // 在错误发生时怎么处理<br>} </p>
+<hr>
+<p>C 库函数 int atoi(const char *str) 把参数 str 所指向的字符串转换为一个整数（类型为 int 型）。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>软件架构</title>
+    <url>/2020/11/20/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/</url>
+    <content><![CDATA[<p>常见软件架构</p>
+<a id="more"></a>  
 
-<p>cat 命令<br>cat（英文全拼：concatenate）命令用于连接文件并打印到标准输出设备上。</p>
-<p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat [-AbeEnstTuv] [--help] [--version] fileName</span><br></pre></td></tr></table></figure>
+<h1 id="系统软件"><a href="#系统软件" class="headerlink" title="系统软件"></a>系统软件</h1><p>驱动软件等等 用C/C++</p>
+<h1 id="C-S-架构软件"><a href="#C-S-架构软件" class="headerlink" title="C/S 架构软件"></a>C/S 架构软件</h1><p>client 客户端<br>server 服务端<br>LOL</p>
+<p>C/C++ C# sharp  Qt:Adobe LOL </p>
+<h1 id="B-S网站"><a href="#B-S网站" class="headerlink" title="B/S网站"></a>B/S网站</h1><p>B browser浏览器<br>taobao jd bilibili baidu…</p>
+<p>(1)前端：HTML CSS JS(javascript)  -&gt;  React  Vue…<br>(2)后端: Java PHP Nde  Golang Python Mysql Redis</p>
+<h1 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h1><p>Android  Java Kotin<br>ios    Object-C </p>
+<h1 id="mini-b-s"><a href="#mini-b-s" class="headerlink" title="mini b/s"></a>mini b/s</h1><p>mini program<br>小程序<br>uniapp  Taro</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>计算机图形学</title>
+    <url>/2020/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/</url>
+    <content><![CDATA[<p>计算机图形学</p>
+<a id="more"></a>  
 
-<p>pwd 命令 当前目录<br>cd 命令<br><code>cd /</code> 根目录<br><code>cd ..</code> 或者 <code>cd .. //</code>  往回跳一层<br><code>cd ../..</code>  往回跳两层<br><code>cd</code> 和 <code>cd ~</code> 都可进入当前用户主目录，即 <code>/root</code> 目录</p>
+<p>仿真，几何，渲染，图形学三大方向<br> Visualization 可视化</p>
+<p>光栅化<br>30 FPS 称为实时</p>
+<p>OpenGL DirectX VulKan  都是图形学API  </p>
+<p>Maya/3DS MAX Blender ,VR / game development using unity / Unreal Engine</p>
+<p>图形学 和 计算机视觉<br>一切需要猜测的内容是视觉研究对象，做分析，理解和猜测</p>
+<p>图形学 computer graphics(rendering)  MODEL-&gt;IMAGE<br>计算机视觉 computer vision  IMAGE-&gt;MODEL</p>
+<p>Computer Vision /Deep learning </p>
 ]]></content>
       <tags>
-        <tag>linux</tag>
+        <tag>计算机基础</tag>
       </tags>
   </entry>
   <entry>
-    <title>Purpose of my Blog</title>
-    <url>/2020/11/08/Purpose-of-my-Blog/</url>
-    <content><![CDATA[<p>MXW01的简单自我介绍，Blog的目的、目标与计划更新内容。</p>
-<a id="more"></a>
+    <title>NAS</title>
+    <url>/2020/12/12/NAS/</url>
+    <content><![CDATA[<p>NAS(Network Attached Storge)网络附属云储存</p>
+<a id="more"></a>  
 
-<h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><p>目前帝都在读研究生，学过一点机械，一点控制，一点计算机，拧过螺丝，敲过代码。总体而言，属于底层的技术工。现在以计算机为主。</p>
-<p>打工人 打工魂….</p>
-<p>开了很多Blog，慢慢填，作为笔记本，针不戳！</p>
-<h1 id="Blog的目的"><a href="#Blog的目的" class="headerlink" title="Blog的目的"></a>Blog的目的</h1><p>学习笔记</p>
-<h1 id="Blog的目标"><a href="#Blog的目标" class="headerlink" title="Blog的目标"></a>Blog的目标</h1><p>&emsp;<br>&emsp;<br>&emsp;<br>&emsp;</p>
-<h1 id="学习的计划"><a href="#学习的计划" class="headerlink" title="学习的计划"></a>学习的计划</h1><p>&emsp;<br>&emsp;<br>&emsp;<br>&emsp;</p>
+<h1 id="NAS"><a href="#NAS" class="headerlink" title="NAS"></a>NAS</h1><p>存储概念：<br>RAID 磁盘阵列（Redundant Arrays of Independent Disks，RAID）</p>
+<p>付费NAS：群晖，威联通，铁威马  提供NAS系统</p>
+<p>免费NAS：FreeNAS，OpenMediaVault，需要自己集成内网穿透  U-NAS</p>
+<p>组件NAS时，需要选CPU，主板，</p>
+<p>CPU常选：入门级：J1900，J3160,J3355 </p>
+<p>主板选择：千兆网口，SATA 3接口，内存条接口(DDR3,DDR4,笔记本台式机内存)</p>
+<p>电源：瓦数</p>
+<p>机箱</p>
+<h1 id="RAID"><a href="#RAID" class="headerlink" title="RAID"></a>RAID</h1><p>2盘位只能上raid1备份 有效容量1/2<br>3盘位可以上raid5 有效容量2/3</p>
+<p>raid0（至少两块硬盘）存储空间大，读写速度是单个硬盘的两倍，但数据丢失风险大</p>
+<p>raid1（两块硬盘）速度为两倍，存储空间为一半，数据有保障</p>
+<p>raid5（至少三块硬盘）为raid0的优化版，多了一个奇偶校检信息，  单块磁盘容量*（n-1）</p>
+<p>raid10（四块硬盘） 先组成两个raid1，再把两个（raid1组）组成一个raid0</p>
+<h1 id="SMR叠瓦式硬盘"><a href="#SMR叠瓦式硬盘" class="headerlink" title="SMR叠瓦式硬盘"></a>SMR叠瓦式硬盘</h1><p>之前的硬盘使用的普遍是PMR-CMR，垂直磁记录技术-常规磁记录方式</p>
+<p>SMR，叠瓦式磁记录技术，把一部分闲置区域进行重叠。如果我们只进行一次性写入，自然就啥事没有的一直写下去了。但是如果我们要对数据进行修改，或者用久了之后就会出现影响后面的文件的情况。</p>
+<p>PMR硬盘只需要原地覆写就行。而SMR硬盘，当你遇到需要修改某一区域的数据的时候，覆写会影响后面的数据。所以在覆写之前，需要先将被影响的数据转移。</p>
+<p>这也就是为啥SMR硬盘需要大缓存，为啥越用越慢。</p>
+<h1 id="硬盘缓存，转速的影响"><a href="#硬盘缓存，转速的影响" class="headerlink" title="硬盘缓存，转速的影响"></a>硬盘缓存，转速的影响</h1><p>如果读写是持续的，那么是转速影响大</p>
+<p>如果读写是偶尔且少量的话，缓存影响大</p>
+<p>另外，数据在盘片的位置、存储密度、算法等等都有很大的影响</p>
+<p>缓存与速度无关，机械硬盘的速度由转速、磁头设计及数量，盘片密度决定</p>
+<p>缓存的作用：<br>“缓存”是为了平衡高速设备和低速设备之间的速度不一样而存在的。举个最简单的例子，内存中的数据要写入机械硬盘保存，由于机械硬盘相比内存要缓慢许多，理论上就需要很长的时间才能完成任务，体现出来的结果就是写入超级慢。</p>
+<h1 id="My-Choice"><a href="#My-Choice" class="headerlink" title="My Choice"></a>My Choice</h1><p>NAS买蜗牛星际，买回来要换固态和电源，如果风扇太吵，还要换风扇。<br>机械硬盘选择在淘宝买拆机，买1T硬盘，选择RAID5，空间大+速度块，只要不同时坏两个盘，数据就可救。</p>
+<h1 id="备份含义"><a href="#备份含义" class="headerlink" title="备份含义"></a>备份含义</h1><p>1&gt; 冷备份 : 备份系统未安装或未配置成与当前使用的系统相同或相似的运行环境，应用系统数据没有及时装入备份系统。一旦发生灾难，需安装配置所需的运行环境，用数据备份介质(磁带或光盘) 恢复应用数据，手工逐笔或自动批量追补孤立数据，将终端用户通过通讯线路切换到备份系统，恢复业务运行<br>     优点 : 设备投资较少，节省通信费用，通信环境要求不高<br>     缺点 : 恢复时间较长，一般要数天至1周，数据完整性与一致性较差</p>
+<p>2&gt; 温备份 : 将备份系统已安装配置成与当前使用的系统相同或相似的系统和网络运行环境，安装应用系统业务定期备份数据。一旦发生灾难，直接使用定期备份数据，手工逐笔或自动批量追补孤立数据或将终端用户通过通讯线路切换到备份系统，恢复业务运行<br>     优点 : 设备投资较少，通信环境要求不高<br>     缺点 : 恢复时间长，一般要十几个小时至数天，数据完整性与一致性较差</p>
+<p>3&gt; 热备份 : 备份处于联机状态，当前应用系统通过高速通信线路将数据实时传送到备份系统，保持备份系统与当前应用系统数据的同步；也可定时在备份系统上恢复应用系统的数据。一旦发生灾难，不用追补或只需追补很少的孤立数据，备份系统可快速接替生产系统运行，恢复营业<br>     优点 : 恢复时间短，一般几十分钟到数小时，数据完整性与一致性最好，数据丢失可能性最小<br>     缺点 : 设备投资大，通信费用高，通信环境要求高，平时运行管理较复杂</p>
 ]]></content>
-      <tags>
-        <tag>唯一</tag>
-      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/11/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>  
+
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h2>]]></content>
   </entry>
   <entry>
     <title>Markdown语法</title>
@@ -1012,28 +583,464 @@ connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/11/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>  
+    <title>C++复习</title>
+    <url>/2020/11/15/Cpp-%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<p>正在复习</p>
+<a id="more"></a>
 
+<p>视频从上到下看到第97</p>
+<p>1.short(2) int(4) long(4) long long(8)</p>
+<p>2.sizeof( 数据类型 / 变量 )</p>
+<p>3.float(4) 7位有效数字 float型数据需要加f/ double(8) 15-16位有效数字    c++默认小数<strong>输出</strong>6位有效数字</p>
+<p>4.字符型变量对应ASCII码值 a-97 A-65</p>
+<p>5.转义字符 \n 换行   \斜杠   \t 水平制表（多行对齐，整齐的输出字符）</p>
+<p>6.string 变量名 = “字符串值” (#include <string>)  C风格字符串char str[] = “hello world”;</string></p>
+<p>7.布尔数据类型bool true false 1个字节大小</p>
+<p>8.只有整型变量才可以进行取模运算 %   取余数</p>
+<p>9.++和–前置变量先变，然后表达式运算，后置先表达式再变量</p>
+<p>10.三目运算符  c = a &gt; b ? a : b   a&gt;b返回a,即c = a；</p>
+<p>11.if和switch区别  switch缺点判断时候只能是整型或者字符型，不可以是区间，switch 优点，结构清晰，执行效率高。</p>
+<p>12.随机数种子 ，利用当前系统时间生成随机数。srand((unsigned int)time(NULL)); #include <ctime>  int random = rand() %61 + 40 //40~100取值</ctime></p>
+<p>13.(int)&amp;arr[1]  取地址+转为整型 arr为地址 arr[1]为元素，相同的二维数组 arr[1]为第二行首地址，arr[1][0]为第二行第一个元素，取地址符&amp;</p>
+<p>14.冒泡排序<br>排序总轮数 = 元素个数 - 1<br>每轮对比次数 = 元素个数 - 排序轮数 - 1；</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">   for (int i &#x3D; 0; i &lt; 9 - 1; i++)</span><br><span class="line">&#123;</span><br><span class="line">	for (int j &#x3D; 0; j &lt; 9 - i - 1; j++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (arr[j] &gt; arr[j + 1])</span><br><span class="line">		&#123;</span><br><span class="line">		int temp &#x3D; arr[j];</span><br><span class="line">		arr[j] &#x3D; arr[j+1];</span><br><span class="line">		arr[j+1] &#x3D; temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>15.二维数组：数据类型 数组名[行数][列数]  先横排后竖排</p>
+<p>16，解引用符号为* 找 指针指向方向的内存，指针定义 int * p = &amp; a； 数组名称就是地址 int * p =  arr;</p>
+<p>17.x86系统下 指针长度为 4，sizeof（int *）=4；同理，x64下指针地址长度为8</p>
+<p>18.int *p = NULL; 空指针不可访问；int * p = （int *）0x1100; 野指针，尽量避免出现野指针//野指针和空指针都不是申请的空间，不要访问</p>
+<p>19.const修饰指针，常量指针 const int * p = &amp; a；指针指向可以修改，值不可以修改。    int * const p = &amp; a ;指针常量 指针指向不可以改，指针指向的值可以改。 const int * const p = &amp; a;都不可以修改；是指针就是常量指针，是常量就算指针常量</p>
+<p>20.取数组长度 int len = sizeof(arr) / sizeof(arr[0]);</p>
+<p>20.地址传递：函数中处理的也是值，*p解引用后处理，改变实参，值传递不改变实参</p>
+<p>21.自定义数据类型：struct 结构体名 {结构体列表}；通过.访问元素//struct关键字可以省略</p>
+<p>22.string类型在输出输出时，需要包含头文件 #include<string></string></p>
+<p>23.结构体指针访问结构体属性，需要使用-&gt;符号</p>
+<p>24.结构体可以嵌套结构体 teacher.student.score = 100;</p>
+<p>25.结构体中 值传递，student.score访问参数，不会修改实参；地址传递 student-&gt;score访问参数，会修改实参。形参改为指针可以减少内存空间，不会复制新的副本出来</p>
+<p>26.结构体中的const， void student（const student *s）;其中const可以保证指针不改变常量，保证实参不变，防止误操作。</p>
+<p>27.内存分区：代码区，全局区（全局变量，静态变量，常量），栈区（局部变量，函数参数值），堆区（new创建的地址，程序员释放，程序结束时操作系统回收）<br><strong>堆和栈的区别</strong>：<br>使用栈就象我们去饭馆里吃饭，只管点菜（发出申请）、付钱、和吃（使用），吃饱了就走，不必理会切菜、洗菜等准备工作和洗碗、刷锅等扫尾工作，他的好处是快捷，但是自由度小。使用堆就象是自己动手做喜欢吃的菜肴，比较麻烦，但是比较符合自己的口味，而且自由度大。(经典！)</p>
+<p>28.new释放数组需要加中括号 delete[] arr;</p>
+<p>29.引用 数据类型 &amp; 别名 = 原名； 给变量起别名，引用必须初始化，之后无法修改。 引用本质在c++内部实现是一个指针常量 int* const 指针指向不可修改，值可以修改</p>
+<p>30.引用传递，形参会修饰实参，发生改变，原因 引用是在起别名。优点 简化指针修改实参，效果同按地址传递一样</p>
+<p>31.int&amp; test(){return a;}; test() = 1000; 引用的函数调用可以作为左值。 不要返回局部变量引用。</p>
+<p>32.常量引用（防止误操作）  cost int &amp; ref = 10；等价于  int temp = 10； const  int &amp; ref = temp；</p>
+<p>33.函数的形参，可以有默认参数。从第一个开始从左向右都得有。函数声明和实现，不能都有默认参数，不然出现二义性，报错。</p>
+<p>34.函数占位参数，void func（int a,int）{；}  占位参数也可以有默认参数</p>
+<p>35.函数重载  函数名可以相同，提高函数复用性<br>满足条件：</p>
+<blockquote>
+<p>1 在同一个作用域之下<br>2 函数名相同<br>3 函数参数(形参)<strong>类型不同</strong>，或者<strong>个数不同</strong> 或者<strong>顺序不同</strong><br>4 返回类型不可以作为函数重载的条件！</p>
+</blockquote>
+<p>注意事项：</p>
+<blockquote>
+<p>1、引用作为重载条件，（引用要放在一个合法内存空间，10是放在常量区，要用const int &amp;a 引用）<br>2、当函数重载遇到默认参数，出现二义性，报错</p>
+</blockquote>
+<p>36.C++面对对象的三大特性：封装、继承、多态。 对象有属性和行为。具有相同性质的对象，抽象为类，比如 人类 ，车类</p>
+<p>37.封装  class 类名{属性 + 行为} 通过类创建对象（实例化），对象用<code>.</code>来访问成员。</p>
+<p>38.属性和行为共称成员，属性也叫 成员属性，成员<strong>变量</strong>，行为又叫成员<strong>函数</strong>，成员方法</p>
+<p>39.类的访问权限</p>
+<blockquote>
+<p>public 公共权限  成员类内类外都可以访问<br>protected 保护权限 类内可以访问，类外不可以访问。儿子也可以访问父亲中的保护内容<br>private 私有权限 类内可以访问，类外不可以访问  儿子不可以访问父亲的私有内容</p>
+</blockquote>
+<p>40.struct和class唯一区别在于 默认访问权限不同，struct默认权限为公共，class默认权限为私有。</p>
+<p>41.成员属性设为私有，可以自己控制读写权限，private的内容在public里读写，具体读写代码自己编写从而控制读写权限，可以检测数据有效性，在public中写的接口可以判断传入的数据是否合理。</p>
+<p>42.在类中可以让另一个类作为成员。.h和.cpp头文件和源文件中需要include。</p>
+<p>43.构造函数和析构函数的函数名和类名一样。构造函数为初始化，析构函数为清理。构造和析构都是必须实现的，如果不提供，编译器会提供一个空实现。<br>构造函数：</p>
+<ul>
+<li>没有返回值 不用写void</li>
+<li>函数名与类名相同</li>
+<li>构造函数可以有参数，可以发生重载</li>
+<li>创建对象的时候，构造函数会<strong>自动调用</strong>，而且只调用一次<br>析构函数：</li>
+<li>没有返回值 不用写void</li>
+<li>函数名与类名相同 在名称前加~</li>
+<li>析构函数不可以有参数，不可以发生重载</li>
+<li>对象在销毁前，会自动调用析构函数，而且只会调用一次。</li>
+</ul>
+<p>44.c++中开方，使用<code>pow(，0.5)</code>平方：<code>pow(，2)</code>,需要#include&lt;math.h&gt;</p>
+<p>45.构造函数<br>两种分类方式：按参数分：有参构造和无参构造。按类型分：普通构造和拷贝构造<br>三种调用方式：括号法，显示法，隐式转换法</p>
+<p>46.拷贝构造函数，不能改变原函数，需要加const，还要按照引用方式构造。将传入人身上的所有属性拷贝到我身上。 写法：person(const person &amp; p){}<br>调用默认构造函数时候，不要加（）。加括号后编译器认为这是函数的声明<br>调用：常用括号法<br>默认构造： 括号法：Person p1;     显示法： Person p1;<br>有参构造： 括号法：Person p2(10); 显示法： Person p2 = person(10); 隐式法：Person p4 = 10;<br>拷贝构造:  括号法：Person p3(p2); 显示法： Person p3 = person(p2); 隐式法：Person p5 = p4;<br>Person(10);单独写为匿名对象，当前行结束之后，马上析构。</p>
+<p>47.拷贝构造函数的调用时机</p>
+<ul>
+<li>使用一个已经创建完毕的对象来初始化一个新对象。 复制，克隆Person p3(p2);</li>
+<li>值传递的方式给函数参数传值。</li>
+<li>以值方式返回局部对象。</li>
+</ul>
+<p>48.构造函数调用规则<br>创建一个类，c++编译器给每个类添加3个函数</p>
+<ul>
+<li>默认构造函数（空实现）</li>
+<li>默认析构函数（空实现）</li>
+<li>默认拷贝构造函数，对属性进行值拷贝（值拷贝）等号=进行赋值操作<br>调用规则：</li>
+<li>如果用户定义有参构造函数，c++不在提供默认无参构造，但是提供默认拷贝构造</li>
+<li>如果用户定义拷贝构造函数，c++不会再提供其他构造函数。</li>
+</ul>
+<p>49.深拷贝和浅拷贝<br>浅拷贝：简单的赋值拷贝操作<br>深拷贝：在堆区重新申请空间，进行拷贝操作</p>
+<p>析构函数作用：将堆区开辟的数据做释放操作，<br>利用编译器提供的拷贝构造函数会做浅拷贝操作，浅拷贝带来的问题是：堆区的内存重复释放。这个问题需要深拷贝来解决。<br>如果属性有在堆区开辟的，一定要自己提供拷贝构造函数，防止浅拷贝带来的问题。</p>
+<p>50.初始化列表<br>语法：构造函数():属性1(值1),属性2(值2)…{}<br>Person(int a,int b, int c) :m_A(a), m_B(b), m_C(c){}</p>
+<p>51.当其他类对象作为类成员，构造时候先构造类对象，再构造自身。析构的顺序与构造相反</p>
+<p>52.静态成员函数 static void func(){}，也可以放在private下，设置访问权限</p>
+<ul>
+<li>所有对象共享同一个函数</li>
+<li>静态成员函数只能访问静态成员变量<br>静态成员函数不能访问非静态的变量，因为每个对象都有一个对应变量，静态成员函数无法区分哪个对象对应的变量<br>访问方式，通过创建对象来访问或者直接通过类名::函数名来访问</li>
+</ul>
+<p>53.成员变量和成员函数分开存储，结论：只有非静态成员变量才属于类的对象上。 静态成员函数，静态成员对象，非静态成员函数都不属于。<br>c++编译器会给每个空对象也分配一个字节空间，是为了区分空对象占内存的位置。<br>每个空对象也应该有一个独一无二的内存地址。<br>静态成员变量需要初始化一个值。</p>
+<p>54.this指针指向被调用的成员函数所属的对象。 大环境，每一个非静态成员函数只会诞生一份函数实例，也就是说多个同类型的对象共用一块代码。<br>this指针是隐含在每一个非静态成员函数内的一个指针，不需要定义，直接使用。<br>用途：</p>
+<ul>
+<li><strong>解决名称冲突</strong>：当形参和成员变量同名时，可用this指针来区分。</li>
+<li>*<em>返回对象本身用</em>this**：在类的非静态成员函数中返回对象本身，可使用return *this<br>链式编程思想。<br>this指针的本质是指针常量，指针的指向是不可以修改的。</li>
+</ul>
+<p>55.空指针访问成员函数<br>提高代码健壮性：if(this == NULL){return;}</p>
+<p>56.const修饰成员函数后这个函数成为<strong>常函数</strong>   const Person * const this;    void showPerson() const {} 这个const相当于第一个式子的第一个const，修饰this指针，让指针指向的值也不可以修改。<br>加关键字 mutable 后，参数就可以修改。<br>常对象只能调用常函数，常对象不能调用普通成员函数，因为普通成员函数可以修改属性。</p>
+<p>57.友元的关键字 friend。 声明特殊的函数和特殊的类，让另外的一些函数或者类进行访问。<br>友元的三种实现方式：</p>
+<ul>
+<li>全局函数做友元</li>
+<li>类做友元</li>
+<li>成员函数做友元</li>
+<li>*全局函数做友元**：把全局函数放在类中声明，并加上friend 关键字。函数就可以访问私有成员了。</li>
+<li>*类做友元**：friend class goodgay；</li>
+<li>*成员函数做友元**：friend void visit；</li>
+</ul>
+<p>58.运算符重载<br><strong>加号运算符重载</strong>：可以通过成员函数或者全局函数重载。 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;成员函数</span><br><span class="line">Person operator+(Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	Person temp;</span><br><span class="line">	temp.m_A &#x3D; this-&gt;m_A + p.m_A;</span><br><span class="line">	temp.m_B &#x3D; this-&gt;m_B + p.m_B;</span><br><span class="line">	return temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;全局函数</span><br><span class="line">Person operator+(Person &amp;p1,Person &amp;p2)</span><br><span class="line">&#123;</span><br><span class="line">	Person temp;</span><br><span class="line">	temp.m_A &#x3D; p1.m_A + p2.m_A;</span><br><span class="line">	temp.m_B &#x3D; p1.m_B + p2.m_B;</span><br><span class="line">	return temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>成员函数调用为：Person p3 = p1.operator+(p2);简化为：Person p3 = p1 + p2;<br>全局函数调用为：Person p3 = p1.operator+(p1,p2);简化为：Person p3 = p1 + p2;<br>运算符重载也可以发生函数重载。Person operator+(Person &amp;p1,Person &amp;p2)重载为Person operator+(Person &amp;p1,int)</p>
+<p><strong>左移运算符重载</strong>:输出自定义类型</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;成员函数</span><br><span class="line">p.operator&lt;&lt;(cout) 简化版本为 p &lt;&lt; cout; 不符合要求</span><br><span class="line">不会利用成员函数重载&lt;&lt;运算符，因为无法实现cout在左侧。</span><br><span class="line">&#x2F;&#x2F;只能利用全局函数来重载左移运算符</span><br><span class="line">ostream operator&lt;&lt;(ostream &amp;cout,Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt;&quot;m_A &#x3D; &quot; &lt;&lt; p.m_A &lt;&lt; &quot;m_B &#x3D; &quot; &lt;&lt; p.m_B;</span><br><span class="line">	return cout;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>递增运算符重载</strong>： </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;前置递增  返回引用类型可以一直对一个m_Num做处理</span><br><span class="line">MyInteger&amp; operator++()</span><br><span class="line">&#123;</span><br><span class="line">	m_Num++;</span><br><span class="line">	return *this;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;后置递增 返回值类型  int代表占位参数，用于区分前置和后置递增</span><br><span class="line">MyInteger operator++(int)</span><br><span class="line">&#123;</span><br><span class="line">	MyInteger temp &#x3D; *this;</span><br><span class="line">	m_Num++;</span><br><span class="line">	return temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>赋值运算符重载</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Person&amp; operator&#x3D;(Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	if(m_Age !&#x3D; NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		delete m_Age;</span><br><span class="line">		m_Age &#x3D; NULL;	</span><br><span class="line">	&#125;</span><br><span class="line">	m_Age &#x3D; new int(*p.m_Age);</span><br><span class="line">	return *this;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>关系运算符重载</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bool operator&#x3D;&#x3D;(Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	if(this-&gt;m_Name &#x3D;&#x3D; p.m_Name &amp;&amp; this-&gt;m_Age &#x3D;&#x3D; p.m_Age)</span><br><span class="line">	&#123;</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line">	return false;</span><br><span class="line">&#125;</span><br><span class="line">bool operator!&#x3D;(Person &amp;p)</span><br><span class="line">&#123;</span><br><span class="line">	if(this-&gt;m_Name &#x3D;&#x3D; p.m_Name &amp;&amp; this-&gt;m_Age &#x3D;&#x3D; p.m_Age)</span><br><span class="line">	&#123;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>函数调用运算符重载</strong>：又叫<strong>仿函数</strong>，符号为<code>()</code>,没有固定写法，非常灵活。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void operator()(string test, , , )</span><br><span class="line">&#123;</span><br><span class="line">	&#x2F;&#x2F;内容灵活</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>cout &lt;&lt; MyAdd()(100,100) &lt;&lt; endl; //匿名函数对象，执行完释放，标志为 <code>函数名()</code>.</p>
+<p>59.继承 减少重复代码<br>语法：class 子类 ： 继承方式 父类<br>子类 也称为 派生类<br>父类 也称为 基类</p>
+<p>60.继承方式</p>
+<ul>
+<li>公共继承  public和protected继承，private不可被继承</li>
+<li>保护继承  public变为protected继承，private不可被继承</li>
+<li>私有继承  public和protected变为private私有继承，private不可被继承<br>基类的private都不可被继承</li>
+</ul>
+<p>61.继承中的对象模型<br>父类中的所有非静态成员属性都会被子类继承下去<br>父类中私有成员被编译器隐藏了，因此访问不到，但确实被继承下去了。<br>开发人员命令提示符<br>定位到CPP文件的盘符 ，然后输入： cl /d1 reportSingleClassLayout参看的类名 所属文件名</p>
+<p>62.继承中构造和析构顺序<br>先构造父类，再构造子类，析构顺序与构造顺序相反。</p>
+<p>63.父类和子类中同名成员处理方式：<br>访问子类成员属性：直接访问<br>访问父类成员属性：需要加作用域s.Base::Num;<br>访问子类成员函数：直接调用<br>访问父类成员函数：需要加作用域s.Base::func();<br>如果子类中出现和父类同名的成员函数，子类的同名成员会隐藏掉父类中的所有同名成员函数。如果想访问需要加作用域.</p>
+<p>64.继承同名静态成员处理方式<br>访问子类同名成员 直接访问即可<br>访问父类同名成员 需要加作用域<br><code>Son::Base::Num</code> 第一个::代表通过类名方式访问，第二个::代表访问父类作用域下的Num</p>
+<p>65.多继承语法，一个儿子可以有多个爹，实际开发中不太建议使用<br>语法：class 子类 ： 继承方式 父类1，继承方式 父类2 …，同名调用时，需要加作用域</p>
+<p>66.菱形继承：（钻石继承）利用虚继承可以解决菱形继承的问题。只会继承最后一次修改的值。<br>两个派生类继承用一个基类，又有某个类继承两个派生类.<br>某份数据只要一份，菱形继承导致有两份，资源浪费。<br>虚继承：在继承以前加上关键字 virtual 变成虚继承：class Sheep : virtual public Animal{};Animal类变为虚基类。<br>使用开发人员命令提示符，查看 vbptr，virtual base pointer ,指针指向vbtable 虚基类表。</p>
+<p>67.多态 多指动态多态，通过父类调用子类，父类的指针或者引用执行子类对象</p>
+<ul>
+<li>静态多态：函数重载 和 运算符重载属于静态多态，复用函数名。  函数地址早绑定，编译阶段确定函数地址。</li>
+<li><strong>动态多态</strong>：派生类和虚函数实现运行时多态。 函数地址晚绑定，运行阶段确定函数地址。<br>在函数名前加，virtual 变成虚函数。父类必须写，子类可不写。</li>
+</ul>
+<ol>
+<li>继承关系</li>
+<li>子类重写父类的虚函数。重写  函数返回值类型，函数名，参数列表，完全相同</li>
+</ol>
+<p>68.多态<br>当子类重写父类的虚函数，子类的虚函数表内部会替换成子类的虚函数地址<br>加virtual后，产生vfptr，virtual function pointer和vftable<br>多态优点：</p>
+<ul>
+<li>代码组织结构清晰</li>
+<li>可读性强</li>
+<li>利于前期和后期的扩展以及维护</li>
+</ul>
+<p>69.如果想扩展新的功能，需求修改源码，提倡 开闭原则<br>开闭原则：对扩展进行开发，对修改进行关闭。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;父类，计算器类，抽象类</span><br><span class="line">class AbstractCalculator</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual int getResult() &#x2F;&#x2F;虚函数</span><br><span class="line">	&#123;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	int m_Num1;</span><br><span class="line">	 int m_Num2;</span><br><span class="line">&#125;;</span><br><span class="line">&#x2F;&#x2F;子类，加法类</span><br><span class="line">class AddCalculator : public AbstractCalculator</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	int getResult()</span><br><span class="line">	&#123;</span><br><span class="line">		return m_Num1+ m_Num2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">&#x2F;&#x2F;子类，减法类</span><br><span class="line">class SubCalculator : public AbstractCalculator</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	int getResult()</span><br><span class="line">	&#123;</span><br><span class="line">		return m_Num1 - m_Num2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">&#x2F;&#x2F;子类，乘法类</span><br><span class="line">class MulCalculator : public AbstractCalculator</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	int getResult()</span><br><span class="line">	&#123;</span><br><span class="line">		return m_Num1 * m_Num2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>在上述代码基础上，增加除法功能，不需要改动其他功能，且每个功能相互独立。</p>
+<p>70.纯虚函数和抽象类<br>纯虚函数语法：virtual 返回值类型 函数名 （参数列表） = 0；<br>当类中有了纯虚函数，这个类也成为<strong>抽象类</strong>。<br>抽象类特点：</p>
+<ul>
+<li>抽象类无法实例化对象</li>
+<li>子类必须重写抽象类中的纯虚函数，否则也是抽象类<br>多态必须重写抽象类中的纯虚函数<br>Base * base = new Son; 父类指针调用子类对象。</li>
+</ul>
+<p>71.虚析构和纯虚析构：解决子类析构函数无法调用问题,通过父类指针释放子类对象<br>多态使用时，如果子类中有属性开辟到堆区，那么父类指针在释放时无法调用到子类的析构代码<br>解决方法：将父类的析构函数改为虚析构或者纯虚析构。<br>如果子类中没有堆区数据，可以不写虚析构或纯虚析构。<br>虚析构和纯虚析构共性：</p>
+<ul>
+<li>可以解决父类指针释放子类对象</li>
+<li>都需要有具体的函数实现<br>虚析构和纯虚析构区别：</li>
+<li>如果是纯虚析构，该类属于<strong>抽象类</strong>，无法实例化</li>
+</ul>
+<p>父类调用子类时，释放堆区内存需要虚析构<br>虚析构实现：子类的析构函数 加上 virtual<br>语法：<code>virtual ~类名()&#123;&#125;</code><br>纯虚析构：需要声明也需要实现，在类内声明，在类外实现。<br>语法：virtual <del>类名() = 0; 类名::</del>类名(){};</p>
+<p>72.对文件操作需要包含头文件<fstream></fstream></p>
+<ul>
+<li>ofstream :写操作 output file输出</li>
+<li>ifstream :读操作 input </li>
+<li>fstream  :读写操作<br>读文件五步：<strong>1.**包含头文件#include<fstream>**2.**创建流对象ofstream ofs;**3.**打开文件ofs.open(“文件路径”,打开方式)；</fstream></strong>4.<strong>写数据 ofs&lt;&lt;”写入的数据”;**5.**关闭文件 ofs.close();<br>写文件五部：**1.**包含头文件#include<fstream>**2.**创建流对象ifstream ifs;**3.**打开文件ifs.open(“文件路径”,打开方式)；</fstream></strong>4.<strong>读数据 四种方式读取</strong>5.**关闭文件 ifs.close();<br>文件打开方式：<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ios::in</td>
+<td>为读文件而打开文件</td>
+</tr>
+<tr>
+<td>ios::out</td>
+<td>为写文件而打开文件</td>
+</tr>
+<tr>
+<td>ios::ate</td>
+<td>初始位置：文件尾</td>
+</tr>
+<tr>
+<td>ios::app</td>
+<td>追加方式写文件</td>
+</tr>
+<tr>
+<td>ios::trunc</td>
+<td>如果文件已经存在先删除，再创建</td>
+</tr>
+<tr>
+<td>ios::binary</td>
+<td>二进制方式</td>
+</tr>
+<tr>
+<td>打开方式可以多个，例如用二进制方式写文件： `ios::binary</td>
+<td>ios::out`</td>
+</tr>
+<tr>
+<td>不指定路径，保存在cpp同文件夹下。</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p>73.读文件<br>四个方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;第一种</span><br><span class="line">	char buf[1024] &#x3D; &#123; 0 &#125;;</span><br><span class="line">	while ( ifs&gt;&gt;buf)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; buf &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#x2F;&#x2F;第二种</span><br><span class="line">	char buf[1024] &#x3D; &#123; 0 &#125;;</span><br><span class="line">	while ( ifs.getline(buf,sizeof(buf)))</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; buf &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#x2F;&#x2F;第三种</span><br><span class="line">	string buf;</span><br><span class="line">	while (getline(ifs,buf))</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; buf &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#x2F;&#x2F;第四种</span><br><span class="line">	char c;</span><br><span class="line">	while ( (c&#x3D;ifs.get())!&#x3D;EOF ) &#x2F;&#x2F;EOF end of line</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; c;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>利用is_open函数可以判断文件是否打开成功</p>
+<p>74.二进制写文件，打开方式指定ios::binary<br>函数原型：<code>ostream&amp; write(const char * buffer,int len);</code> buffer为字符指针，len为读写字节数</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Person p &#x3D; &#123;&quot;张三&quot;,18&#125;;</span><br><span class="line">ofs.write((const char *)&amp;p,sizeof(Person) );</span><br></pre></td></tr></table></figure>
 
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>二进制读文件，<code>istream&amp; read(char * buffer,int len);</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Person p;</span><br><span class="line">ifs.read((char *)&amp;p,sizeof(Person));</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>75.泛式编程，模板就是建立通用模具，大大提高复用性。模板不可以直接使用，它只是一个框架。<br>c++提供两种模板机制，函数模板和类模板</p>
+<p>76.函数模板，函数返回值和形参类型可以不具体制定，用一个虚拟的类型来表示。<br>语法<code>template&lt;typename T&gt;</code>typename可以替换为class<br>解释：<br>template — 声明创建模板<br>typename — 表明其后面的符号是一种数据类型，可以用class代替<br>T — 通用的数据类型，名称可以替换，通常为大写</p>
+<p>77.使用函数模板有两种方式：自动类型推导、显示指定类型</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mySwap(a,b);</span><br><span class="line">mySwap&lt;int&gt;(a, b);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>自动类型推导必须推导出一致的数据类型T，才可以使用。</li>
+<li>模板必须要确定出T的数据类型，才可以使用<br>建议使用显示指定类型方式，调用函数模板，因为可以自己确定通用类型T；可以发生隐式类型转换。</li>
+</ul>
+<p>78.普通函数与函数模板调用规则</p>
+<ol>
+<li>如果函数模板和普通函数都可以调用，优先调用普通函数</li>
+<li>可以通过空模板参数列表 强制调用 函数模板</li>
+<li>函数模板可以发生函数重载</li>
+<li>如果函数模板可以产生更好的匹配，优先调用函数模板<br>空函数模板：myPrint&lt;&gt;(a,b);<br>总结：既然提供了函数模板，最好就不要提供普通函数，否则容易出现二义性。</li>
+</ol>
+<p>79.具体化的模板，可以解决自定义类型的通用化。<br>template&lt;&gt; bool myCompare(Person &amp;p1,Person &amp;p2){return;}<br>学习模板并不是为了写模板，而是在STL中能够运用系统提供的模板。</p>
+<p>80.类模板 ，建立通用类</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">template&lt;class NameType,class AgeType&gt;</span><br><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Person(NameType name,AgeType age)</span><br><span class="line">	&#123;</span><br><span class="line">		this-&gt;m_Name &#x3D; name;</span><br><span class="line">		this-&gt;m_Age &#x3D; age;</span><br><span class="line">	&#125;</span><br><span class="line">	NameType m_Name;</span><br><span class="line">	AgeType m_Age;</span><br><span class="line">&#125;</span><br><span class="line">调用：Person&lt;string,int&gt;p1(&quot;孙悟空&quot;,999)</span><br></pre></td></tr></table></figure>
+<p>调用时，先给模板 参数类型，在给实参赋值。</p>
+<p>81.类模板与函数模板区别</p>
+<ol>
+<li>类模板没有自动类型推导的</li>
+<li>类模板在模板参数列表中可以有默认参数<br>Person(NameType name = string,AgeType age = int)</li>
+</ol>
+<p>82.类模板中的成员函数在调用时候才创立。因为类模板一开始无法确定数据类型。</p>
+<p>83.类模板对象做函数参数<br>三种传入方式：</p>
+<ol>
+<li>指定传入类型  –直接显示对象的数据类型   Person&lt;string,int&gt;p1(“孙悟空”,999)</li>
+<li>参数模板化   –将对象中的参数变为模板进行传递</li>
+<li>整个类模板化 –将这个对象类型 模板化进行传递</li>
+</ol>
+<p>84.查看数据类型：cout &lt;&lt; “T的数据类型： “ &lt;&lt; typeid(T1).name() &lt;&lt; endl;</p>
+<p>85.类模板与继承</p>
+<ol>
+<li>子类继承类模板的父类，子类在声明时，要指定出父类中T的类型。</li>
+<li>如果不指定，编译器无法给子类分配内存</li>
+<li>如果想灵活指定出父类中T的类型，子类也需编程类模板 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">template&lt;clasee T&gt;</span><br><span class="line">class Base   &#x2F;&#x2F;父类</span><br><span class="line">&#123;</span><br><span class="line">	T m;</span><br><span class="line">&#125;;</span><br><span class="line">class Son:public Base&lt;int&gt; &#x2F;&#x2F;子类继承，指定数据类型int</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">&#x2F;&#x2F;子类模板</span><br><span class="line">template&lt;class T1,class T2&gt;  &#x2F;&#x2F;T1为子类模板类型，T2为父类模板类型</span><br><span class="line">class Son2 :public Base&lt;T2&gt;</span><br><span class="line">&#123;</span><br><span class="line">	T1 obj;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
+<p>86.类模板成员函数类外实现</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;构造函数的类外实现</span><br><span class="line">template&lt;class T1,class T2&gt;</span><br><span class="line">Person&lt;T1,T2&gt;::person(T1 name,T2 age) &#x2F;&#x2F;加了作用域和模板类型</span><br><span class="line">&#123;</span><br><span class="line">	this-&gt;m_Name &#x3D; name;</span><br><span class="line">	this-&gt;m_Age &#x3D; age;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;成员函数类外实现</span><br><span class="line">template&lt;class T1,class T2&gt;</span><br><span class="line">void Person&lt;T1,T2&gt;::showPerson</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>调用时候需要通过模板建立实例。  </p>
+<p>87.类模板分文件编写 </p>
+<ul>
+<li>第一种解决方式，直接包含源文件，因为父类模板在执行时，不会初始化内容，头文件模板内容不会被识别，这是创建时机的问题，类模板的成员创建是在调用阶段。</li>
+<li>第二种解决方式，将.h和.cpp中的内容写到一起，将后缀名改为.hpp文件<br>主流使用第二种。</li>
+</ul>
+<p>88.类模板与友元：类内和类外实现<br>全局函数类内实现-直接在类内声明友元<br>全局函数类外实现-需要提前让编译器知道全局函数的存在,提前声明，如果全局函数使用模板，还需要提前声明模板<br>总结：建议使用全局函数做类内实现，用法简单，而且编译器可以直接识别。</p>
+<p>89.STL(Standard Template Library,标准模板库),分为容器(container)算法(algorithm)迭代器(iterator)</p>
+<ul>
+<li>容器和算法之间通过迭代器进行无缝连接</li>
+<li>STL几乎所有的代码都采用了模板类或者模板函数</li>
+</ul>
+<p>90.STL大体分为六大组件，分别是：容器、算法、迭代器、仿函数、适配器（配接器）、空间配置器。</p>
+<ol>
+<li>容器：各种数据结构，如vector、list、deque、set、map等，用来<strong>存放数据</strong>。</li>
+<li>算法：各种常用的算法，如sort排序、find查找、copy拷贝、for_each遍历等</li>
+<li>迭代器：扮演了容器与算法之间的胶合剂。</li>
+<li>仿函数：行为类似函数，可作为算法的某种策略。</li>
+<li>适配器：一种用来修饰容器或者仿函数或迭代器接口的东西。</li>
+<li>空间适配器：负责空间的配置与管理。 </li>
+</ol>
+<p><strong>容器</strong> ： 数组，链表，树，栈，队列，集合，映射表。<br>序列式容器：强调值的排序，序列式容器中的每个元素均有固定的位置<br>关联式容器：二叉树结构，各元素之间没有严格的物理意义上的顺序关系。<br><strong>算法</strong>：<br>质变算法：是指运算过程中会更改区间内的元素的内容。例如拷贝，替换，删除等等<br>非质变算法：是指运算过程中不会更改区间内的元素内容，例如查找，计数，遍历，寻找极值等等<br><strong>迭代器</strong>：容器和算法之间粘合剂<br>算法通过迭代器才可以访问容器中的数据。<br>每个容器都有自己的迭代器。<br>迭代器种类：<br>|  种类   | 功能  | 支持运算 |<br>|  —-  | —-  | —-  |<br>| 输入迭代器       | 对数据的只读访问                        | 只读，支持++、++、！= |<br>| 输出迭代器       | 对数据的只写访问                        | 只写，支持++ |<br>| 前向迭代器       | 读写操作，并能向前推进迭代器             | 读写，支持++、==、！= |<br>|双向迭代器        | 读写操作，并能向前和向后操作             | 读写，支持++、– |<br>| 随机访问迭代器   | 读写操作，可以以跳跃的方式访问任意数据，功能最强的迭代器 | 读写，支持++、–、[n]、-n、&lt;、&lt;=、&gt;、&gt;= |<br>常用迭代器为双向迭代器和随机访问迭代器</p>
+<p>91.vector容器遍历方法：<br>for_each遍历算法：for_each(v.begin(), v.end(), myPrint);<br>for循环：for (vector<int>::iterator it = v.begin(); it &lt; v.end(); it++)  //常用<br>while循环：<br>vector<int>::iterator itBegin = v.begin(); //起始迭代器，指向容器中第一个元素<br>vector<int>::iterator itEnd = v.end();//结束迭代器，指向容器中最后一个元素的下一个位置<br>while (itBegin!= itEnd)<br>{<br>    cout &lt;&lt; *itBegin &lt;&lt; endl;<br>    itBegin++;<br>}</int></int></int></p>
+<p>92.vector容器嵌套容器<br>vector&lt; vector<int>&gt;v;<br>vector<int>v1;<br>vector<int>v2;</int></int></int></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(vector&lt; vector&lt;int&gt;&gt;::iterator it &#x3D; v.begin();it&lt;v.end();it++)</span><br><span class="line">&#123;</span><br><span class="line">	for(vector&lt;int&gt;::iterator vit &#x3D; (*it).begin();vit&lt;(*it).end();vit++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; *vit &lt;&lt;&quot; &quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>string容器<br>93.string本质是类。<br>string和char <em>的区别：<br>char</em>是一个指针<br>string是一个类，类内封装了char<em>，管理这个字符串，是一个char</em>型容器<br>特点：<br>string类内部封装了很多成员方法：查找find，拷贝copy，删除delete，替换replace，插入insert<br>string构造函数：<br>string()；//创建一个空的字符串，例如string str；<br>string(const char*s);//使用字符串s初始化<br>string(const string &amp; str);//使用一个string对象初始化另一个string对象<br>string(int n , char c); //使用n个字符c初始化</p>
+<p>94.string赋值操作<code>=</code>或者<code>.assign</code><br>string&amp; operator=(const char <em>s); //char</em>类型字符串赋值给当前的字符串<br>string&amp; operator=(const string &amp;s); //把字符串s赋给当前的字符串<br>string&amp; operator=(char c);//字符赋值给当前的字符串；<br>string&amp; assign(const char *s)；//把字符串s赋值给当前的字符串<br>string&amp; assign(const char *s,int n);//把字符串的前n个字符赋给当前的字符串<br>string&amp; assign(const string &amp;s); //把字符串s赋给当前字符串<br>string&amp; assign(int n,char c); //用n个字符c赋给当前字符串</p>
+<p>95.string字符串拼接 <code>+=</code>或者<code>.append</code><br>string&amp; operator+=(const char* str)或者(const char c)或者(const string&amp; str)<br>string&amp; append(const char *s)或者(const char *s,int n)或者(const string &amp;s)或者(const string &amp;s,int pos,int n)</p>
+<p>96.string查找和替换 <code>find</code>或者<code>.rfind</code>或者<code>replace</code><br>    int rfind(const string&amp; str,int pos = 0) const；//rfind是从右往左，find是从左往右查<br>替换：string&amp; replace(int pos,int n,const string&amp; str); //替换从pos开始n个字符为字符串str。</p>
+<p>97.string字符串比较<code>.compare</code><br>主要用来判断是否相等</p>
+<p>98.string字符存取，使用<code>[]</code>或者<code>at</code>方式<br>for(int i = 0;i &lt; str.size();i++)<br>{<br>    cout&lt;&lt;str[i]&lt;&lt;” “;<br>    //或者cout&lt;&lt;str.at(i)&lt;&lt;” “;<br>}</p>
+<p>99.string插入和删除 <code>insert</code>和<code>erase</code><br>string&amp; insert(int pos,const char* s);<br>string&amp; erase(int pos,int n = npos);//删除从pos开始的n个字符</p>
+<p>100.string子串 <code>.substr</code><br>string substr(int pos = 0,int m = npos ) const;//返回由pos开始的n个字符组成的字符串<br>str.substr(1,3);</p>
+<p>101.vector容器，又叫单端数组。<br>和普通数组不同之处在于数组是静态空间，vector可以动态扩展。动态扩展，并不是在原空间后续接新空间，而是找更大的内存空间，然后将原数据拷贝新空间，释放原空间。<br>vector的迭代器支持随机访问<br>vector构造函数<br>vector<T>v; |vector(v.begin(),v.end());| vector(n,elem);n个elem构造|vector(const vector &amp;vec);</T></p>
+<p>102.vector赋值操作</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;operator&#x3D;</span><br><span class="line">vector&lt;int&gt;v2;</span><br><span class="line">v2 &#x3D; v1;</span><br><span class="line">&#x2F;&#x2F;assign</span><br><span class="line">vector&lt;int&gt;v3;</span><br><span class="line">v3.assign(v1.begin(),v1.end());</span><br><span class="line">&#x2F;&#x2F;n个elem方式</span><br><span class="line">vector&lt;int&gt;v4;</span><br><span class="line">v4.assign(10,100);</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>103.vector容量和大小<br>empty();//判断是否为空|||capacity();//容量|||size();//返回容器中的元素个数|||resize(int num);//重新指定容器长度|||resize(int num ,elem);//重新指定容器长度,超过长度的元素被删除</p>
+<p>104.vector插入和删除<br>push_back(ele);//从尾部插入<br>pop_back();//删除最后一个元素<br>insert(const_iterator pos,ele);//迭代器指向位置pos插入元素<br>insert(const_iterator pos,int count,ele);//迭代器指向位置pos插入count个元素<br>erase(const_iterator pos); //删除迭代器指向的元素<br>erase(const_iterator start,const_iterator end);//删除从start到end之间的元素<br>clear();//删除容器中所有内容</p>
+<p>105.vector数据存取<br>at(int idx); //返回索引|idx所指的数据<br>operator[];//返回索引|idx所指的数据<br>front();//返回容器中的第一个数据元素<br>back();//返回容器中的最后一个数据元素</p>
+<p>106.vector互换容器  swap(vec);//将vec与本身的元素互换。<br>实际用途：巧用swap可以收缩内存空间<br>vector<int>(v).swap(v);<br>vector<int>(v)为匿名对象</int></int></p>
+<p>107.vector预留空间：减少vector在动态扩展容量时的扩展次数<br>reserve(int len);//容器预留len个元素长度，预留位置不初始化，元素不可访问</p>
+<p>108.deque容器，又叫双端数组，可以对头端进行插入删除操作，中控器，支持随机访问<br>deque与vector区别</p>
+<ul>
+<li>vector对于头部的插入删除效率低，数据量越大，效率越低。</li>
+<li>deque相对而言插入删除速度会比vector快。</li>
+<li>vector访问元素时的速度会比deque快，这和两者内部实现有关。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void printDeque(const deque&lt;int&gt;&amp;d) &#x2F;&#x2F;只读容器</span><br><span class="line">&#123;</span><br><span class="line">	for(deque&lt;int&gt;::const_iterator it &#x3D; d.begin();it !&#x3D; d.end();it++)</span><br><span class="line">	&#123;</span><br><span class="line">		&#x2F;&#x2F;*it &#x3D; 100; 容器不可修改</span><br><span class="line">		cout&lt;&lt;*it&lt;&lt;&quot; &quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+deque构造函数操作和vector差不多</li>
+</ul>
+<p>109.<strong>deque赋值操作</strong><br>operator=方式，(beg,end);方式，assign方式<br>deque容量大小操作 和vector比没有capacity操作，其他一样<br>两端插入操作：<br>push_back(elem); //在容器尾部添加一个数据<br>push_front(elem); //在容器头部插入一个数据<br>pop_back(); //删除容器最后一个数据<br>pop_front(); //删除容器第一个数据<br>指定位置操作：<br>insert(pos,elem); //在pos位置插入一个elem元素的拷贝，返回新数据的位置。<br>insert(pos,n,elem); //在pos位置插入n个elem数据，无返回值。<br>insert(pos,beg,end); //在pos位置插入[beg,end]区间的数据，无返回值。<br>clear(); //清空容器的所有数据<br>erase(beg,end); //删除[beg,end)区间的数据，返回下一个数据的位置。<br>erase(pos); //删除pos位置的数据，返回下一个数据的位置。<br><strong>deque数据存取</strong><br>at(int idx); //返回索引idx所指的数据<br>operator[]; //返回索引idx所指的数据<br>front(); //返回容器中第一个数据元素<br>back(); //返回容器中最后一个数据元素<br><strong>deque 排序</strong><br>#include <algorithm><br>sort(iterator beg, iterator end) //对beg和end区间内元素进行排序<br>sort(d.begin(), d.end());</algorithm></p>
+<p>110.<strong>stack容器</strong>栈容器常用的对外接口<br>stack是一种<strong>先进后出(First In Last Out,FILO)**的数据结构，它只有一个出口<br>栈中只有顶端的元素才可以被外界使用，因此</strong>栈不允许有遍历行为**<br>栈中进入数据称为 — 入栈 push,栈中弹出数据称为 — 出栈 pop<br><strong>stack 常用接口</strong><br>构造函数：<br>stack<T> stk; //stack采用模板类实现， stack对象的默认构造形式<br>stack(const stack &amp;stk); //拷贝构造函数<br>赋值操作：<br>stack&amp; operator=(const stack &amp;stk); //重载等号操作符<br>数据存取：<br>push(elem); //向栈顶添加元素<br>pop(); //从栈顶移除第一个元素<br>top(); //返回栈顶元素<br>大小操作：<br>empty(); //判断堆栈是否为空<br>size(); //返回栈的大小<br>常用五个接口：</T></p>
+<ul>
+<li>入栈 — push</li>
+<li>出栈 — pop</li>
+<li>返回栈顶 — top</li>
+<li>判断栈是否为空 — empty</li>
+<li>返回栈大小 — size</li>
+</ul>
+<p>111.<strong>queue容器</strong>，Queue是一种<strong>先进先出(First In First Out,FIFO)**的数据结构，它有两个出口。<br>队列容器允许从一端新增元素，从另一端移除元素<br>队列中只有队头和队尾才可以被外界使用，因此队列不允许有遍历行为<br>队列中进数据称为 — 入队 push，队列中出数据称为 — 出队 pop<br>**queue常用接口</strong><br>构造函数：<br>queue<T> que; //queue采用模板类实现，queue对象的默认构造形式<br>queue(const queue &amp;que); //拷贝构造函数<br>赋值操作：<br>queue&amp; operator=(const queue &amp;que); //重载等号操作符<br>数据存取：<br>push(elem); //往队尾添加元素<br>pop(); //从队头移除第一个元素<br>back(); //返回最后一个元素<br>front(); //返回第一个元素<br>大小操作：<br>empty(); //判断堆栈是否为空<br>size(); //返回栈的大小<br>常用接口：</T></p>
+<ul>
+<li>入队 — push</li>
+<li>出队 — pop</li>
+<li>返回队头元素 — front</li>
+<li>返回队尾元素 — back</li>
+<li>判断队是否为空 — empty</li>
+<li>返回队列大小 — size</li>
+</ul>
+<p>112.<strong>list容器</strong> 将数据进行链式存储<br>链表（list）是一种物理存储单元上非连续的存储结构，数据元素的逻辑顺序是通过链表中的指针链接实现的<br>链表的组成：链表由一系列结点组成<br>结点的组成：一个是存储数据元素的数据域，另一个是存储下一个结点地址的指针域<br>STL中的链表是一个双向循环链表<br>由于链表的存储方式并不是连续的内存空间，因此链表list中的迭代器只支持前移和后移，属于<strong>双向迭代器</strong><br>list的优点：</p>
+<ul>
+<li>采用动态存储分配，不会造成内存浪费和溢出</li>
+<li>链表执行插入和删除操作十分方便，修改指针即可，不需要移动大量元素<br>list的缺点：</li>
+<li>链表灵活，但是空间(指针域) 和 时间（遍历）额外耗费较大<br>List有一个重要的性质，插入操作和删除操作都不会造成原有list迭代器的失效，这在vector是不成立的。<br>总结：STL中List和vector是两个最常被使用的容器，各有优缺点</li>
+<li>*list构造函数**<br>list<T> lst; //list采用采用模板类实现,对象的默认构造形式：<br>list(beg,end); //构造函数将[beg, end)区间中的元素拷贝给本身。<br>list(n,elem); //构造函数将n个elem拷贝给本身。<br>list(const list &amp;lst); //拷贝构造函数。<br>总结：list构造方式同其他几个STL常用容器，熟练掌握即可</T></li>
+<li>*list赋值和交换**<br>assign(beg, end); //将[beg, end)区间中的数据拷贝赋值给本身。<br>assign(n, elem); //将n个elem拷贝赋值给本身。<br>list&amp; operator=(const list &amp;lst); //重载等号操作符<br>swap(lst); //将lst与本身的元素互换。<br>总结：list赋值和交换操作能够灵活运用即可</li>
+<li>*list大小操作**<br>size(); //返回容器中元素的个数<br>empty(); //判断容器是否为空<br>resize(num); //重新指定容器的长度为num，若容器变长，则以默认值填充新位置。<br>​ //如果容器变短，则末尾超出容器长度的元素被删除。<br>resize(num, elem); //重新指定容器的长度为num，若容器变长，则以elem值填充新位置。</li>
+<li>*list插入和删除**<br>push_back(elem);//在容器尾部加入一个元素<br>pop_back();//删除容器中最后一个元素<br>push_front(elem);//在容器开头插入一个元素<br>pop_front();//从容器开头移除第一个元素<br>insert(pos,elem);//在pos位置插elem元素的拷贝，返回新数据的位置。<br>insert(pos,n,elem);//在pos位置插入n个elem数据，无返回值。<br>insert(pos,beg,end);//在pos位置插入[beg,end)区间的数据，无返回值。<br>clear();//移除容器的所有数据<br>erase(beg,end);//删除[beg,end)区间的数据，返回下一个数据的位置。<br>erase(pos);//删除pos位置的数据，返回下一个数据的位置。</li>
+<li>*remove(elem);**//删除容器中所有与elem值匹配的元素。</li>
+<li>尾插 — push_back</li>
+<li>尾删 — pop_back</li>
+<li>头插 — push_front</li>
+<li>头删 — pop_front</li>
+<li>插入 — insert</li>
+<li>删除 — erase</li>
+<li>移除 — remove</li>
+<li>清空 — clear</li>
+<li>*list数据存取**<br>front(); //返回第一个元素。<br>back(); //返回最后一个元素。<br>总结：</li>
+<li>list容器中不可以通过[]或者at方式访问数据</li>
+<li>返回第一个元素 — front</li>
+<li>返回最后一个元素 — back</li>
+<li>*list反转和排序**<br>reverse(); //反转链表<br>sort(); //链表排序<br>总结：</li>
+<li>反转 — reverse</li>
+<li>排序 — sort （成员函数）<br>//所有不支持随机访问迭代器的容器，不可以用标准算法<br>//不支持随机访问迭代器的容器，内部会提供对应一些算法。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bool myCompare(int val1 , int val2)</span><br><span class="line">&#123;</span><br><span class="line">	return val1 &gt; val2;</span><br><span class="line">&#125;</span><br><span class="line">L.sort(myCompare); &#x2F;&#x2F;指定规则，从大到小</span><br></pre></td></tr></table></figure>
+总结：</li>
+<li>对于自定义数据类型，必须要指定排序规则，否则编译器不知道如何进行排序</li>
+<li>高级排序只是在排序规则上再进行一次逻辑规则制定，并不复杂</li>
+</ul>
+<p>113.<strong>set/multiset 容器</strong>:所有元素都会在插入时自动被排序#include <set><br>set/multiset属于关联式容器，底层结构是用二叉树实现。<br>set和multiset区别：</set></p>
+<ul>
+<li>set不允许容器中有重复的元素</li>
+<li>multiset允许容器中有重复的元素</li>
+<li>*set构造和赋值**<br>构造：<br>set<T> st; //默认构造函数：<br>set(const set &amp;st); //拷贝构造函数<br>赋值：<br>set&amp; operator=(const set &amp;st); //重载等号操作符<br>总结：</T></li>
+<li>set容器插入数据时用insert</li>
+<li>set容器插入数据的数据会自动排序</li>
+<li>*set大小和交换**<br>size(); //返回容器中元素的数目<br>empty(); //判断容器是否为空<br>swap(st); //交换两个集合容器<br>总结：</li>
+<li>统计大小 — size</li>
+<li>判断是否为空 — empty</li>
+<li>交换容器 — swap</li>
+<li>*set插入和删除**<br>insert(elem); //在容器中插入元素。<br>clear(); //清除所有元素<br>erase(pos); //删除pos迭代器所指的元素，返回下一个元素的迭代器。<br>erase(beg, end); //删除区间[beg,end]的所有元素 ，返回下一个元素的迭代器。<br>erase(elem); //删除容器中值为elem的元素。<br>总结：</li>
+<li>插入 — insert</li>
+<li>删除 — erase</li>
+<li>清空 — clear</li>
+<li>*set查找和统计**<br>find(key); //查找key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end();<br>count(key); //统计key的元素个数<br>总结：</li>
+<li>查找 — find （返回的是迭代器）</li>
+<li>统计 — count （对于set，结果为0或者1）</li>
+<li>*set和multiset区别**<br>区别：</li>
+<li>set不可以插入重复数据，而multiset可以</li>
+<li>set插入数据的同时会返回插入结果，表示插入是否成功</li>
+<li>multiset不会检测数据，因此可以插入重复数据<br>pair&lt;set<int>::iterator, bool&gt;  ret = s.insert(10);//插入结果的返回值<br>总结：</int></li>
+<li>如果不允许插入重复数据可以利用set</li>
+<li>如果需要插入重复数据利用multiset</li>
+<li>*pair对组创建** 成对出现的数据，利用对组可以返回两个数据<br>两种创建方式：<br>pair&lt;type, type&gt; p ( value1, value2 );<br>pair&lt;type, type&gt; p = make_pair( value1, value2 );<br>访问：p2.first   p2.second </li>
+<li>*set容器排序**默认排序规则为从小到大，改变排序规则<br>主要技术点：<br>示例一 利用仿函数，可以改变排序规则<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;仿函数</span><br><span class="line">class MyCompare </span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	bool operator()(int v1, int v2) &#123;</span><br><span class="line">		return v1 &gt; v2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">set&lt;int,MyCompare&gt; s2;</span><br></pre></td></tr></table></figure>
+示例二 set存放自定义数据类型,都会指定排序规程<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class comparePerson</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	bool operator()(const Person&amp; p1, const Person &amp;p2)</span><br><span class="line">	&#123;</span><br><span class="line">		return p1.m_Age &gt; p2.m_Age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">set&lt;Person, comparePerson&gt; s;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>114.<strong>map/multimap容器</strong></p>
+<ul>
+<li>map中所有元素都是pair</li>
+<li>pair中第一个元素为key（键值），起到索引作用，第二个元素为value（实值）</li>
+<li>所有元素都会根据元素的键值自动排序<br>本质：map/multimap属于关联式容器，底层结构是用二叉树实现。</li>
+<li>map和multimap区别：</li>
+<li>map不允许容器中有重复key值元素</li>
+<li>multimap允许容器中有重复key值元素</li>
+<li>*map构造和赋值**<br>构造：两个<br>map&lt;T1, T2&gt; mp; //map默认构造函数:<br>map(const map &amp;mp); //拷贝构造函数<br>赋值：<br>map&amp; operator=(const map &amp;mp); //重载等号操作符<br>总结：map中所有元素都是成对出现，插入数据时候要使用对组</li>
+<li>*map大小和交换**<br>size(); //返回容器中元素的数目<br>empty(); //判断容器是否为空<br>swap(st); //交换两个集合容器<br>总结：</li>
+<li>统计大小 — size</li>
+<li>判断是否为空 — empty</li>
+<li>交换容器 — swap</li>
+<li>*map插入和删除**<br>insert(elem); //在容器中插入元素。<br>clear(); //清除所有元素<br>erase(pos); //删除pos迭代器所指的元素，返回下一个元素的迭代器。<br>erase(beg, end); //删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。<br>erase(key); //删除容器中值为key的元素。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;第一种插入方式</span><br><span class="line">	m.insert(pair&lt;int, int&gt;(1, 10));</span><br><span class="line">&#x2F;&#x2F;第二种插入方式  &#x2F;&#x2F;建议使用</span><br><span class="line">	m.insert(make_pair(2, 20));</span><br><span class="line">&#x2F;&#x2F;第三种插入方式 不建议</span><br><span class="line">	m.insert(map&lt;int, int&gt;::value_type(3, 30));</span><br><span class="line">&#x2F;&#x2F;第四种插入方式 不建议参数，用[]key找value</span><br><span class="line">	m[4] &#x3D; 40; </span><br><span class="line">	printMap(m);</span><br></pre></td></tr></table></figure>
+总结：</li>
+<li>map插入方式很多，记住其一即可</li>
+<li>插入 — insert</li>
+<li>删除 — erase</li>
+<li>清空 — clear</li>
+<li>*map查找和统计**<br>find(key); //查找key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end();<br>count(key); //统计key的元素个数<br>总结：<br>查找 — find （返回的是迭代器）<br>统计 — count （对于map，结果为0或者1）</li>
+<li>*map容器排序**:利用仿函数，可以改变排序规则<br>map容器默认排序规则为 按照key值进行 从小到大排序，掌握如何改变排序规则<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bool operator()(int v1, int v2) &#123;</span><br><span class="line">		return v1 &gt; v2;</span><br><span class="line">	&#125;</span><br><span class="line">for (map&lt;int, int, MyCompare&gt;::iterator it &#x3D; m.begin(); it !&#x3D; m.end(); it++) &#123;</span><br><span class="line">		cout &lt;&lt; &quot;key:&quot; &lt;&lt; it-&gt;first &lt;&lt; &quot; value:&quot; &lt;&lt; it-&gt;second &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
+<p>115.<strong>函数对象</strong>重载函数调用操作符的类，其对象常称为函数对象<br>函数对象使用重载的()时，行为类似函数调用，也叫仿函数<br>本质：函数对象(仿函数)是一个类，不是一个函数<br><strong>函数对象使用</strong></p>
+<ul>
+<li>函数对象在使用时，可以像普通函数那样调用, 可以有参数，可以有返回值</li>
+<li>函数对象超出普通函数的概念，函数对象可以有自己的状态</li>
+<li>函数对象可以作为参数传递</li>
+</ul>
+<p>116.<strong>谓词</strong></p>
+<ul>
+<li>返回bool类型的仿函数称为谓词</li>
+<li>如果operator()接受一个参数，那么叫做一元谓词</li>
+<li>如果operator()接受两个参数，那么叫做二元谓词<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vector&lt;int&gt;::iterator it &#x3D; find_if(v.begin(), v.end(), GreaterFive());</span><br><span class="line">&#x2F;&#x2F;使用函数对象改变算法策略，排序从大到小</span><br><span class="line">	sort(v.begin(), v.end(), MyCompare());</span><br></pre></td></tr></table></figure>
 
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h2 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h2>]]></content>
+</li>
+</ul>
+<p>117.<strong>内建函数对象</strong><br>仿函数所产生的对象，用法和一般函数完全相同<br>使用内建函数对象，需要引入头文件 #include<functional><br><strong>算术仿函数</strong><br>实现四则运算<br>其中negate是一元运算，其他都是二元运算<br>template<class t> T plus<T> //加法仿函数<br>template<class t> T minus<T> //减法仿函数<br>template<class t> T multiplies<T> //乘法仿函数<br>template<class t> T divides<T> //除法仿函数<br>template<class t> T modulus<T> //取模仿函数<br>template<class t> T negate<T> //取反仿函数<br><strong>关系仿函数</strong><br>template<class t> bool equal_to<T> //等于<br>template<class t> bool not_equal_to<T> //不等于<br>template<class t> bool greater<T> //<strong>大于</strong><br>template<class t> bool greater_equal<T> //大于等于<br>template<class t> bool less<T> //小于<br>template<class t> bool less_equal<T> //小于等于<br><strong>逻辑仿函数</strong>逻辑仿函数实际应用较少<br>template<class t> bool logical_and<T> //逻辑与<br>template<class t> bool logical_or<T> //逻辑或<br>template<class t> bool logical_not<T> //逻辑非</T></class></T></class></T></class></T></class></T></class></T></class></T></class></T></class></T></class></T></class></T></class></T></class></T></class></T></class></T></class></functional></p>
+<p>118.STL- 常用算法<br>算法主要是由头文件<algorithm> <functional> <numeric>组成。<br><algorithm>是所有STL头文件中最大的一个，范围涉及到比较、 交换、查找、遍历操作、复制、修改等等<br><numeric>体积很小，只包括几个在序列上面进行简单数学运算的模板函数<br><functional>定义了一些模板类,用以声明函数对象。</functional></numeric></algorithm></numeric></functional></algorithm></p>
+<p>119.常用遍历算法for_each和transform<br>for_each //遍历容器<br>transform //搬运容器到另一个容器中<br><strong>for_each</strong>(iterator beg, iterator end, _func);<br>// 遍历算法 遍历容器元素<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _func 函数或者函数对象<br><strong>transform</strong>(iterator beg1, iterator end1, iterator beg2, _func);<br>//beg1 源容器开始迭代器<br>//end1 源容器结束迭代器<br>//beg2 目标容器开始迭代器<br>//_func 函数或者函数对象<br>总结： 搬运的目标容器必须要提前开辟空间，否则无法正常搬运</p>
+<p>120.常用查找算法<br>find //查找元素  查找指定元素，找到返回指定元素的迭代器，找不到返回结束迭代器end()<br>find_if //按条件查找元素<br>adjacent_find //查找相邻重复元素<br>binary_search //二分查找法<br>count //统计元素个数<br>count_if //按条件统计元素个数<br><strong>find</strong>(iterator beg, iterator end, value);<br>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置<br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 查找的元素<br><strong>find_if</strong><br>find_if(iterator beg, iterator end, _Pred);<br>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _Pred 函数或者谓词（返回bool类型的仿函数）<br><strong>adjacent_find</strong><br>adjacent_find(iterator beg, iterator end);<br>// 查找相邻重复元素,返回相邻元素的第一个位置的迭代器<br>// beg 开始迭代器<br>// end 结束迭代器<br>总结：面试题中如果出现查找相邻重复元素，记得用STL中的adjacent_find算法<br><strong>binary_search</strong><br>bool binary_search(iterator beg, iterator end, value);<br>// 查找指定的元素，查到 返回true 否则false<br>// 注意: <strong>在无序序列中不可用</strong><br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 查找的元素<br><strong>count</strong><br>count(iterator beg, iterator end, value);<br>// 统计元素出现次数<br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 统计的元素<br><strong>count_if</strong> 按条件统计元素个数<br>count_if(iterator beg, iterator end, _Pred);<br>// 按条件统计元素出现次数<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _Pred 谓词</p>
+<p>121.常用排序算法<br>sort //对容器内元素进行排序<br>random_shuffle //洗牌 指定范围内的元素随机调整次序<br>merge // 容器元素合并，并存储到另一容器中<br>reverse // 反转指定范围的元素<br><strong>sort</strong><br>sort(iterator beg, iterator end, _Pred);<br>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _Pred 谓词<br><strong>random_shuffle</strong>  洗牌算法<br>random_shuffle(iterator beg, iterator end);<br>// 指定范围内的元素随机调整次序<br>// beg 开始迭代器<br>// end 结束迭代器<br>srand((unsigned int)time(NULL));<br><strong>merge</strong>  两个容器元素合并，并存储到另一容器中<br>merge(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);<br>// 注意: 两个容器必须是有序的<br>// beg1 容器1开始迭代器<br>// end1 容器1结束迭代器<br>// beg2 容器2开始迭代器<br>// end2 容器2结束迭代器<br>// dest 目标容器开始迭代器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;目标容器需要提前开辟空间</span><br><span class="line">vtarget.resize(v1.size() + v2.size());</span><br><span class="line">&#x2F;&#x2F;合并  需要两个有序序列</span><br><span class="line">merge(v1.begin(), v1.end(), v2.begin(), v2.end(), vtarget.begin());</span><br></pre></td></tr></table></figure>
+<p><strong>reverse</strong><br>reverse(iterator beg, iterator end);<br>// 反转指定范围的元素<br>// beg 开始迭代器<br>// end 结束迭代器</p>
+<p>122.<strong>常用拷贝和替换算法</strong><br>copy // 容器内指定范围的元素拷贝到另一容器中<br>replace // 将容器内指定范围的旧元素修改为新元素<br>replace_if // 容器内指定范围满足条件的元素替换为新元素<br>swap // 互换两个容器的元素<br><strong>copy</strong>  容器内指定范围的元素拷贝到另一容器中<br>copy(iterator beg, iterator end, iterator dest);<br>// 按值查找元素，找到返回指定位置迭代器，找不到返回结束迭代器位置<br>// beg 开始迭代器<br>// end 结束迭代器<br>// dest 目标起始迭代器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vector&lt;int&gt; v2;</span><br><span class="line">v2.resize(v1.size());&#x2F;&#x2F;提前开辟</span><br><span class="line">copy(v1.begin(), v1.end(), v2.begin());</span><br></pre></td></tr></table></figure>
+<p>​<strong>replace</strong> 将容器内指定范围的旧元素修改为新元素<br>replace(iterator beg, iterator end, oldvalue, newvalue);<br>// 将区间内旧元素 替换成 新元素<br>// beg 开始迭代器<br>// end 结束迭代器<br>// oldvalue 旧元素<br>// newvalue 新元素<br><strong>replace_if</strong><br>replace_if(iterator beg, iterator end, _pred, newvalue);<br>// 按条件替换元素，满足条件的替换成指定元素<br>// beg 开始迭代器<br>// end 结束迭代器<br>// _pred 谓词<br>// newvalue 替换的新元素<br><strong>swap</strong> 互换两个容器的元素。两个同种类型<br>swap(container c1, container c2);<br>// 互换两个容器的元素<br>// c1容器1<br>// c2容器2</p>
+<p>123.常用算术生成算法<br>算术生成算法属于小型算法，使用时包含的头文件为 #include <numeric><br>accumulate // 计算容器元素累计总和<br>fill // 向容器中添加元素<br><strong>accumulate</strong>  计算区间内 容器元素累计总和<br>accumulate(iterator beg, iterator end, value);<br>// 计算容器元素累计总和<br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 起始值<br><strong>fill</strong>   向容器中填充指定的元素<br>fill(iterator beg, iterator end, value);<br>// 向容器中填充元素<br>// beg 开始迭代器<br>// end 结束迭代器<br>// value 填充的值</numeric></p>
+<p>124.常用集合算法<br>set_intersection // 求两个容器的交集<br>set_union // 求两个容器的并集<br>set_difference // 求两个容器的差集<br><strong>set_intersection</strong>  求两个容器的交集<br>set_intersection(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);<br>// 求两个集合的交集<br>// 注意:两个集合必须是有序序列<br>// beg1 容器1开始迭代器<br>// end1 容器1结束迭代器<br>// beg2 容器2开始迭代器<br>// end2 容器2结束迭代器<br>// dest 目标容器开始迭代器<br>总结：</p>
+<ul>
+<li>求交集的两个集合必须的有序序列</li>
+<li>目标容器开辟空间需要从两个容器中取小值</li>
+<li>set_intersection返回值既是交集中最后一个元素的位置</li>
+<li>*set_union** 求两个集合的并集<br>set_union(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);<br>// 注意:两个集合必须是有序序列<br>// beg1 容器1开始迭代器<br>// end1 容器1结束迭代器<br>// beg2 容器2开始迭代器<br>// end2 容器2结束迭代器<br>// dest 目标容器开始迭代器<br>总结：</li>
+<li>求并集的两个集合必须的有序序列</li>
+<li>目标容器开辟空间需要两个容器相加</li>
+<li>set_union返回值既是并集中最后一个元素的位置</li>
+<li>*set_difference**  // 求两个集合的差集<br>set_difference(iterator beg1, iterator end1, iterator beg2, iterator end2, iterator dest);<br>// 注意:两个集合必须是有序序列<br>// beg1 容器1开始迭代器<br>// end1 容器1结束迭代器<br>// beg2 容器2开始迭代器<br>// end2 容器2结束迭代器<br>// dest 目标容器开始迭代器<br>总结：</li>
+<li>求差集的两个集合必须的有序序列</li>
+<li>目标容器开辟空间需要从两个容器取较大值</li>
+<li>set_difference返回值既是差集中最后一个元素的位置</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
   </entry>
 </search>
