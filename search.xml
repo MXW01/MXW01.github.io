@@ -41,26 +41,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git使用方法学习</title>
-    <url>/2020/11/09/git%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>计划使用github托管一部分代码</p>
-<a id="more"></a>
-
-<p>之前学过git使用，了解过一部分git指令（现在忘光了）。<br>先占一个位置，学一点再更新。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>研究方向变更</title>
-    <url>/2020/11/09/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E5%8F%98%E6%9B%B4/</url>
-    <content><![CDATA[<p>研究内容从机器人硬件改为医学图像处理</p>
-<a id="more"></a>
-
-
-<p>目前学习了 数字图像处理，计算机图形学</p>
-<p>软件学习了VTK ITK QT </p>
-]]></content>
-  </entry>
-  <entry>
     <title>hexo next主题持续优化</title>
     <url>/2020/11/09/hexo-next%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96/</url>
     <content><![CDATA[<p>已做的优化，发现的bug统计，计划修改的样式记录。</p>
@@ -88,6 +68,26 @@
       <tags>
         <tag>hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>研究方向变更</title>
+    <url>/2020/11/09/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E5%8F%98%E6%9B%B4/</url>
+    <content><![CDATA[<p>研究内容从机器人硬件改为医学图像处理</p>
+<a id="more"></a>
+
+
+<p>目前学习了 数字图像处理，计算机图形学</p>
+<p>软件学习了VTK ITK QT </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>git使用方法学习</title>
+    <url>/2020/11/09/git%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>计划使用github托管一部分代码</p>
+<a id="more"></a>
+
+<p>之前学过git使用，了解过一部分git指令（现在忘光了）。<br>先占一个位置，学一点再更新。</p>
+]]></content>
   </entry>
   <entry>
     <title>软件使用</title>
@@ -271,39 +271,6 @@ connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
 ]]></content>
   </entry>
   <entry>
-    <title>计算机图形学</title>
-    <url>/2020/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/</url>
-    <content><![CDATA[<p>计算机图形学</p>
-<a id="more"></a>  
-
-<p>仿真，几何，渲染，图形学三大方向<br> Visualization 可视化</p>
-<p>光栅化<br>30 FPS 称为实时</p>
-<p>OpenGL DirectX VulKan  都是图形学API  </p>
-<p>Maya/3DS MAX Blender ,VR / game development using unity / Unreal Engine</p>
-<p>图形学 和 计算机视觉<br>一切需要猜测的内容是视觉研究对象，做分析，理解和猜测</p>
-<p>图形学 computer graphics(rendering)  MODEL-&gt;IMAGE<br>计算机视觉 computer vision  IMAGE-&gt;MODEL</p>
-<p>Computer Vision /Deep learning </p>
-]]></content>
-      <tags>
-        <tag>计算机基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>软件架构</title>
-    <url>/2020/11/20/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/</url>
-    <content><![CDATA[<p>常见软件架构</p>
-<a id="more"></a>  
-
-<h1 id="系统软件"><a href="#系统软件" class="headerlink" title="系统软件"></a>系统软件</h1><p>驱动软件等等 用C/C++</p>
-<h1 id="C-S-架构软件"><a href="#C-S-架构软件" class="headerlink" title="C/S 架构软件"></a>C/S 架构软件</h1><p>client 客户端<br>server 服务端<br>LOL</p>
-<p>C/C++ C# sharp  Qt:Adobe LOL </p>
-<h1 id="B-S网站"><a href="#B-S网站" class="headerlink" title="B/S网站"></a>B/S网站</h1><p>B browser浏览器<br>taobao jd bilibili baidu…</p>
-<p>(1)前端：HTML CSS JS(javascript)  -&gt;  React  Vue…<br>(2)后端: Java PHP Nde  Golang Python Mysql Redis</p>
-<h1 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h1><p>Android  Java Kotin<br>ios    Object-C </p>
-<h1 id="mini-b-s"><a href="#mini-b-s" class="headerlink" title="mini b/s"></a>mini b/s</h1><p>mini program<br>小程序<br>uniapp  Taro</p>
-]]></content>
-  </entry>
-  <entry>
     <title>NAS</title>
     <url>/2020/12/12/NAS/</url>
     <content><![CDATA[<p>NAS(Network Attached Storge)网络附属云储存</p>
@@ -365,6 +332,39 @@ connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
 ]]></content>
   </entry>
   <entry>
+    <title>计算机图形学</title>
+    <url>/2020/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/</url>
+    <content><![CDATA[<p>计算机图形学</p>
+<a id="more"></a>  
+
+<p>仿真，几何，渲染，图形学三大方向<br> Visualization 可视化</p>
+<p>光栅化<br>30 FPS 称为实时</p>
+<p>OpenGL DirectX VulKan  都是图形学API  </p>
+<p>Maya/3DS MAX Blender ,VR / game development using unity / Unreal Engine</p>
+<p>图形学 和 计算机视觉<br>一切需要猜测的内容是视觉研究对象，做分析，理解和猜测</p>
+<p>图形学 computer graphics(rendering)  MODEL-&gt;IMAGE<br>计算机视觉 computer vision  IMAGE-&gt;MODEL</p>
+<p>Computer Vision /Deep learning </p>
+]]></content>
+      <tags>
+        <tag>计算机基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件架构</title>
+    <url>/2020/11/20/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/</url>
+    <content><![CDATA[<p>常见软件架构</p>
+<a id="more"></a>  
+
+<h1 id="系统软件"><a href="#系统软件" class="headerlink" title="系统软件"></a>系统软件</h1><p>驱动软件等等 用C/C++</p>
+<h1 id="C-S-架构软件"><a href="#C-S-架构软件" class="headerlink" title="C/S 架构软件"></a>C/S 架构软件</h1><p>client 客户端<br>server 服务端<br>LOL</p>
+<p>C/C++ C# sharp  Qt:Adobe LOL </p>
+<h1 id="B-S网站"><a href="#B-S网站" class="headerlink" title="B/S网站"></a>B/S网站</h1><p>B browser浏览器<br>taobao jd bilibili baidu…</p>
+<p>(1)前端：HTML CSS JS(javascript)  -&gt;  React  Vue…<br>(2)后端: Java PHP Nde  Golang Python Mysql Redis</p>
+<h1 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h1><p>Android  Java Kotin<br>ios    Object-C </p>
+<h1 id="mini-b-s"><a href="#mini-b-s" class="headerlink" title="mini b/s"></a>mini b/s</h1><p>mini program<br>小程序<br>uniapp  Taro</p>
+]]></content>
+  </entry>
+  <entry>
     <title>R2S</title>
     <url>/2020/12/17/R2S/</url>
     <content><![CDATA[<p>疫情期间买的软路由</p>
@@ -403,7 +403,8 @@ connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
   <entry>
     <title>windows server</title>
     <url>/2020/12/21/windows-server/</url>
-    <content><![CDATA[<a id="more"></a>
+    <content><![CDATA[<p>windows server</p>
+<a id="more"></a>
 
 
 <h1 id="hyper-V"><a href="#hyper-V" class="headerlink" title="hyper-V"></a>hyper-V</h1><p>虚拟化技术</p>
@@ -444,12 +445,49 @@ connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
   <entry>
     <title>Adobe</title>
     <url>/2020/12/22/Adobe/</url>
-    <content><![CDATA[<a id="more"></a>
+    <content><![CDATA[<p>Adobe快捷操作</p>
+<a id="more"></a>
 
 
 
 <h1 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h1><p>ctrol+D可以取消选中框</p>
 <h1 id="Pr"><a href="#Pr" class="headerlink" title="Pr"></a>Pr</h1>]]></content>
+  </entry>
+  <entry>
+    <title>VS-VTK-QT安装与配置</title>
+    <url>/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>VS+VTK+QT安装与配置</p>
+<a id="more"></a>
+<p>visualstudio 2019，VTK 8.2，QT 5.14.0</p>
+<h1 id="VTK安装"><a href="#VTK安装" class="headerlink" title="VTK安装"></a>VTK安装</h1><p>安装cmake，打开cmake</p>
+<p>where is the source code选择vtk解压包，也就是源文件包</p>
+<p>where to build the binaries 选择 新建一个文件夹，比如bin</p>
+<p>然后选择configue，弹窗按照visualstudio版本选择即可，</p>
+<p>configure后，选择安装插件，</p>
+<ol>
+<li>选择example，生成VTK提供例子代码</li>
+<li>修改prefix路径，这个文件保存bin，include，lib文件</li>
+<li>选择qt组件，包括SupportQtOpenGL和Group_Qt,configure后选择QT_DESIGNER_PLUGUIN生成插件</li>
+</ol>
+<p>configure可以多点几次，知道没有红色选项。</p>
+<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/cmake01.png"></p>
+<p>然后选择generate，没有报错后，打开bin文件夹会有VTK.sln文件双击打开，或者直接点边上Open Project</p>
+<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/VS01.png"></p>
+<p>VS界面中重点关注，Release和Debug版本，位数选X64。一般情况编译会把两个都编译一次。<br>选择好一个版本后(Debug)，选中ALL_BUILD右键选择生成，VS开始编译VTK包，第一次编译大约半小时。<br>编译完成后，选中INSTALL右键选择仅用于此项目——仅生成INSTALL(B),这一步后VTK的依赖包会安装到cmake中修改的修改prefix路径。这些依赖包用来配置VTK工程环境。</p>
+<p>此时Debug版本已编译完成，依赖包安装到prefix路径。把prefix路径中的文件拷贝到另外一个文件夹并做好标记，因为在编译Release时，依赖会被覆盖。</p>
+<p>在visualstudio中编译好两个版本，整理好依赖包后，新建一个工程。</p>
+<p>选择DebugX64版本，选择属性管理器（视图中添加），选中Debug|X64 右键新建属性表，属性表中修改三个参数。</p>
+<ol>
+<li>VC++中包含文件，选到Debug版本的include文件夹</li>
+<li>VC++中库文件，选到Debug版本的lib文件夹</li>
+<li>链接器——输入——附加依赖项中添加lib文件夹下所有lib文件名称</li>
+</ol>
+<p>第三步技巧：<br>新建txt文件，添加内容：DIR <em>.</em>  /B &gt;LIST.TXT，修改为bat文件，会自动生成名称list，再删除不要的内容后复制即可。</p>
+<p>到此，DebugX64版本的属性表就设置完成，同样的可以设置ReleaseX64版本的属性表，这两个属性表可以保存一下，以后新建项目都可以用。</p>
+<p>接下来，选择解决方案，选中项目右键属性中——调试——环境中添加PATH=%PATH%;D:\VTK\VTKLibrary820\ReleaseX64\bin（PATH=%PATH%;+debug或者release版本中bin的文件夹路径）<br><strong>环境选项卡下不要选从父级货项目默认设置继承</strong></p>
+<p>到此VTK工程环境安装完毕</p>
+<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/VS02.png"></p>
+<h1 id="Qt安装"><a href="#Qt安装" class="headerlink" title="Qt安装"></a>Qt安装</h1>]]></content>
   </entry>
   <entry>
     <title>科学上网</title>
