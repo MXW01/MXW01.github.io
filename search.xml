@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Purpose of my Blog</title>
+    <url>/2020/11/08/Purpose-of-my-Blog/</url>
+    <content><![CDATA[<p>MXW01的简单自我介绍，Blog的目的、目标与计划更新内容。</p>
+<a id="more"></a>
+
+<h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><p>目前帝都在读研究生，学过一点机械，一点控制，一点计算机，拧过螺丝，敲过代码。总体而言，属于底层的技术工。现在以计算机为主。</p>
+<p>打工人 打工魂….</p>
+<p>开了很多Blog，慢慢填，作为笔记本，针不戳！</p>
+<h1 id="Blog的目的"><a href="#Blog的目的" class="headerlink" title="Blog的目的"></a>Blog的目的</h1><p>学习笔记</p>
+<h1 id="Blog的目标"><a href="#Blog的目标" class="headerlink" title="Blog的目标"></a>Blog的目标</h1><p>&emsp;<br>&emsp;<br>&emsp;<br>&emsp;</p>
+<h1 id="学习的计划"><a href="#学习的计划" class="headerlink" title="学习的计划"></a>学习的计划</h1><p>&emsp;<br>&emsp;<br>&emsp;<br>&emsp;</p>
+]]></content>
+      <tags>
+        <tag>唯一</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux指令（备忘录）</title>
+    <url>/2020/11/09/Linux%E6%8C%87%E4%BB%A4%EF%BC%88%E5%A4%87%E5%BF%98%E5%BD%95%EF%BC%89/</url>
+    <content><![CDATA[<p>Linux指令</p>
+<a id="more"></a>
+
+
+<p>grep 命令</p>
+<p>Linux grep 命令用于查找文件里符合条件的字符串。<br>grep 指令用于查找内容包含指定的范本样式的文件，如果发现某文件的内容符合所指定的范本样式，预设 grep 指令会把含有范本样式的那一列显示出来。若不指定任何文件名称，或是所给予的文件名为 <code>-</code>，则 grep 指令会从标准输入设备读取数据。</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grep [-abcEFGhHilLnqrsvVwxy][-A&lt;显示列数&gt;][-B&lt;显示列数&gt;][-C&lt;显示列数&gt;][-d&lt;进行动作&gt;][-e&lt;范本样式&gt;][-f&lt;范本文件&gt;][--help][范本样式][文件或目录...]</span><br></pre></td></tr></table></figure>
+
+
+<p>cat 命令<br>cat（英文全拼：concatenate）命令用于连接文件并打印到标准输出设备上。</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat [-AbeEnstTuv] [--help] [--version] fileName</span><br></pre></td></tr></table></figure>
+
+<p>pwd 命令 当前目录<br>cd 命令<br><code>cd /</code> 根目录<br><code>cd ..</code> 或者 <code>cd .. //</code>  往回跳一层<br><code>cd ../..</code>  往回跳两层<br><code>cd</code> 和 <code>cd ~</code> 都可进入当前用户主目录，即 <code>/root</code> 目录</p>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git使用方法学习</title>
+    <url>/2020/11/09/git%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>计划使用github托管一部分代码</p>
+<a id="more"></a>
+
+<p>之前学过git使用，了解过一部分git指令（现在忘光了）。<br>先占一个位置，学一点再更新。</p>
+<p>Udemy - Git from Basics to Advanced Practical Guide for Developers</p>
+<p><strong>lessons 1</strong> </p>
+<p>a <strong>shell</strong> is a terminal application used to interface with an operating system</p>
+<p>git config –global user.name “”</p>
+<p>git config –global user.email “”</p>
+<p>git config –global list</p>
+<p>git config –global core.editor “”</p>
+<p><strong>lessons 2</strong></p>
+<p><strong>stage area</strong> – the area where we place files that we want to commit</p>
+<p>git init</p>
+<p>git add license.txt README.md</p>
+<p>git status</p>
+<p>control+L – clear </p>
+<p>git add *.java</p>
+<p>git status -s</p>
+<p>git status .       – all files </p>
+<p>git commit -m “init commit”</p>
+<p>git status –help       –web<br>git status -h           –bash</p>
+<p>git commit -a -m “new changes”</p>
+<p>git rm –cached .classpath </p>
+<p>–cached   keep file in your working directory , remove it from the staging area</p>
+<p>git rm –r –cached bin/</p>
+<p>touch .gitignore      –create new file</p>
+<p>nano .gitignore</p>
+<p>git  log       –check git history</p>
+]]></content>
+  </entry>
+  <entry>
     <title>hexo next主题持续优化</title>
     <url>/2020/11/09/hexo-next%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96/</url>
     <content><![CDATA[<p>已做的优化，发现的bug统计，计划修改的样式记录。</p>
@@ -30,208 +104,239 @@
       </tags>
   </entry>
   <entry>
-    <title>int main(int argc,char* argv[])</title>
-    <url>/2021/01/07/int-main-int-argc-char-argv/</url>
-    <content><![CDATA[<p>关于int main(int argc,char* argv[])详解</p>
+    <title>研究方向变更</title>
+    <url>/2020/11/09/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E5%8F%98%E6%9B%B4/</url>
+    <content><![CDATA[<p>研究内容从机器人硬件改为医学图像处理</p>
+<a id="more"></a>
+
+
+<p>目前学习了 数字图像处理，计算机图形学</p>
+<p>软件学习了VTK ITK QT </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>English words</title>
+    <url>/2020/11/10/English-words-in-IT/</url>
+    <content><![CDATA[<p>English words</p>
+<a id="more"></a>
+
+<p>slash  斜线</p>
+<p>recap  扼要重述</p>
+<p>scope 范围，视野</p>
+<p>simultaneously  同时的</p>
+<p>snapshot 快照</p>
+<p>technically  专门的，技术上的，学术的</p>
+<p>overrides 重写，撤销</p>
+<p>intuitive 直观的，直觉的</p>
+<p>latency 潜伏的</p>
+<p>widget 小部件，装饰物</p>
+<p>geometry 几何</p>
+<p>exempt 免除，豁免</p>
+<p>contour 轮廓的</p>
+<p>geodesic 测量的</p>
+<p>diffusion 扩散，传播</p>
+<p>conductance 导率，电导</p>
+<p>deprecated 弃用</p>
+<p>undo 取消</p>
+<p>annotation 注释</p>
+<p>crop 修剪</p>
+<p>pulmonary arteries 肺 动脉</p>
+<p>Dilatation 扩张</p>
+<p>sub-class 子类</p>
+<p>trade off 权衡，舍弃</p>
+<p>curve 曲线</p>
+<p>rasterization 光栅化</p>
+<p>fundamental 基本的</p>
+<p>synthesize  合成</p>
+<p>parse解析</p>
+<p>registration 注册</p>
+<p>segmentation 分割</p>
+<p>digest 消化</p>
+<p>workflow 工作流</p>
+<p>spatial 空间的</p>
+<p>polyline 多叉线，多段线</p>
+<p>topology 拓扑学</p>
+<p>customize 定制</p>
+<p>mesh 网格</p>
+<p>wrap 包，缠绕，掩护</p>
+<p>scalar 标量的</p>
+<p>opacity 不透明度</p>
+<p>filter 滤波器</p>
+<p>Renderer 渲染，描绘</p>
+<p>Mapper 绘图</p>
+<p>backwards compatibility 向后兼容</p>
+<p>toolkit 工具箱</p>
+<p>dashboard 仪表盘</p>
+<p>binaries 二进制</p>
+<p>cross-platform 跨平台</p>
+<p>inheritance and collaboration  继承和协作</p>
+<p>capture dependencies 获取依赖项</p>
+<p>invoke  调用   invocation</p>
+<p>extract 提取</p>
+<p>executables 可执行文件</p>
+<p>customize 定制</p>
+<p>Rendering Engine  绘制/渲染引擎</p>
+<p>dialog 对话</p>
+<p>cache  缓存</p>
+<p>scroll down 向下滚动</p>
+<p>toggle 切换/开关</p>
+<p>makefile 生成文件</p>
+<p>prompt 提示</p>
+<p>batch script 批处理脚本</p>
+<p>shortcut 快捷方式</p>
+<p>drag-and-drop 拖放</p>
+<p>modify the properties of the shortcut  修改属性</p>
+<p>System Architecture 系统架构</p>
+<p>manipulate 操纵</p>
+<p>remainder 剩余的</p>
+<p>raw 原始的</p>
+<p>annotation 标注</p>
+<p>opacity 透明度 ambient, diffuse, and specular coefficient 环境系数、漫射系数和镜面系数</p>
+<p>clip  剪裁</p>
+<p>focal  焦点的 stereo, anti-aliasing, motion blur 立体，抗锯齿，运动模糊</p>
+<p>derivative 派生的</p>
+<p>inheritance 继承</p>
+<p>spheres and cylinders  球体和圆柱体</p>
+<p>dataset 数据集</p>
+]]></content>
+      <tags>
+        <tag>English</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件使用</title>
+    <url>/2020/11/10/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>待更新</p>
+<a id="more"></a>
+
+
+<h1 id="visual-studio"><a href="#visual-studio" class="headerlink" title="visual studio"></a>visual studio</h1><p>一个vs窗口只能打开一个解决方案，一个解决方案可以包括多个工程项目。<br>ctrol + K + C 快速注释<br>ctrol + K + U 快速取消注释</p>
+<h1 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h1><p>windows + E 快速打开资源管理器</p>
+<p>windows + R input control can open 控制面板</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>学习方法改进</title>
+    <url>/2020/11/11/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E6%94%B9%E8%BF%9B/</url>
+    <content><![CDATA[<p>学习方法</p>
+<a id="more"></a>
+
+<p>之前觉得看书效率还不错，在连啃几本厚书后（600+页），发现吸收较差。<br>同时，在B站和MOOC上发现很多不错的教程，计划学习方法转为看教学视频，记blog，找实例或者项目做的形式。</p>
+<h1 id="B站"><a href="#B站" class="headerlink" title="B站"></a>B站</h1><p>B站上的IT视频比较丰富，观看人数也很多，弹幕也有解答。<br>之前曾在B站看过stm32视频，之前不常在B站看教学视频因为校园网流量太少。现在多了一些，4G流量也很多，计划多看一些。<br>复习 ：<br>C++<br>数据结构与算法<br>计算机系统<br>计算机网络<br>计算机接口与组成<br>Linux</p>
+<p>学习：<br>QT<br>Opencv<br>深度学习<br>Java</p>
+<h1 id="MOOC"><a href="#MOOC" class="headerlink" title="MOOC"></a>MOOC</h1><p>数字图像处理 第四周-第六讲 灰度的形态学</p>
+<p>慕课上有一些专业的课还是很不错。<br>之前看了一个医学图像处理的课，还有ROS系统的课。</p>
+]]></content>
+      <tags>
+        <tag>学习方法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>QT学习</title>
+    <url>/2020/11/12/QT%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>已看完一部教学视频，待总结。</p>
+<a id="more"></a>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p><strong>1</strong>.在Qt中主要有三种顶层窗口：</p>
+<p>QWidget：最基础的窗口，所有窗口及控件都继承QWidget。</p>
+<p>QDialog：对话框窗口，可类比Windows中的对话框。</p>
+<p>QMainWindow：主窗口，一般主窗口会包括标题栏，菜单栏，工具栏，中心部件，停靠窗口，状态栏等。可类比桌面应用程序。</p>
+<p><strong>2</strong>. VS2019+Qt乱码问题：vs用的GBK，Qt用的UTF-8，两种方法。<br>第一种：头文件位置加入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#pragma execution_character_set(&quot;utf-8&quot;)</span><br></pre></td></tr></table></figure>
+<p>第二种： vs2019的设置中可以通过来修改执行字符集  /execution-charset:utf-8</p>
+<p><img src="/2020/11/12/QT%E5%AD%A6%E4%B9%A0/vs2019setting.png"></p>
+<p><strong>3</strong>.</p>
+<h1 id="信号和槽"><a href="#信号和槽" class="headerlink" title="信号和槽"></a>信号和槽</h1><p>消息传递机制</p>
+<p>在面向对象的编程方法中，都会创建很多的实例，每个实例都是单独的，要想每个实例能够协同合作，那么就会需要一种对象间传递消息的机制，在很多框架中都采用回调函数来进行对象间信息传递。</p>
+<p>回调是一个指向函数的指针，如果想要一个处理函数通知一些事件，你需要将这个指针传递给处理函数。处理函数在适当时间调用回调函数。MFC就是使用的回调函数，但回调可能是不直观的，不易于理解的，并且也不能保证是类型安全的。</p>
+<p>安装 MS  自带编译器，部分编码与visual stdio不一样</p>
+<p>基类： QWidget（父类） QMainWindow、QDialog（子类）派生</p>
+<p>QMainWindow 多菜单栏 工具 状态栏<br>QDialog 对话框</p>
+<p>.pro - project文件<br>.cpp -</p>
+<p>窗口.cpp 和 .c</p>
+<p> QApplication a 有且只有一个<br> myWidget w；实例化窗口对象<br>w.show() 调用show函数显示窗口<br>return a.exec() 消息循环机制，代码阻塞</p>
+<p>QT       += core gui  //Qt包含模块</p>
+<p>greaterThan(QT_MAJOR_VERSION, 4): QT += widgets //大于4版本以上  widgets</p>
+<p>TARGET = 01_FirstProject    //目标 生成.exe文件 文件名称<br>TEMPLATE = app              //模板 应用程序模板</p>
+<p>SOURCES += <br>        main.cpp \      //源码<br>        mywidge.cpp</p>
+<p>HEADERS += <br>        mywidge.h         //头文件</p>
+<pre><code>QPushButton * btn2 = new QPushButton ;
+btn2-&gt;setText(&quot;关闭&quot;);
+btn2-&gt;move(100,0);
+btn2-&gt;resize(50,50);
+btn2-&gt;setParent(this);
+
+connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
+<p>信号槽的优点，松散耦合，信号发送端和接收端 本身是没有关联的，通过一个connect连接，将两端 耦合在一起<br>参数1 信号的发送者 参数2 发送的信号（函数的地址） 参数3 信号的接受者 参数4 处理的槽函数（函数的地址）<br>connect( myBtn, &amp;QPushButton::clicked, this, &amp;QWidget::close );</p>
+<p>信号可以连接信号</p>
+<p>一个信号可以连接多个槽函数<br>多个信号可以连接同一个槽函数<br>信号和槽函数的参数类型必须一一对应<br>信号和槽的参数个数可以不一致  信号的个数可以多于槽个数</p>
+<p>QDialog</p>
+<p>事件过滤器</p>
+<p>1，给控件安装事件过滤器<br>2. 重写事件</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>软件架构</title>
+    <url>/2020/11/20/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/</url>
+    <content><![CDATA[<p>常见软件架构</p>
 <a id="more"></a>  
 
-
-<p>argc是命令行总的参数个数<br>argv[]为保存命令行参数的字符串指针，其中第0个参数是程序的全名，以后的参数为命令行后面跟的用户输入的参数。</p>
-<p>argv参数是字符串指针数组，其各元素值为命令行中各字符串(参数均按字符串处理)的首地址。 指针数组的长度即为参数个数argc。数组元素初值由系统自动赋予。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int   main(int   argc,   char*   argv[])   </span><br><span class="line">&#123;   </span><br><span class="line">int   i;   </span><br><span class="line">for   (i   &#x3D;   0;   i&lt;argc;   i++)   </span><br><span class="line">cout&lt;&lt;argv[i]&lt;&lt;endl;   </span><br><span class="line">cin&gt;&gt;i;   </span><br><span class="line">return   0;   </span><br><span class="line">&#125;   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>执行时敲入<br>F:\MYDOCU<del>1\TEMPCODE\D1\DEBUG\D1.EXE   aaaa   bbb   ccc   ddd<br>输出如下：<br>F:\MYDOCU</del>1\TEMPCODE\D1\DEBUG\D1.EXE<br>aaaa<br>bbb<br>ccc<br>ddd   </p>
-<p>char   *argv[]是一个字符数组,其大小是int   argc,主要用于命令行参数   argv[]   参数，数组里每个元素代表一个参数;<br>比如你输入<br>test   a.c   b.c   t.c<br>则<br>argc   =   4   </p>
-<p>argv[0]   =   “test”<br>argv[1]   =   “a.c”<br>argv[2]   =   “b.c”<br>argv[3]   =   “t.c”</p>
+<h1 id="系统软件"><a href="#系统软件" class="headerlink" title="系统软件"></a>系统软件</h1><p>驱动软件等等 用C/C++</p>
+<h1 id="C-S-架构软件"><a href="#C-S-架构软件" class="headerlink" title="C/S 架构软件"></a>C/S 架构软件</h1><p>client 客户端<br>server 服务端<br>LOL</p>
+<p>C/C++ C# sharp  Qt:Adobe LOL </p>
+<h1 id="B-S网站"><a href="#B-S网站" class="headerlink" title="B/S网站"></a>B/S网站</h1><p>B browser浏览器<br>taobao jd bilibili baidu…</p>
+<p>(1)前端：HTML CSS JS(javascript)  -&gt;  React  Vue…<br>(2)后端: Java PHP Nde  Golang Python Mysql Redis</p>
+<h1 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h1><p>Android  Java Kotin<br>ios    Object-C </p>
+<h1 id="mini-b-s"><a href="#mini-b-s" class="headerlink" title="mini b/s"></a>mini b/s</h1><p>mini program<br>小程序<br>uniapp  Taro</p>
 ]]></content>
   </entry>
   <entry>
-    <title>bios</title>
-    <url>/2020/12/31/bios/</url>
-    <content><![CDATA[<p>bios</p>
+    <title>VTK使用</title>
+    <url>/2020/11/20/VTK%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>Study_VTK_Together 第一节26.05</p>
 <a id="more"></a>  
-
-<p>Asset Tag  资产标签  standard</p>
-<p>UUID 是 通用唯一识别码（Universally Unique Identifier）的缩写</p>
-<p>ACPI表示高级配置和电源管理接口（Advanced Configuration and Power Management Interface）。<br>ACPI SETTINGS也就是高级电源管理设置</p>
-<p>Wake on LAN 局域网换新</p>
-<p>Intel Virtualization Technology intel虚拟化技术</p>
-<p>Access level 访问级别</p>
-<p>variables 变量</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>快速打印技术</title>
-    <url>/2020/12/31/%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E6%8A%80%E6%9C%AF/</url>
-    <content><![CDATA[<p>热升华，ZINK，Instax</p>
-<a id="more"></a>
-
-<h1 id="ZINK"><a href="#ZINK" class="headerlink" title="ZINK"></a>ZINK</h1><p>ZINK即“零墨水纸张”技术。它所使用的相纸内含ZINK专利染料晶体，可以在加热至不同温度后呈现出彩色。</p>
-<p>优点：成像速度快</p>
-<p>不足：色彩不太稳定</p>
-<p>代表产品：</p>
-<p>宝丽来（ZINK是由原宝丽来旗下部门研发的）、LG Pocket Photo、HP Sprocket/小印、佳能PV-123等，MOTO摩印附件和刚刚发布的华为便携打印机也采用ZINK技术。</p>
-<p>耗材成本：</p>
-<p>只需要更换相纸（专用）。主流规格为2×3英寸（和富士instax mini尺寸相同），价格约3元/张；现在也有3×4英寸相纸（和富士instax wide尺寸相同），价格约6元/张。</p>
-<p>ZINK其实跟热敏纸的技术类似，时间长了就会褪色，虽然厂商在表面加了一层覆膜，起到减缓照片氧化的作用，<strong>但相片打印出来基本两年左右，也会模糊不清了的</strong>；跟Instax一样，ZINK也怕潮、怕光、怕热。</p>
-<h1 id="热升华"><a href="#热升华" class="headerlink" title="热升华"></a>热升华</h1><p>热升华打印机采用固体染料，打印时会将染料直接加热至气态（即升华），然后再将气体喷射到打印介质上。常见的热升华打印机在打印一张照片时需要往复4次，前3次分别是喷涂黄、红、青颜色，第4次则是覆膜。</p>
-<p>优点：画质优秀，照片防水、防污性能好且能持久保持色彩</p>
-<p>不足：对灰尘比较敏感（落在色带或相纸上会形成暗斑）</p>
-<p>代表产品：</p>
-<p>佳能炫飞系列、富士小俏印、以及米家照片打印机 。根据佳能这边的情况，热升华打印机的定位是要高于ZINK打印机的。</p>
-<p>耗材成本：</p>
-<p>需要更换色带（专用）和相纸（通用）。以佳能为例，使用原厂耗材的总成本约2元/张。</p>
-<h1 id="一次成像"><a href="#一次成像" class="headerlink" title="一次成像"></a>一次成像</h1><p>采用和拍立得（富士instax系列）相机相同的一次成像底片，内部结构有点类似扫描仪，是将照片文件转换为光信号然后“扫描”给一次成像底片曝光。相比一次成像相机，因为先得到了照片再进行输出，因此成功率更高，并且可以反复输出（这让一些明星签名照身价大跌）。</p>
-<p>优点：具有一次成像的独特风格</p>
-<p>不足：精度不高，照片耐久性较差</p>
-<p>代表产品：</p>
-<p>富士SP系列打印机，富士SQ10、SQ20数码一次成像相机。</p>
-<p>耗材成本：</p>
-<p>只需要更换相纸。目前主要是2×3英寸相纸（mini尺寸），价格约3.5元/张；2.4×2.4英寸方形相纸（square尺寸），价格约6.5元/张。</p>
-<h1 id="instax"><a href="#instax" class="headerlink" title="instax"></a>instax</h1><p>银盐技术<br>银盐技术是通过光和相纸内的化学试剂发生反应之后经过滚压，在定影片后面呈现出颜色，instax拍立得相纸就是使用这个技术的。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>VS-VTK-QT安装与配置</title>
-    <url>/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>VS+VTK+QT安装与配置</p>
-<a id="more"></a>
-<p>visualstudio 2019，VTK 8.2，QT 5.14.0</p>
-<h1 id="VTK安装"><a href="#VTK安装" class="headerlink" title="VTK安装"></a>VTK安装</h1><p>安装cmake，打开cmake</p>
-<p>where is the source code选择vtk解压包，也就是源文件包</p>
-<p>where to build the binaries 选择 新建一个文件夹，比如bin</p>
-<p>然后选择configue，弹窗按照visualstudio版本选择即可，</p>
-<p>configure后，选择安装插件，</p>
-<ol>
-<li>选择example，生成VTK提供例子代码</li>
-<li>修改prefix路径，这个文件保存bin，include，lib文件</li>
-<li>选择qt组件，包括SupportQtOpenGL和Group_Qt,configure后选择QT_DESIGNER_PLUGUIN生成插件</li>
-</ol>
-<p>configure可以多点几次，知道没有红色选项。</p>
-<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/cmake01.png"></p>
-<p>然后选择generate，没有报错后，打开bin文件夹会有VTK.sln文件双击打开，或者直接点边上Open Project</p>
-<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/VS01.png"></p>
-<p>VS界面中重点关注，Release和Debug版本，位数选X64。一般情况编译会把两个都编译一次。<br>选择好一个版本后(Debug)，选中ALL_BUILD右键选择生成，VS开始编译VTK包，第一次编译大约半小时。<br>编译完成后，选中INSTALL右键选择仅用于此项目——仅生成INSTALL(B),这一步后VTK的依赖包会安装到cmake中修改的修改prefix路径。这些依赖包用来配置VTK工程环境。</p>
-<p>此时Debug版本已编译完成，依赖包安装到prefix路径。把prefix路径中的文件拷贝到另外一个文件夹并做好标记，因为在编译Release时，依赖会被覆盖。</p>
-<p>在visualstudio中编译好两个版本，整理好依赖包后，新建一个工程。</p>
-<p>选择DebugX64版本，选择属性管理器（视图中添加），选中Debug|X64 右键新建属性表，属性表中修改三个参数。</p>
-<ol>
-<li>VC++中包含文件，选到Debug版本的include文件夹</li>
-<li>VC++中库文件，选到Debug版本的lib文件夹</li>
-<li>链接器——输入——附加依赖项中添加lib文件夹下所有lib文件名称</li>
-</ol>
-<p>第三步技巧：<br>新建txt文件，添加内容：DIR <em>.</em>  /B &gt;LIST.TXT，修改为bat文件，会自动生成名称list，再删除不要的内容后复制即可。</p>
-<p>到此，DebugX64版本的属性表就设置完成，同样的可以设置ReleaseX64版本的属性表，这两个属性表可以保存一下，以后新建项目都可以用。</p>
-<p>接下来，选择解决方案，选中项目右键属性中——调试——环境中添加PATH=%PATH%;D:\VTK\VTKLibrary820\ReleaseX64\bin（PATH=%PATH%;+debug或者release版本中bin的文件夹路径）<br><strong>环境选项卡下不要选从父级货项目默认设置继承</strong></p>
-<p>到此VTK工程环境安装完毕</p>
-<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/VS02.png"></p>
-<h1 id="Qt安装"><a href="#Qt安装" class="headerlink" title="Qt安装"></a>Qt安装</h1><p>Qt安装mscv2017和mscv2017_64，前者为32位，vs中使用后者64位。</p>
-<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/QT01.png"></p>
-<p>vs中扩展——管理扩展——联机——搜索Qt——下载Qt Visual Studio Tools，下载好重启VS</p>
-<p>vs中扩展——Qt VS Tools——Option——add增加mscv2017_64目录，默认选择64位的，建议只添加64位。</p>
-<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/QT02.png"></p>
-<p>至此，VS2019支持Qt插件</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>科学上网</title>
-    <url>/2020/12/29/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</url>
-    <content><![CDATA[<p>科学上网</p>
-<a id="more"></a>
-
-
-
-<h1 id="速度"><a href="#速度" class="headerlink" title="速度"></a>速度</h1><p>包括：<strong>Xray</strong>、<strong>V2ray</strong>、<strong>trojan-go</strong><br><img src="/2020/12/29/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91.png"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Adobe</title>
-    <url>/2020/12/22/Adobe/</url>
-    <content><![CDATA[<p>Adobe快捷操作</p>
-<a id="more"></a>
-
-
-
-<h1 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h1><p>ctrol+D可以取消选中框</p>
-<h1 id="Pr"><a href="#Pr" class="headerlink" title="Pr"></a>Pr</h1>]]></content>
-  </entry>
-  <entry>
-    <title>windows server</title>
-    <url>/2020/12/21/windows-server/</url>
-    <content><![CDATA[<p>windows server</p>
-<a id="more"></a>
-
-
-<h1 id="hyper-V"><a href="#hyper-V" class="headerlink" title="hyper-V"></a>hyper-V</h1><p>虚拟化技术</p>
-<h1 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h1><p>路径 服务器管理工具——工具——计算机管理——磁盘管理</p>
-<p>联机</p>
-<p>MBR 最多四个分区，三个主分区，剩下的都是扩展分区，逻辑磁盘，最大支持单盘2T<br>GPT 最大不限制，最大支持容量可以超2T</p>
-<p>做RAID后，单盘容量会超过2T，所以最好选择GPT格式。</p>
-<p>raid0 带区卷<br>raid1 镜像卷  必须两块<br>raid-5      实际容量，为容量减1<br>需要动态磁盘</p>
-<h1 id="DNS服务器"><a href="#DNS服务器" class="headerlink" title="DNS服务器"></a>DNS服务器</h1><h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h1><ul>
-<li>gpedit.msc——组策略</li>
-<li>计算机管理——用户和组</li>
-<li>管理工具——工具</li>
-<li>windows凭证——密钥</li>
-<li>compmgmt.msc———计算机管理</li>
-</ul>
-<h1 id="已做修改"><a href="#已做修改" class="headerlink" title="已做修改"></a>已做修改</h1><p>1、网卡驱动</p>
-<p>装完网卡驱动后，增加中文语言包</p>
-<p>2、基础设置<br>windows server 2019  账户和共享设置</p>
-<p>3、改本地IP访问<br>首先要保证机子都在同一个工作组、使用管理员账户并保证网络互通、开启了共享的情况下.到:<br>1.控制面板－管理工具－本地安全设置－本地策略－用户权利指派－从网络访问计算机－双击输入guest。<br>2.拒绝从网络访问次计算机－删除带有guest一项。<br>3.安全选项－网络访问：本地账户到共享和安全模式－选择经典。<br>4.安全选项－账户:来宾账户- 改为已启用..<br>5.账户：使用空密码到本地改成禁用。</p>
-<p>4.增加smbv1支持</p>
-<p>SMB v1 协议</p>
-<p>察觉<br>Get-WindowsOptionalFeature -Online -FeatureName SMB1Protocol<br>禁用<br>Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol<br>启用：<br>Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol</p>
-<p>5.安装Windows Admin Center</p>
-<p>微软下载安装包即可</p>
-<p>6.该服务器证书吊销不能被检验，因为吊销服务器脱机</p>
-<p>解决方法：<br>Internet<br>Explorer&gt;“工具&gt;”Internet选项&gt;“高级”选项卡&gt;安全选项组,取消选中框旁边的选项，“检查服务器证书吊销”。<br>（需要Internet Explorer的重新启动才能生效）</p>
-<p>7.高级共享设置，无法打开时候，需要打开服务。</p>
-<p>第一步打开我的电脑————计算机管理器————服务与应用程序————服务————启动————Function Discovery Resource Publication、SSD Discovery 、UPnP Device Host三个服务</p>
-<p>第二步、1.进入网络–&gt;网络和共享中心—&gt;高级共享设置，打开“家庭工作”，在“网络发现中选择“启用网络发现”，在“文件和打印机共享”选择“启用文件和打印机共享”，在“密码保护的共享”选“关闭密码共享”。</p>
-<p>8.开机启动软件windows server<br>批处理文件bat格式为：<br>格式为 ：  start + 空格 + 引号 +空格+ 程序目录</p>
-<p><img src="/2020/12/21/windows-server/bat.png"></p>
-<p>启动目录：<br>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</p>
-<p>延时启动<br> 启动程序时为了避免阻塞，可以设置一定时间的延迟，一个程序启动后再规定时间后再启动其他程序，可以通过ping本机实现延迟的方法实现该功能，例如</p>
-<p>ping 127.0.01 -n 2 ，这行命令代表的是ping 本地网卡 ，-n后面的参数代表ping的次数，由于ping 命令是一秒执行一次 ，所以这条命令就实现了延迟2秒执行的功能。</p>
-<p>加入脚本，注意在启动命令后不要忘了加个&amp;字符</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Synology群晖系统</title>
-    <url>/2020/12/19/Synology%E7%BE%A4%E6%99%96%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>白群晖和黑群晖</p>
-<a id="more"></a>
-
-
-<p>1.白群晖和黑群晖区别</p>
-<p>白群晖是指买 群晖官方的NAS自带的群晖系统。<br>黑群晖是自己组NAS，跑群晖系统。</p>
-<p>白群 黑群 除了硬件上的细节做工外，还有几个地方区别：</p>
-<p>1、远程访问quickconnect只有白群用</p>
-<p>PS：什么是quickconnect，就是群晖自带的远程连接，无视内外网让大家直接远程操控群晖（网页端，APP），不用再去调控什么穿透啊，DDNS之类。</p>
-<p>2、补丁更新</p>
-<p>无论是小补丁还是群晖的大版本变化（4-5,5-6等）都可以第一时间享受</p>
+<p>VTK ITK Qt VisualStudio</p>
+<p>怎么判断图像好不好，简单点就是图像亮不亮</p>
+<h1 id="VTK-Observer-command-设计模式"><a href="#VTK-Observer-command-设计模式" class="headerlink" title="VTK Observer/command 设计模式"></a>VTK Observer/command 设计模式</h1><p>适合交互使用</p>
+<p>Observer模式是一种行为模式，这一模式主要针对两个 对象，Object和Observer。一个Object可以有多个Observer，它定义对象间的一种一对多的依赖关系。当一个object的状态发生改变时，所有依赖于它的observer对象都得到通知并被自动更新。</p>
+<p>command属于对象行为模式，command模式将一个请求封装成一个对象，并提供一致性请求接口。事件调用者只是和接口打交道。不和具体实现交互。</p>
+<h1 id="VTK中的代码"><a href="#VTK中的代码" class="headerlink" title="VTK中的代码"></a>VTK中的代码</h1><p><strong>snprintf()</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int snprintf ( char * str, size_t size, const char * format, ... );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char buffer[50];</span><br><span class="line">    char* s &#x3D; &quot;runoobcom&quot;;</span><br><span class="line"> </span><br><span class="line">    &#x2F;&#x2F; 读取字符串并存储在 buffer 中</span><br><span class="line">    int j &#x3D; snprintf(buffer, 6, &quot;%s\n&quot;, s);</span><br><span class="line"> </span><br><span class="line">    &#x2F;&#x2F; 输出 buffer及字符数</span><br><span class="line">    printf(&quot;string:\n%s\ncharacter count &#x3D; %d\n&quot;, buffer, j);</span><br><span class="line"> </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>返回值<br>(1) 如果格式化后的字符串长度小于等于 size，则会把字符串全部复制到 str 中，并给其后添加一个字符串结束符 \0；<br>(2) 如果格式化后的字符串长度大于 size，超过 size 的部分会被截断，只将其中的 (size-1) 个字符复制到 str 中，并给其后添加一个字符串结束符 \0，返回值为欲写入的字符串长度。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string:</span><br><span class="line">runoo</span><br><span class="line">character count &#x3D; 10</span><br></pre></td></tr></table></figure>
 <hr>
-<p>而洗白就是让大家可以直接使用quickconnect为目的，同时可以更新小补丁（大补丁还是不行）</p>
-<p>洗白分为软洗和硬洗：</p>
-<p>硬洗就是改变你的机器网卡MAC地址来达成</p>
-<p>软洗就是通过修改启动U盘上的一些配置达成</p>
-<p>硬洗就是除了大版本变化不行外白群所有功能都行了（国行带的迅雷不行，需要通过之前发的方法实现：<a href="http://koolshare.cn/thread-7906-1-2.html%EF%BC%89">http://koolshare.cn/thread-7906-1-2.html）</a></p>
-<p>软洗除了大版本外,DS finder也不能用（网络唤醒），其他都可以用</p>
+<p><strong>atof()</strong><br>C 库函数 double atof(const char *str) 把参数 str 所指向的字符串转换为一个浮点数（类型为 double 型）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   float val;</span><br><span class="line">   char str[20];</span><br><span class="line">   </span><br><span class="line">   strcpy(str, &quot;98993489&quot;);</span><br><span class="line">   val &#x3D; atof(str);</span><br><span class="line">   printf(&quot;字符串值 &#x3D; %s, 浮点值 &#x3D; %f\n&quot;, str, val);</span><br><span class="line"> </span><br><span class="line">   strcpy(str, &quot;runoob&quot;);</span><br><span class="line">   val &#x3D; atof(str);</span><br><span class="line">   printf(&quot;字符串值 &#x3D; %s, 浮点值 &#x3D; %f\n&quot;, str, val);</span><br><span class="line"> </span><br><span class="line">   return(0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">字符串值 &#x3D; 98993489, 浮点值 &#x3D; 98993488.000000</span><br><span class="line">字符串值 &#x3D; runoob, 浮点值 &#x3D; 0.000000</span><br></pre></td></tr></table></figure>
 <hr>
-<p>wget <a href="https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control.sh">https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control.sh</a></p>
-<p><strong>GNU计划</strong></p>
-<p>GNU计划，又称革奴计划，是由Richard Stallman在1983年9月27日公开发起的。它的目标是创建一套完全自由的操作系统。Richard Stallman最早是在net.unix-wizards新闻组上公布该消息，并附带《GNU宣言》等解释为何发起该计划的文章，其中一个理由就是要“重现当年软件界合作互助的团结精神”。为保证GNU软件可以自由地“使用、复制、修改和发布”，所有GNU软件都有一份在禁止其他人添加任何限制的情况下授权所有权利给任何人的协议条款，GNU通用公共许可证（GNU General Public License，GPL）。即“反版权”（或称Copyleft）概念。</p>
-<p><strong>MIT许可证</strong><br>MIT许可证（The MIT License）是许多软件授权条款中，被广泛使用的其中一种。与其他常见的软件授权条款（如GPL、LGPL、BSD）相比，MIT是相对宽松的软件授权条款。<br>被授权人权利<br>被授权人有权利使用、复制、修改、合并、出版发行、散布、再授权及贩售软件及软件的副本。<br>被授权人可根据程序的需要修改授权条款为适当的内容。<br>被授权人义务<br>在软件和软件的所有副本中都必须包含版权声明和许可声明。<br>其他重要特性<br>此授权条款并非属copyleft的自由软件授权条款，允许在自由/开放源码软件或非自由软件（proprietary software）所使用。<br>MIT的内容可依照程序著作权者的需求更改内容。此亦为MIT与BSD（The BSD license, 3-clause BSD license）本质上不同处。<br>MIT条款可与其他授权条款并存。另外，MIT条款也是自由软件基金会（FSF）所认可的自由软件授权条款，与GPL兼容。</p>
+<p>//固定点的映射<br>vtkFixedPointVolumeRayCastMappe：A fixed point mapper for volumes</p>
+<hr>
+<p>using<br>1命名空间的使用<br>using namespace android;<br>2在子类中引用基类的成员<br>using T5Base::test1;<br>3别名指定<br>using Vec = MyVector&lt;T, MyAlloc<T>&gt;;</T></p>
+<hr>
+<p>inline是C++关键字，在函数声明或定义中，函数返回类型前加上关键字inline，即可以把函数指定为内联函数。这样可以解决一些频繁调用的函数大量消耗栈空间（栈内存）的问题。关键字inline必须与函数定义放在一起才能使函数成为内联函数，仅仅将inline放在函数声明前面不起任何作用。inline是一种“用于实现”的关键字，而不是一种“用于声明”的关键字。</p>
+<hr>
+<p>ITK中使用<br>try{<br> // 可能会导致错误的代码<br>} catch(error){<br> // 在错误发生时怎么处理<br>} </p>
+<hr>
+<p>C 库函数 int atoi(const char *str) 把参数 str 所指向的字符串转换为一个整数（类型为 int 型）。</p>
 ]]></content>
   </entry>
   <entry>
-    <title>R2S</title>
-    <url>/2020/12/17/R2S/</url>
-    <content><![CDATA[<p>疫情期间买的软路由</p>
+    <title>计算机图形学</title>
+    <url>/2020/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/</url>
+    <content><![CDATA[<p>计算机图形学</p>
 <a id="more"></a>  
-<p>curl “<a href="http://10.0.0.55/cgi-bin/get_challenge?callback=jQuery112403205033847932084_1608254804043&amp;username=3220190145&amp;ip=10.1.77.67&amp;_=1608254804044&quot;">http://10.0.0.55/cgi-bin/get_challenge?callback=jQuery112403205033847932084_1608254804043&amp;username=3220190145&amp;ip=10.1.77.67&amp;_=1608254804044&quot;</a></p>
+
+<p>仿真，几何，渲染，图形学三大方向<br> Visualization 可视化</p>
+<p>光栅化<br>30 FPS 称为实时</p>
+<p>OpenGL DirectX VulKan  都是图形学API  </p>
+<p>Maya/3DS MAX Blender ,VR / game development using unity / Unreal Engine</p>
+<p>图形学 和 计算机视觉<br>一切需要猜测的内容是视觉研究对象，做分析，理解和猜测</p>
+<p>图形学 computer graphics(rendering)  MODEL-&gt;IMAGE<br>计算机视觉 computer vision  IMAGE-&gt;MODEL</p>
+<p>Computer Vision /Deep learning </p>
 ]]></content>
+      <tags>
+        <tag>计算机基础</tag>
+      </tags>
   </entry>
   <entry>
     <title>NAS</title>
@@ -295,68 +400,469 @@
 ]]></content>
   </entry>
   <entry>
-    <title>计算机图形学</title>
-    <url>/2020/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/</url>
-    <content><![CDATA[<p>计算机图形学</p>
+    <title>R2S</title>
+    <url>/2020/12/17/R2S/</url>
+    <content><![CDATA[<p>疫情期间买的软路由</p>
+<a id="more"></a>  
+<p>curl “<a href="http://10.0.0.55/cgi-bin/get_challenge?callback=jQuery112403205033847932084_1608254804043&amp;username=3220190145&amp;ip=10.1.77.67&amp;_=1608254804044&quot;">http://10.0.0.55/cgi-bin/get_challenge?callback=jQuery112403205033847932084_1608254804043&amp;username=3220190145&amp;ip=10.1.77.67&amp;_=1608254804044&quot;</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Synology群晖系统</title>
+    <url>/2020/12/19/Synology%E7%BE%A4%E6%99%96%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>白群晖和黑群晖</p>
+<a id="more"></a>
+
+
+<p>1.白群晖和黑群晖区别</p>
+<p>白群晖是指买 群晖官方的NAS自带的群晖系统。<br>黑群晖是自己组NAS，跑群晖系统。</p>
+<p>白群 黑群 除了硬件上的细节做工外，还有几个地方区别：</p>
+<p>1、远程访问quickconnect只有白群用</p>
+<p>PS：什么是quickconnect，就是群晖自带的远程连接，无视内外网让大家直接远程操控群晖（网页端，APP），不用再去调控什么穿透啊，DDNS之类。</p>
+<p>2、补丁更新</p>
+<p>无论是小补丁还是群晖的大版本变化（4-5,5-6等）都可以第一时间享受</p>
+<hr>
+<p>而洗白就是让大家可以直接使用quickconnect为目的，同时可以更新小补丁（大补丁还是不行）</p>
+<p>洗白分为软洗和硬洗：</p>
+<p>硬洗就是改变你的机器网卡MAC地址来达成</p>
+<p>软洗就是通过修改启动U盘上的一些配置达成</p>
+<p>硬洗就是除了大版本变化不行外白群所有功能都行了（国行带的迅雷不行，需要通过之前发的方法实现：<a href="http://koolshare.cn/thread-7906-1-2.html%EF%BC%89">http://koolshare.cn/thread-7906-1-2.html）</a></p>
+<p>软洗除了大版本外,DS finder也不能用（网络唤醒），其他都可以用</p>
+<hr>
+<p>wget <a href="https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control.sh">https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control.sh</a></p>
+<p><strong>GNU计划</strong></p>
+<p>GNU计划，又称革奴计划，是由Richard Stallman在1983年9月27日公开发起的。它的目标是创建一套完全自由的操作系统。Richard Stallman最早是在net.unix-wizards新闻组上公布该消息，并附带《GNU宣言》等解释为何发起该计划的文章，其中一个理由就是要“重现当年软件界合作互助的团结精神”。为保证GNU软件可以自由地“使用、复制、修改和发布”，所有GNU软件都有一份在禁止其他人添加任何限制的情况下授权所有权利给任何人的协议条款，GNU通用公共许可证（GNU General Public License，GPL）。即“反版权”（或称Copyleft）概念。</p>
+<p><strong>MIT许可证</strong><br>MIT许可证（The MIT License）是许多软件授权条款中，被广泛使用的其中一种。与其他常见的软件授权条款（如GPL、LGPL、BSD）相比，MIT是相对宽松的软件授权条款。<br>被授权人权利<br>被授权人有权利使用、复制、修改、合并、出版发行、散布、再授权及贩售软件及软件的副本。<br>被授权人可根据程序的需要修改授权条款为适当的内容。<br>被授权人义务<br>在软件和软件的所有副本中都必须包含版权声明和许可声明。<br>其他重要特性<br>此授权条款并非属copyleft的自由软件授权条款，允许在自由/开放源码软件或非自由软件（proprietary software）所使用。<br>MIT的内容可依照程序著作权者的需求更改内容。此亦为MIT与BSD（The BSD license, 3-clause BSD license）本质上不同处。<br>MIT条款可与其他授权条款并存。另外，MIT条款也是自由软件基金会（FSF）所认可的自由软件授权条款，与GPL兼容。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>windows server</title>
+    <url>/2020/12/21/windows-server/</url>
+    <content><![CDATA[<p>windows server</p>
+<a id="more"></a>
+
+
+<h1 id="hyper-V"><a href="#hyper-V" class="headerlink" title="hyper-V"></a>hyper-V</h1><p>虚拟化技术</p>
+<h1 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h1><p>路径 服务器管理工具——工具——计算机管理——磁盘管理</p>
+<p>联机</p>
+<p>MBR 最多四个分区，三个主分区，剩下的都是扩展分区，逻辑磁盘，最大支持单盘2T<br>GPT 最大不限制，最大支持容量可以超2T</p>
+<p>做RAID后，单盘容量会超过2T，所以最好选择GPT格式。</p>
+<p>raid0 带区卷<br>raid1 镜像卷  必须两块<br>raid-5      实际容量，为容量减1<br>需要动态磁盘</p>
+<h1 id="DNS服务器"><a href="#DNS服务器" class="headerlink" title="DNS服务器"></a>DNS服务器</h1><h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h1><ul>
+<li>gpedit.msc——组策略</li>
+<li>计算机管理——用户和组</li>
+<li>管理工具——工具</li>
+<li>windows凭证——密钥</li>
+<li>compmgmt.msc———计算机管理</li>
+</ul>
+<h1 id="已做修改"><a href="#已做修改" class="headerlink" title="已做修改"></a>已做修改</h1><p>1、网卡驱动</p>
+<p>装完网卡驱动后，增加中文语言包</p>
+<p>2、基础设置<br>windows server 2019  账户和共享设置</p>
+<p>3、改本地IP访问<br>首先要保证机子都在同一个工作组、使用管理员账户并保证网络互通、开启了共享的情况下.到:<br>1.控制面板－管理工具－本地安全设置－本地策略－用户权利指派－从网络访问计算机－双击输入guest。<br>2.拒绝从网络访问次计算机－删除带有guest一项。<br>3.安全选项－网络访问：本地账户到共享和安全模式－选择经典。<br>4.安全选项－账户:来宾账户- 改为已启用..<br>5.账户：使用空密码到本地改成禁用。</p>
+<p>4.增加smbv1支持</p>
+<p>SMB v1 协议</p>
+<p>察觉<br>Get-WindowsOptionalFeature -Online -FeatureName SMB1Protocol<br>禁用<br>Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol<br>启用：<br>Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol</p>
+<p>5.安装Windows Admin Center</p>
+<p>微软下载安装包即可</p>
+<p>6.该服务器证书吊销不能被检验，因为吊销服务器脱机</p>
+<p>解决方法：<br>Internet<br>Explorer&gt;“工具&gt;”Internet选项&gt;“高级”选项卡&gt;安全选项组,取消选中框旁边的选项，“检查服务器证书吊销”。<br>（需要Internet Explorer的重新启动才能生效）</p>
+<p>7.高级共享设置，无法打开时候，需要打开服务。</p>
+<p>第一步打开我的电脑————计算机管理器————服务与应用程序————服务————启动————Function Discovery Resource Publication、SSD Discovery 、UPnP Device Host三个服务</p>
+<p>第二步、1.进入网络–&gt;网络和共享中心—&gt;高级共享设置，打开“家庭工作”，在“网络发现中选择“启用网络发现”，在“文件和打印机共享”选择“启用文件和打印机共享”，在“密码保护的共享”选“关闭密码共享”。</p>
+<p>8.开机启动软件windows server<br>批处理文件bat格式为：<br>格式为 ：  start + 空格 + 引号 +空格+ 程序目录</p>
+<p><img src="/2020/12/21/windows-server/bat.png"></p>
+<p>启动目录：<br>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</p>
+<p>延时启动<br> 启动程序时为了避免阻塞，可以设置一定时间的延迟，一个程序启动后再规定时间后再启动其他程序，可以通过ping本机实现延迟的方法实现该功能，例如</p>
+<p>ping 127.0.01 -n 2 ，这行命令代表的是ping 本地网卡 ，-n后面的参数代表ping的次数，由于ping 命令是一秒执行一次 ，所以这条命令就实现了延迟2秒执行的功能。</p>
+<p>加入脚本，注意在启动命令后不要忘了加个&amp;字符</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Adobe</title>
+    <url>/2020/12/22/Adobe/</url>
+    <content><![CDATA[<p>Adobe快捷操作</p>
+<a id="more"></a>
+
+
+
+<h1 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h1><p>ctrol+D可以取消选中框</p>
+<h1 id="Pr"><a href="#Pr" class="headerlink" title="Pr"></a>Pr</h1>]]></content>
+  </entry>
+  <entry>
+    <title>VS-VTK-QT安装与配置</title>
+    <url>/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>VS+VTK+QT安装与配置</p>
+<a id="more"></a>
+<p>visualstudio 2019，VTK 8.2，QT 5.14.0</p>
+<h1 id="VTK安装"><a href="#VTK安装" class="headerlink" title="VTK安装"></a>VTK安装</h1><p>安装cmake，打开cmake</p>
+<p>where is the source code选择vtk解压包，也就是源文件包</p>
+<p>where to build the binaries 选择 新建一个文件夹，比如bin</p>
+<p>然后选择configue，弹窗按照visualstudio版本选择即可，</p>
+<p>configure后，选择安装插件，</p>
+<ol>
+<li>选择example，生成VTK提供例子代码</li>
+<li>修改prefix路径，这个文件保存bin，include，lib文件</li>
+<li>选择qt组件，包括SupportQtOpenGL和Group_Qt,configure后选择QT_DESIGNER_PLUGUIN生成插件</li>
+</ol>
+<p>configure可以多点几次，知道没有红色选项。</p>
+<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/cmake01.png"></p>
+<p>然后选择generate，没有报错后，打开bin文件夹会有VTK.sln文件双击打开，或者直接点边上Open Project</p>
+<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/VS01.png"></p>
+<p>VS界面中重点关注，Release和Debug版本，位数选X64。一般情况编译会把两个都编译一次。<br>选择好一个版本后(Debug)，选中ALL_BUILD右键选择生成，VS开始编译VTK包，第一次编译大约半小时。<br>编译完成后，选中INSTALL右键选择仅用于此项目——仅生成INSTALL(B),这一步后VTK的依赖包会安装到cmake中修改的修改prefix路径。这些依赖包用来配置VTK工程环境。</p>
+<p>此时Debug版本已编译完成，依赖包安装到prefix路径。把prefix路径中的文件拷贝到另外一个文件夹并做好标记，因为在编译Release时，依赖会被覆盖。</p>
+<p>在visualstudio中编译好两个版本，整理好依赖包后，新建一个工程。</p>
+<p>选择DebugX64版本，选择属性管理器（视图中添加），选中Debug|X64 右键新建属性表，属性表中修改三个参数。</p>
+<ol>
+<li>VC++中包含文件，选到Debug版本的include文件夹</li>
+<li>VC++中库文件，选到Debug版本的lib文件夹</li>
+<li>链接器——输入——附加依赖项中添加lib文件夹下所有lib文件名称</li>
+</ol>
+<p>第三步技巧：<br>新建txt文件，添加内容：DIR <em>.</em>  /B &gt;LIST.TXT，修改为bat文件，会自动生成名称list，再删除不要的内容后复制即可。</p>
+<p>到此，DebugX64版本的属性表就设置完成，同样的可以设置ReleaseX64版本的属性表，这两个属性表可以保存一下，以后新建项目都可以用。</p>
+<p>接下来，选择解决方案，选中项目右键属性中——调试——环境中添加PATH=%PATH%;D:\VTK\VTKLibrary820\ReleaseX64\bin（PATH=%PATH%;+debug或者release版本中bin的文件夹路径）<br><strong>环境选项卡下不要选从父级货项目默认设置继承</strong></p>
+<p>到此VTK工程环境安装完毕</p>
+<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/VS02.png"></p>
+<h1 id="Qt安装"><a href="#Qt安装" class="headerlink" title="Qt安装"></a>Qt安装</h1><p>Qt安装mscv2017和mscv2017_64，前者为32位，vs中使用后者64位。</p>
+<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/QT01.png"></p>
+<p>vs中扩展——管理扩展——联机——搜索Qt——下载Qt Visual Studio Tools，下载好重启VS</p>
+<p>vs中扩展——Qt VS Tools——Option——add增加mscv2017_64目录，默认选择64位的，建议只添加64位。</p>
+<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/QT02.png"></p>
+<p>至此，VS2019支持Qt插件</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>科学上网</title>
+    <url>/2020/12/29/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</url>
+    <content><![CDATA[<p>科学上网</p>
+<a id="more"></a>
+
+
+
+<h1 id="速度"><a href="#速度" class="headerlink" title="速度"></a>速度</h1><p>包括：<strong>Xray</strong>、<strong>V2ray</strong>、<strong>trojan-go</strong><br><img src="/2020/12/29/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91.png"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>bios</title>
+    <url>/2020/12/31/bios/</url>
+    <content><![CDATA[<p>bios</p>
 <a id="more"></a>  
 
-<p>仿真，几何，渲染，图形学三大方向<br> Visualization 可视化</p>
-<p>光栅化<br>30 FPS 称为实时</p>
-<p>OpenGL DirectX VulKan  都是图形学API  </p>
-<p>Maya/3DS MAX Blender ,VR / game development using unity / Unreal Engine</p>
-<p>图形学 和 计算机视觉<br>一切需要猜测的内容是视觉研究对象，做分析，理解和猜测</p>
-<p>图形学 computer graphics(rendering)  MODEL-&gt;IMAGE<br>计算机视觉 computer vision  IMAGE-&gt;MODEL</p>
-<p>Computer Vision /Deep learning </p>
+<p>Asset Tag  资产标签  standard</p>
+<p>UUID 是 通用唯一识别码（Universally Unique Identifier）的缩写</p>
+<p>ACPI表示高级配置和电源管理接口（Advanced Configuration and Power Management Interface）。<br>ACPI SETTINGS也就是高级电源管理设置</p>
+<p>Wake on LAN 局域网换新</p>
+<p>Intel Virtualization Technology intel虚拟化技术</p>
+<p>Access level 访问级别</p>
+<p>variables 变量</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>快速打印技术</title>
+    <url>/2020/12/31/%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E6%8A%80%E6%9C%AF/</url>
+    <content><![CDATA[<p>热升华，ZINK，Instax</p>
+<a id="more"></a>
+
+<h1 id="ZINK"><a href="#ZINK" class="headerlink" title="ZINK"></a>ZINK</h1><p>ZINK即“零墨水纸张”技术。它所使用的相纸内含ZINK专利染料晶体，可以在加热至不同温度后呈现出彩色。</p>
+<p>优点：成像速度快</p>
+<p>不足：色彩不太稳定</p>
+<p>代表产品：</p>
+<p>宝丽来（ZINK是由原宝丽来旗下部门研发的）、LG Pocket Photo、HP Sprocket/小印、佳能PV-123等，MOTO摩印附件和刚刚发布的华为便携打印机也采用ZINK技术。</p>
+<p>耗材成本：</p>
+<p>只需要更换相纸（专用）。主流规格为2×3英寸（和富士instax mini尺寸相同），价格约3元/张；现在也有3×4英寸相纸（和富士instax wide尺寸相同），价格约6元/张。</p>
+<p>ZINK其实跟热敏纸的技术类似，时间长了就会褪色，虽然厂商在表面加了一层覆膜，起到减缓照片氧化的作用，<strong>但相片打印出来基本两年左右，也会模糊不清了的</strong>；跟Instax一样，ZINK也怕潮、怕光、怕热。</p>
+<h1 id="热升华"><a href="#热升华" class="headerlink" title="热升华"></a>热升华</h1><p>热升华打印机采用固体染料，打印时会将染料直接加热至气态（即升华），然后再将气体喷射到打印介质上。常见的热升华打印机在打印一张照片时需要往复4次，前3次分别是喷涂黄、红、青颜色，第4次则是覆膜。</p>
+<p>优点：画质优秀，照片防水、防污性能好且能持久保持色彩</p>
+<p>不足：对灰尘比较敏感（落在色带或相纸上会形成暗斑）</p>
+<p>代表产品：</p>
+<p>佳能炫飞系列、富士小俏印、以及米家照片打印机 。根据佳能这边的情况，热升华打印机的定位是要高于ZINK打印机的。</p>
+<p>耗材成本：</p>
+<p>需要更换色带（专用）和相纸（通用）。以佳能为例，使用原厂耗材的总成本约2元/张。</p>
+<h1 id="一次成像"><a href="#一次成像" class="headerlink" title="一次成像"></a>一次成像</h1><p>采用和拍立得（富士instax系列）相机相同的一次成像底片，内部结构有点类似扫描仪，是将照片文件转换为光信号然后“扫描”给一次成像底片曝光。相比一次成像相机，因为先得到了照片再进行输出，因此成功率更高，并且可以反复输出（这让一些明星签名照身价大跌）。</p>
+<p>优点：具有一次成像的独特风格</p>
+<p>不足：精度不高，照片耐久性较差</p>
+<p>代表产品：</p>
+<p>富士SP系列打印机，富士SQ10、SQ20数码一次成像相机。</p>
+<p>耗材成本：</p>
+<p>只需要更换相纸。目前主要是2×3英寸相纸（mini尺寸），价格约3.5元/张；2.4×2.4英寸方形相纸（square尺寸），价格约6.5元/张。</p>
+<h1 id="instax"><a href="#instax" class="headerlink" title="instax"></a>instax</h1><p>银盐技术<br>银盐技术是通过光和相纸内的化学试剂发生反应之后经过滚压，在定影片后面呈现出颜色，instax拍立得相纸就是使用这个技术的。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>int main(int argc,char* argv[])</title>
+    <url>/2021/01/07/int-main-int-argc-char-argv/</url>
+    <content><![CDATA[<p>关于int main(int argc,char* argv[])详解</p>
+<a id="more"></a>  
+
+
+<p>argc是命令行总的参数个数<br>argv[]为保存命令行参数的字符串指针，其中第0个参数是程序的全名，以后的参数为命令行后面跟的用户输入的参数。</p>
+<p>argv参数是字符串指针数组，其各元素值为命令行中各字符串(参数均按字符串处理)的首地址。 指针数组的长度即为参数个数argc。数组元素初值由系统自动赋予。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int   main(int   argc,   char*   argv[])   </span><br><span class="line">&#123;   </span><br><span class="line">int   i;   </span><br><span class="line">for   (i   &#x3D;   0;   i&lt;argc;   i++)   </span><br><span class="line">cout&lt;&lt;argv[i]&lt;&lt;endl;   </span><br><span class="line">cin&gt;&gt;i;   </span><br><span class="line">return   0;   </span><br><span class="line">&#125;   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>执行时敲入<br>F:\MYDOCU<del>1\TEMPCODE\D1\DEBUG\D1.EXE   aaaa   bbb   ccc   ddd<br>输出如下：<br>F:\MYDOCU</del>1\TEMPCODE\D1\DEBUG\D1.EXE<br>aaaa<br>bbb<br>ccc<br>ddd   </p>
+<p>char   *argv[]是一个字符数组,其大小是int   argc,主要用于命令行参数   argv[]   参数，数组里每个元素代表一个参数;<br>比如你输入<br>test   a.c   b.c   t.c<br>则<br>argc   =   4   </p>
+<p>argv[0]   =   “test”<br>argv[1]   =   “a.c”<br>argv[2]   =   “b.c”<br>argv[3]   =   “t.c”</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/11/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>  
+
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h2>]]></content>
+  </entry>
+  <entry>
+    <title>Markdown语法</title>
+    <url>/2020/11/06/hexo-markdown-%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p>Markdown 是一种轻量级标记语言，文本后缀为 .md, .markdown，广泛用来撰写帮助文档或用于论坛上发表消息。</p>
+<a id="more"></a>
+
+<!-- 注释 -->
+<hr>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>使用 # 号可表示 1-6 级标题<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">## 这是二级标题</span><br><span class="line">### 这是三级标题</span><br><span class="line">#### 这是四级标题</span><br><span class="line">##### 这是五级标题</span><br><span class="line">###### 这是六级标题</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h3 id="这是三级标题"><a href="#这是三级标题" class="headerlink" title="这是三级标题"></a>这是三级标题</h3><h4 id="这是四级标题"><a href="#这是四级标题" class="headerlink" title="这是四级标题"></a>这是四级标题</h4><h5 id="这是五级标题"><a href="#这是五级标题" class="headerlink" title="这是五级标题"></a>这是五级标题</h5><h6 id="这是六级标题"><a href="#这是六级标题" class="headerlink" title="这是六级标题"></a>这是六级标题</h6><hr>
+<h1 id="段落格式"><a href="#段落格式" class="headerlink" title="段落格式"></a>段落格式</h1><h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><p><code>&amp;emsp;</code>和<code>&amp;nbsp;</code>，注意加<code>;</code><strong>分号</strong>。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">空格：&amp;emsp;空格</span><br><span class="line">&amp;nbsp;</span><br><span class="line">空格</span><br></pre></td></tr></table></figure>
+<p>效果：<br>空格：&emsp;空格<br>&nbsp;<br>空格 </p>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><table>
+<thead>
+<tr>
+<th>字体</th>
+<th>语法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>斜体</td>
+<td>左右分别加一个<code>*</code>或<code>_</code>号</td>
+</tr>
+<tr>
+<td>加粗</td>
+<td>左右分别加两个<code>*</code>号</td>
+</tr>
+<tr>
+<td>斜体加粗</td>
+<td>左右分别加三个<code>*</code>号</td>
+</tr>
+<tr>
+<td>删除线</td>
+<td>左右分别加两个<code>~~</code>号</td>
+</tr>
+<tr>
+<td>下划线</td>
+<td>通过HTML 的<code>&lt;u&gt;</code> 标签</td>
+</tr>
+</tbody></table>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体文本*        _斜体文本_</span><br><span class="line">**粗体文本**      __粗体文本__</span><br><span class="line">***粗斜体文本***  ___粗斜体文本___</span><br><span class="line">~~加删除线文本~~</span><br><span class="line">&lt;u&gt;带下划线文本&lt;&#x2F;u&gt;</span><br></pre></td></tr></table></figure>
+<p>效果：<br><em>斜体文本</em>        <em>斜体文本</em><br><strong>粗体文本</strong>      <strong>粗体文本</strong><br><strong><em>粗斜体文本</em></strong>  <strong><em>粗斜体文本</em></strong><br><del>加删除线文本</del><br><u>带下划线文本</u></p>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西，星号或是减号中间可以插入空格。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">* * *</span><br><span class="line">_   _   _</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<hr>
+<hr>
+<hr>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>无序列表使用星号<code>*</code>、加号<code>+</code>或是减号<code>-</code>作为列表标记，标记后面要添加一个<strong>空格</strong>。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">+ 第二项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<ul>
+<li>第一项</li>
+</ul>
+<ul>
+<li>第二项</li>
+</ul>
+<ul>
+<li>第三项</li>
+</ul>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>数字并加上<code>.</code>号来表示。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 第一项</span><br><span class="line">2. 第二项</span><br><span class="line">3. 第三项</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+<h2 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h2><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 第一项：</span><br><span class="line">    - 第一篇博客</span><br><span class="line">    - 第二篇博客</span><br><span class="line">2. 第二项：</span><br><span class="line">    - 第三篇博客</span><br><span class="line">    - 第四篇博客</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<ol>
+<li>第一项：<ul>
+<li>第一篇博客</li>
+<li>第二篇博客</li>
+</ul>
+</li>
+<li>第二项：<ul>
+<li>第三篇博客</li>
+<li>第四篇博客</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h1><p>区块引用是在段落开头使用<code>&gt;</code>符号 ，然后后面紧跟一个<strong>空格</strong>符号：<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块引用</span><br><span class="line">&gt; MXW&#39;s Blog</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<blockquote>
+<p>区块引用<br>MXW’s Blog</p>
+</blockquote>
+<h2 id="区块嵌套"><a href="#区块嵌套" class="headerlink" title="区块嵌套"></a>区块嵌套</h2><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 最外层</span><br><span class="line">&gt; &gt; 第一层嵌套</span><br><span class="line">&gt; &gt; &gt; &gt; &gt; 第四层嵌套</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<blockquote>
+<p>最外层</p>
+<blockquote>
+<p>第一层嵌套</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>第四层嵌套</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="列表-区块"><a href="#列表-区块" class="headerlink" title="列表+区块"></a>列表+区块</h2><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块1</span><br><span class="line">&gt; + 列表2</span><br><span class="line"></span><br><span class="line">+ 列表1</span><br><span class="line">+ &gt; 区块2</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<blockquote>
+<p>区块1</p>
+<ul>
+<li>列表2</li>
+</ul>
+</blockquote>
+<ul>
+<li>列表1</li>
+<li><blockquote>
+<p>区块2</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><p>表格使用 <code>|</code> 来分隔不同的单元格，使用 <code>-</code> 来分隔表头和其他行,表格前后需要<strong>空一行</strong>。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">|  表头   | 表头  |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody></table>
+<p><strong>对齐方式：</strong><br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :-----| ----: | :----: |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="right">右对齐</th>
+<th align="center">居中对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+<tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>段落中的代码或者函数可以用（`）包起来。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;printf()&#96; 函数</span><br></pre></td></tr></table></figure>
+<p>效果：<br><code>printf()</code> 函数</p>
+<h2 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h2><p>代码区块使用```包裹一段代码，并指定一种语言（也可以不指定）。</p>
+<hr>
+<h1 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h1><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[超链接名](超链接地址 &quot;超链接title&quot;)</span><br><span class="line">不加title:[超链接名](超链接地址)</span><br><span class="line">直接使用链接地址&lt;超链接地址&gt;</span><br></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MXW01&#39;s Blog](http:&#x2F;&#x2F;MXW01.github.io)</span><br><span class="line">[Baidu](http:&#x2F;&#x2F;baidu.com)</span><br><span class="line">直接使用链接地址&lt;http:&#x2F;&#x2F;mxw01.github.io&gt;</span><br></pre></td></tr></table></figure>
+<p>效果：<br><a href="http://mxw01.github.io/">MXW01’s Blog</a><br><a href="http://baidu.com/">Baidu</a><br>直接使用链接地址<a href="http://mxw01.github.io/">http://mxw01.github.io</a></p>
+<hr>
+<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p>！+[图片替代文字]+(图片地址”title”)<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![天使](https:&#x2F;&#x2F;ss1.bdstatic.com&#x2F;70cFvXSh_Q1YnxGkpoWK1HF6hhy&#x2F;it&#x2F;u&#x3D;3065461735,3257830606&amp;fm&#x3D;26&amp;gp&#x3D;0.jpg &quot;angel&quot;)</span><br></pre></td></tr></table></figure>
+<p>效果：<br><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3065461735,3257830606&fm=26&gp=0.jpg" alt="天使" title="angel"></p>
+<h2 id="改变图片大小"><a href="#改变图片大小" class="headerlink" title="改变图片大小"></a>改变图片大小</h2><p>使用<code>&lt;img&gt;</code>标签。<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;https:&#x2F;&#x2F;ss1.bdstatic.com&#x2F;70cFvXSh_Q1YnxGkpoWK1HF6hhy&#x2F;it&#x2F;u&#x3D;3065461735,3257830606&amp;fm&#x3D;26&amp;gp&#x3D;0.jpg&quot; width&#x3D;&quot;30%&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>效果：<br><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3065461735,3257830606&fm=26&gp=0.jpg" width="30%"></p>
+<hr>
+<h1 id="hexo标签插件"><a href="#hexo标签插件" class="headerlink" title="hexo标签插件"></a>hexo标签插件</h1><p>hexo标签插件（Tag Plugins）可以修改引用块，代码块，图片，链接，视频等等。</p>
+<h2 id="引用块加颜色"><a href="#引用块加颜色" class="headerlink" title="引用块加颜色"></a>引用块加颜色</h2><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note [class_name] %&#125;  content  &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>[class_name]可以替换为<code>default</code>，<code>primary</code>，<code>success</code>，<code>info</code>，<code>warning</code>，<code>danger</code></li>
+<li>content写你需要写的内容</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note default %&#125;  default  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note primary %&#125;  primary  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note success %&#125;  success  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note info %&#125;  info  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note warning %&#125;  warning  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note danger %&#125;  danger  &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<div class="note default">
+            <p>default  </p>
+          </div>
+
+<div class="note primary">
+            <p>primary  </p>
+          </div>
+
+<div class="note success">
+            <p>success  </p>
+          </div>
+
+<div class="note info">
+            <p>info  </p>
+          </div>
+
+<div class="note warning">
+            <p>warning  </p>
+          </div>
+
+<div class="note danger">
+            <p>danger  </p>
+          </div>
+<hr>
+<h1 id="其它技巧"><a href="#其它技巧" class="headerlink" title="其它技巧"></a>其它技巧</h1><p><strong>转义</strong><br>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">**文本加粗**</span><br><span class="line">\*\*显示星星\*\*</span><br></pre></td></tr></table></figure>
+<p>效果：<br><strong>文本加粗</strong><br>**显示星星**</p>
+<p><strong>支持的 HTML 元素</strong></p>
+<h1 id="本文参考"><a href="#本文参考" class="headerlink" title="本文参考"></a>本文参考</h1><p>菜鸟教程——<a href="https://www.runoob.com/markdown/md-tutorial.html">Markdown教程</a></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
       <tags>
-        <tag>计算机基础</tag>
+        <tag>hexo</tag>
+        <tag>语法</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>VTK使用</title>
-    <url>/2020/11/20/VTK%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>Study_VTK_Together 第一节26.05</p>
-<a id="more"></a>  
-<p>VTK ITK Qt VisualStudio</p>
-<p>怎么判断图像好不好，简单点就是图像亮不亮</p>
-<h1 id="VTK-Observer-command-设计模式"><a href="#VTK-Observer-command-设计模式" class="headerlink" title="VTK Observer/command 设计模式"></a>VTK Observer/command 设计模式</h1><p>适合交互使用</p>
-<p>Observer模式是一种行为模式，这一模式主要针对两个 对象，Object和Observer。一个Object可以有多个Observer，它定义对象间的一种一对多的依赖关系。当一个object的状态发生改变时，所有依赖于它的observer对象都得到通知并被自动更新。</p>
-<p>command属于对象行为模式，command模式将一个请求封装成一个对象，并提供一致性请求接口。事件调用者只是和接口打交道。不和具体实现交互。</p>
-<h1 id="VTK中的代码"><a href="#VTK中的代码" class="headerlink" title="VTK中的代码"></a>VTK中的代码</h1><p><strong>snprintf()</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int snprintf ( char * str, size_t size, const char * format, ... );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char buffer[50];</span><br><span class="line">    char* s &#x3D; &quot;runoobcom&quot;;</span><br><span class="line"> </span><br><span class="line">    &#x2F;&#x2F; 读取字符串并存储在 buffer 中</span><br><span class="line">    int j &#x3D; snprintf(buffer, 6, &quot;%s\n&quot;, s);</span><br><span class="line"> </span><br><span class="line">    &#x2F;&#x2F; 输出 buffer及字符数</span><br><span class="line">    printf(&quot;string:\n%s\ncharacter count &#x3D; %d\n&quot;, buffer, j);</span><br><span class="line"> </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>返回值<br>(1) 如果格式化后的字符串长度小于等于 size，则会把字符串全部复制到 str 中，并给其后添加一个字符串结束符 \0；<br>(2) 如果格式化后的字符串长度大于 size，超过 size 的部分会被截断，只将其中的 (size-1) 个字符复制到 str 中，并给其后添加一个字符串结束符 \0，返回值为欲写入的字符串长度。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string:</span><br><span class="line">runoo</span><br><span class="line">character count &#x3D; 10</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>atof()</strong><br>C 库函数 double atof(const char *str) 把参数 str 所指向的字符串转换为一个浮点数（类型为 double 型）。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   float val;</span><br><span class="line">   char str[20];</span><br><span class="line">   </span><br><span class="line">   strcpy(str, &quot;98993489&quot;);</span><br><span class="line">   val &#x3D; atof(str);</span><br><span class="line">   printf(&quot;字符串值 &#x3D; %s, 浮点值 &#x3D; %f\n&quot;, str, val);</span><br><span class="line"> </span><br><span class="line">   strcpy(str, &quot;runoob&quot;);</span><br><span class="line">   val &#x3D; atof(str);</span><br><span class="line">   printf(&quot;字符串值 &#x3D; %s, 浮点值 &#x3D; %f\n&quot;, str, val);</span><br><span class="line"> </span><br><span class="line">   return(0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">字符串值 &#x3D; 98993489, 浮点值 &#x3D; 98993488.000000</span><br><span class="line">字符串值 &#x3D; runoob, 浮点值 &#x3D; 0.000000</span><br></pre></td></tr></table></figure>
-<hr>
-<p>//固定点的映射<br>vtkFixedPointVolumeRayCastMappe：A fixed point mapper for volumes</p>
-<hr>
-<p>using<br>1命名空间的使用<br>using namespace android;<br>2在子类中引用基类的成员<br>using T5Base::test1;<br>3别名指定<br>using Vec = MyVector&lt;T, MyAlloc<T>&gt;;</T></p>
-<hr>
-<p>inline是C++关键字，在函数声明或定义中，函数返回类型前加上关键字inline，即可以把函数指定为内联函数。这样可以解决一些频繁调用的函数大量消耗栈空间（栈内存）的问题。关键字inline必须与函数定义放在一起才能使函数成为内联函数，仅仅将inline放在函数声明前面不起任何作用。inline是一种“用于实现”的关键字，而不是一种“用于声明”的关键字。</p>
-<hr>
-<p>ITK中使用<br>try{<br> // 可能会导致错误的代码<br>} catch(error){<br> // 在错误发生时怎么处理<br>} </p>
-<hr>
-<p>C 库函数 int atoi(const char *str) 把参数 str 所指向的字符串转换为一个整数（类型为 int 型）。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>软件架构</title>
-    <url>/2020/11/20/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/</url>
-    <content><![CDATA[<p>常见软件架构</p>
-<a id="more"></a>  
-
-<h1 id="系统软件"><a href="#系统软件" class="headerlink" title="系统软件"></a>系统软件</h1><p>驱动软件等等 用C/C++</p>
-<h1 id="C-S-架构软件"><a href="#C-S-架构软件" class="headerlink" title="C/S 架构软件"></a>C/S 架构软件</h1><p>client 客户端<br>server 服务端<br>LOL</p>
-<p>C/C++ C# sharp  Qt:Adobe LOL </p>
-<h1 id="B-S网站"><a href="#B-S网站" class="headerlink" title="B/S网站"></a>B/S网站</h1><p>B browser浏览器<br>taobao jd bilibili baidu…</p>
-<p>(1)前端：HTML CSS JS(javascript)  -&gt;  React  Vue…<br>(2)后端: Java PHP Nde  Golang Python Mysql Redis</p>
-<h1 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h1><p>Android  Java Kotin<br>ios    Object-C </p>
-<h1 id="mini-b-s"><a href="#mini-b-s" class="headerlink" title="mini b/s"></a>mini b/s</h1><p>mini program<br>小程序<br>uniapp  Taro</p>
-]]></content>
   </entry>
   <entry>
     <title>C++复习</title>
@@ -820,474 +1326,80 @@ deque构造函数操作和vector差不多</li>
       </tags>
   </entry>
   <entry>
-    <title>QT学习</title>
-    <url>/2020/11/12/QT%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>已看完一部教学视频，待总结。</p>
-<a id="more"></a>
-<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p><strong>1</strong>.在Qt中主要有三种顶层窗口：</p>
-<p>QWidget：最基础的窗口，所有窗口及控件都继承QWidget。</p>
-<p>QDialog：对话框窗口，可类比Windows中的对话框。</p>
-<p>QMainWindow：主窗口，一般主窗口会包括标题栏，菜单栏，工具栏，中心部件，停靠窗口，状态栏等。可类比桌面应用程序。</p>
-<p><strong>2</strong>. VS2019+Qt乱码问题：vs用的GBK，Qt用的UTF-8，两种方法。<br>第一种：头文件位置加入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#pragma execution_character_set(&quot;utf-8&quot;)</span><br></pre></td></tr></table></figure>
-<p>第二种： vs2019的设置中可以通过来修改执行字符集  /execution-charset:utf-8</p>
-<p><img src="/2020/11/12/QT%E5%AD%A6%E4%B9%A0/vs2019setting.png"></p>
-<p><strong>3</strong>.</p>
-<h1 id="信号和槽"><a href="#信号和槽" class="headerlink" title="信号和槽"></a>信号和槽</h1><p>消息传递机制</p>
-<p>在面向对象的编程方法中，都会创建很多的实例，每个实例都是单独的，要想每个实例能够协同合作，那么就会需要一种对象间传递消息的机制，在很多框架中都采用回调函数来进行对象间信息传递。</p>
-<p>回调是一个指向函数的指针，如果想要一个处理函数通知一些事件，你需要将这个指针传递给处理函数。处理函数在适当时间调用回调函数。MFC就是使用的回调函数，但回调可能是不直观的，不易于理解的，并且也不能保证是类型安全的。</p>
-<p>安装 MS  自带编译器，部分编码与visual stdio不一样</p>
-<p>基类： QWidget（父类） QMainWindow、QDialog（子类）派生</p>
-<p>QMainWindow 多菜单栏 工具 状态栏<br>QDialog 对话框</p>
-<p>.pro - project文件<br>.cpp -</p>
-<p>窗口.cpp 和 .c</p>
-<p> QApplication a 有且只有一个<br> myWidget w；实例化窗口对象<br>w.show() 调用show函数显示窗口<br>return a.exec() 消息循环机制，代码阻塞</p>
-<p>QT       += core gui  //Qt包含模块</p>
-<p>greaterThan(QT_MAJOR_VERSION, 4): QT += widgets //大于4版本以上  widgets</p>
-<p>TARGET = 01_FirstProject    //目标 生成.exe文件 文件名称<br>TEMPLATE = app              //模板 应用程序模板</p>
-<p>SOURCES += <br>        main.cpp \      //源码<br>        mywidge.cpp</p>
-<p>HEADERS += <br>        mywidge.h         //头文件</p>
-<pre><code>QPushButton * btn2 = new QPushButton ;
-btn2-&gt;setText(&quot;关闭&quot;);
-btn2-&gt;move(100,0);
-btn2-&gt;resize(50,50);
-btn2-&gt;setParent(this);
-
-connect(btn2, &amp;QPushButton::clicked,this,&amp;Widget::close);</code></pre>
-<p>信号槽的优点，松散耦合，信号发送端和接收端 本身是没有关联的，通过一个connect连接，将两端 耦合在一起<br>参数1 信号的发送者 参数2 发送的信号（函数的地址） 参数3 信号的接受者 参数4 处理的槽函数（函数的地址）<br>connect( myBtn, &amp;QPushButton::clicked, this, &amp;QWidget::close );</p>
-<p>信号可以连接信号</p>
-<p>一个信号可以连接多个槽函数<br>多个信号可以连接同一个槽函数<br>信号和槽函数的参数类型必须一一对应<br>信号和槽的参数个数可以不一致  信号的个数可以多于槽个数</p>
-<p>QDialog</p>
-<p>事件过滤器</p>
-<p>1，给控件安装事件过滤器<br>2. 重写事件</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>学习方法改进</title>
-    <url>/2020/11/11/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E6%94%B9%E8%BF%9B/</url>
-    <content><![CDATA[<p>学习方法</p>
+    <title>组会记录</title>
+    <url>/2021/01/09/%E7%BB%84%E4%BC%9A%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>组会记录</p>
 <a id="more"></a>
 
-<p>之前觉得看书效率还不错，在连啃几本厚书后（600+页），发现吸收较差。<br>同时，在B站和MOOC上发现很多不错的教程，计划学习方法转为看教学视频，记blog，找实例或者项目做的形式。</p>
-<h1 id="B站"><a href="#B站" class="headerlink" title="B站"></a>B站</h1><p>B站上的IT视频比较丰富，观看人数也很多，弹幕也有解答。<br>之前曾在B站看过stm32视频，之前不常在B站看教学视频因为校园网流量太少。现在多了一些，4G流量也很多，计划多看一些。<br>复习 ：<br>C++<br>数据结构与算法<br>计算机系统<br>计算机网络<br>计算机接口与组成<br>Linux</p>
-<p>学习：<br>QT<br>Opencv<br>深度学习<br>Java</p>
-<h1 id="MOOC"><a href="#MOOC" class="headerlink" title="MOOC"></a>MOOC</h1><p>数字图像处理 第四周-第六讲 灰度的形态学</p>
-<p>慕课上有一些专业的课还是很不错。<br>之前看了一个医学图像处理的课，还有ROS系统的课。</p>
-]]></content>
-      <tags>
-        <tag>学习方法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>软件使用</title>
-    <url>/2020/11/10/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>待更新</p>
-<a id="more"></a>
-
-
-<h1 id="visual-studio"><a href="#visual-studio" class="headerlink" title="visual studio"></a>visual studio</h1><p>一个vs窗口只能打开一个解决方案，一个解决方案可以包括多个工程项目。<br>ctrol + K + C 快速注释<br>ctrol + K + U 快速取消注释</p>
-<h1 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h1><p>windows + E 快速打开资源管理器</p>
-<p>windows + R input control can open 控制面板</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>English words</title>
-    <url>/2020/11/10/English-words-in-IT/</url>
-    <content><![CDATA[<p>English words</p>
-<a id="more"></a>
-
-<p>geometry 几何</p>
-<p>exempt 免除，豁免</p>
-<p>contour 轮廓的</p>
-<p>geodesic 测量的</p>
-<p>diffusion 扩散，传播</p>
-<p>conductance 导率，电导</p>
-<p>deprecated 弃用</p>
-<p>undo 取消</p>
-<p>annotation 注释</p>
-<p>crop 修剪</p>
-<p>pulmonary arteries 肺 动脉</p>
-<p>Dilatation 扩张</p>
-<p>sub-class 子类</p>
-<p>trade off 权衡，舍弃</p>
-<p>curve 曲线</p>
-<p>rasterization 光栅化</p>
-<p>fundamental 基本的</p>
-<p>synthesize  合成</p>
-<p>parse解析</p>
-<p>registration 注册</p>
-<p>segmentation 分割</p>
-<p>digest 消化</p>
-<p>workflow 工作流</p>
-<p>spatial 空间的</p>
-<p>polyline 多叉线，多段线</p>
-<p>topology 拓扑学</p>
-<p>customize 定制</p>
-<p>mesh 网格</p>
-<p>wrap 包，缠绕，掩护</p>
-<p>scalar 标量的</p>
-<p>opacity 不透明度</p>
-<p>filter 滤波器</p>
-<p>Renderer 渲染，描绘</p>
-<p>Mapper 绘图</p>
-<p>backwards compatibility 向后兼容</p>
-<p>toolkit 工具箱</p>
-<p>dashboard 仪表盘</p>
-<p>binaries 二进制</p>
-<p>cross-platform 跨平台</p>
-<p>inheritance and collaboration  继承和协作</p>
-<p>capture dependencies 获取依赖项</p>
-<p>invoke  调用   invocation</p>
-<p>extract 提取</p>
-<p>executables 可执行文件</p>
-<p>customize 定制</p>
-<p>Rendering Engine  绘制/渲染引擎</p>
-<p>dialog 对话</p>
-<p>cache  缓存</p>
-<p>scroll down 向下滚动</p>
-<p>toggle 切换/开关</p>
-<p>makefile 生成文件</p>
-<p>prompt 提示</p>
-<p>batch script 批处理脚本</p>
-<p>shortcut 快捷方式</p>
-<p>drag-and-drop 拖放</p>
-<p>modify the properties of the shortcut  修改属性</p>
-<p>System Architecture 系统架构</p>
-<p>manipulate 操纵</p>
-<p>remainder 剩余的</p>
-<p>raw 原始的</p>
-<p>annotation 标注</p>
-<p>opacity 透明度 ambient, diffuse, and specular coefficient 环境系数、漫射系数和镜面系数</p>
-<p>clip  剪裁</p>
-<p>focal  焦点的 stereo, anti-aliasing, motion blur 立体，抗锯齿，运动模糊</p>
-<p>derivative 派生的</p>
-<p>inheritance 继承</p>
-<p>spheres and cylinders  球体和圆柱体</p>
-<p>dataset 数据集</p>
-]]></content>
-      <tags>
-        <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git使用方法学习</title>
-    <url>/2020/11/09/git%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>计划使用github托管一部分代码</p>
-<a id="more"></a>
-
-<p>之前学过git使用，了解过一部分git指令（现在忘光了）。<br>先占一个位置，学一点再更新。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>研究方向变更</title>
-    <url>/2020/11/09/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E5%8F%98%E6%9B%B4/</url>
-    <content><![CDATA[<p>研究内容从机器人硬件改为医学图像处理</p>
-<a id="more"></a>
-
-
-<p>目前学习了 数字图像处理，计算机图形学</p>
-<p>软件学习了VTK ITK QT </p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Linux指令（备忘录）</title>
-    <url>/2020/11/09/Linux%E6%8C%87%E4%BB%A4%EF%BC%88%E5%A4%87%E5%BF%98%E5%BD%95%EF%BC%89/</url>
-    <content><![CDATA[<p>Linux指令</p>
-<a id="more"></a>
-
-
-<p>grep 命令</p>
-<p>Linux grep 命令用于查找文件里符合条件的字符串。<br>grep 指令用于查找内容包含指定的范本样式的文件，如果发现某文件的内容符合所指定的范本样式，预设 grep 指令会把含有范本样式的那一列显示出来。若不指定任何文件名称，或是所给予的文件名为 <code>-</code>，则 grep 指令会从标准输入设备读取数据。</p>
-<p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grep [-abcEFGhHilLnqrsvVwxy][-A&lt;显示列数&gt;][-B&lt;显示列数&gt;][-C&lt;显示列数&gt;][-d&lt;进行动作&gt;][-e&lt;范本样式&gt;][-f&lt;范本文件&gt;][--help][范本样式][文件或目录...]</span><br></pre></td></tr></table></figure>
-
-
-<p>cat 命令<br>cat（英文全拼：concatenate）命令用于连接文件并打印到标准输出设备上。</p>
-<p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat [-AbeEnstTuv] [--help] [--version] fileName</span><br></pre></td></tr></table></figure>
-
-<p>pwd 命令 当前目录<br>cd 命令<br><code>cd /</code> 根目录<br><code>cd ..</code> 或者 <code>cd .. //</code>  往回跳一层<br><code>cd ../..</code>  往回跳两层<br><code>cd</code> 和 <code>cd ~</code> 都可进入当前用户主目录，即 <code>/root</code> 目录</p>
-]]></content>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Purpose of my Blog</title>
-    <url>/2020/11/08/Purpose-of-my-Blog/</url>
-    <content><![CDATA[<p>MXW01的简单自我介绍，Blog的目的、目标与计划更新内容。</p>
-<a id="more"></a>
-
-<h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><p>目前帝都在读研究生，学过一点机械，一点控制，一点计算机，拧过螺丝，敲过代码。总体而言，属于底层的技术工。现在以计算机为主。</p>
-<p>打工人 打工魂….</p>
-<p>开了很多Blog，慢慢填，作为笔记本，针不戳！</p>
-<h1 id="Blog的目的"><a href="#Blog的目的" class="headerlink" title="Blog的目的"></a>Blog的目的</h1><p>学习笔记</p>
-<h1 id="Blog的目标"><a href="#Blog的目标" class="headerlink" title="Blog的目标"></a>Blog的目标</h1><p>&emsp;<br>&emsp;<br>&emsp;<br>&emsp;</p>
-<h1 id="学习的计划"><a href="#学习的计划" class="headerlink" title="学习的计划"></a>学习的计划</h1><p>&emsp;<br>&emsp;<br>&emsp;<br>&emsp;</p>
-]]></content>
-      <tags>
-        <tag>唯一</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdown语法</title>
-    <url>/2020/11/06/hexo-markdown-%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<p>Markdown 是一种轻量级标记语言，文本后缀为 .md, .markdown，广泛用来撰写帮助文档或用于论坛上发表消息。</p>
-<a id="more"></a>
-
-<!-- 注释 -->
-<hr>
-<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>使用 # 号可表示 1-6 级标题<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">## 这是二级标题</span><br><span class="line">### 这是三级标题</span><br><span class="line">#### 这是四级标题</span><br><span class="line">##### 这是五级标题</span><br><span class="line">###### 这是六级标题</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h3 id="这是三级标题"><a href="#这是三级标题" class="headerlink" title="这是三级标题"></a>这是三级标题</h3><h4 id="这是四级标题"><a href="#这是四级标题" class="headerlink" title="这是四级标题"></a>这是四级标题</h4><h5 id="这是五级标题"><a href="#这是五级标题" class="headerlink" title="这是五级标题"></a>这是五级标题</h5><h6 id="这是六级标题"><a href="#这是六级标题" class="headerlink" title="这是六级标题"></a>这是六级标题</h6><hr>
-<h1 id="段落格式"><a href="#段落格式" class="headerlink" title="段落格式"></a>段落格式</h1><h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><p><code>&amp;emsp;</code>和<code>&amp;nbsp;</code>，注意加<code>;</code><strong>分号</strong>。<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">空格：&amp;emsp;空格</span><br><span class="line">&amp;nbsp;</span><br><span class="line">空格</span><br></pre></td></tr></table></figure>
-<p>效果：<br>空格：&emsp;空格<br>&nbsp;<br>空格 </p>
-<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><table>
-<thead>
-<tr>
-<th>字体</th>
-<th>语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>斜体</td>
-<td>左右分别加一个<code>*</code>或<code>_</code>号</td>
-</tr>
-<tr>
-<td>加粗</td>
-<td>左右分别加两个<code>*</code>号</td>
-</tr>
-<tr>
-<td>斜体加粗</td>
-<td>左右分别加三个<code>*</code>号</td>
-</tr>
-<tr>
-<td>删除线</td>
-<td>左右分别加两个<code>~~</code>号</td>
-</tr>
-<tr>
-<td>下划线</td>
-<td>通过HTML 的<code>&lt;u&gt;</code> 标签</td>
-</tr>
-</tbody></table>
-<p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体文本*        _斜体文本_</span><br><span class="line">**粗体文本**      __粗体文本__</span><br><span class="line">***粗斜体文本***  ___粗斜体文本___</span><br><span class="line">~~加删除线文本~~</span><br><span class="line">&lt;u&gt;带下划线文本&lt;&#x2F;u&gt;</span><br></pre></td></tr></table></figure>
-<p>效果：<br><em>斜体文本</em>        <em>斜体文本</em><br><strong>粗体文本</strong>      <strong>粗体文本</strong><br><strong><em>粗斜体文本</em></strong>  <strong><em>粗斜体文本</em></strong><br><del>加删除线文本</del><br><u>带下划线文本</u></p>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西，星号或是减号中间可以插入空格。<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">* * *</span><br><span class="line">_   _   _</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<hr>
-<hr>
-<hr>
-<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>无序列表使用星号<code>*</code>、加号<code>+</code>或是减号<code>-</code>作为列表标记，标记后面要添加一个<strong>空格</strong>。<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">+ 第二项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<ul>
-<li>第一项</li>
-</ul>
-<ul>
-<li>第二项</li>
-</ul>
-<ul>
-<li>第三项</li>
-</ul>
-<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>数字并加上<code>.</code>号来表示。<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 第一项</span><br><span class="line">2. 第二项</span><br><span class="line">3. 第三项</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
+<h1 id="2021-1-9"><a href="#2021-1-9" class="headerlink" title="2021/1/9"></a>2021/1/9</h1><p>几级支气管</p>
+<p>多少段肺部</p>
+<p>分割出来可以作为 导航规划</p>
+<p>NDI光学导航靶点</p>
+<p>呼吸——检测（完成）——跟踪——软件传承</p>
+<p>真健康合作：</p>
 <ol>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
+<li>保密（方案、技术、规划等）商业需要</li>
+<li>软件</li>
+<li></li>
+<li></li>
 </ol>
-<h2 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h2><p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 第一项：</span><br><span class="line">    - 第一篇博客</span><br><span class="line">    - 第二篇博客</span><br><span class="line">2. 第二项：</span><br><span class="line">    - 第三篇博客</span><br><span class="line">    - 第四篇博客</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
+<p>末端问题</p>
 <ol>
-<li>第一项：<ul>
-<li>第一篇博客</li>
-<li>第二篇博客</li>
-</ul>
-</li>
-<li>第二项：<ul>
-<li>第三篇博客</li>
-<li>第四篇博客</li>
-</ul>
-</li>
+<li>太重：实心没必要</li>
+<li>焊接完标定 </li>
+<li>标定球</li>
+<li></li>
 </ol>
-<hr>
-<h1 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h1><p>区块引用是在段落开头使用<code>&gt;</code>符号 ，然后后面紧跟一个<strong>空格</strong>符号：<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块引用</span><br><span class="line">&gt; MXW&#39;s Blog</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<blockquote>
-<p>区块引用<br>MXW’s Blog</p>
-</blockquote>
-<h2 id="区块嵌套"><a href="#区块嵌套" class="headerlink" title="区块嵌套"></a>区块嵌套</h2><p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 最外层</span><br><span class="line">&gt; &gt; 第一层嵌套</span><br><span class="line">&gt; &gt; &gt; &gt; &gt; 第四层嵌套</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<blockquote>
-<p>最外层</p>
-<blockquote>
-<p>第一层嵌套</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>第四层嵌套</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="列表-区块"><a href="#列表-区块" class="headerlink" title="列表+区块"></a>列表+区块</h2><p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 区块1</span><br><span class="line">&gt; + 列表2</span><br><span class="line"></span><br><span class="line">+ 列表1</span><br><span class="line">+ &gt; 区块2</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<blockquote>
-<p>区块1</p>
-<ul>
-<li>列表2</li>
-</ul>
-</blockquote>
-<ul>
-<li>列表1</li>
-<li><blockquote>
-<p>区块2</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><p>表格使用 <code>|</code> 来分隔不同的单元格，使用 <code>-</code> 来分隔表头和其他行,表格前后需要<strong>空一行</strong>。<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">|  表头   | 表头  |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<table>
-<thead>
-<tr>
-<th>表头</th>
-<th>表头</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>单元格</td>
-<td>单元格</td>
-</tr>
-<tr>
-<td>单元格</td>
-<td>单元格</td>
-</tr>
-</tbody></table>
-<p><strong>对齐方式：</strong><br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :-----| ----: | :----: |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<table>
-<thead>
-<tr>
-<th align="left">左对齐</th>
-<th align="right">右对齐</th>
-<th align="center">居中对齐</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-<tr>
-<td align="left">单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>段落中的代码或者函数可以用（`）包起来。<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;printf()&#96; 函数</span><br></pre></td></tr></table></figure>
-<p>效果：<br><code>printf()</code> 函数</p>
-<h2 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h2><p>代码区块使用```包裹一段代码，并指定一种语言（也可以不指定）。</p>
-<hr>
-<h1 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h1><p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[超链接名](超链接地址 &quot;超链接title&quot;)</span><br><span class="line">不加title:[超链接名](超链接地址)</span><br><span class="line">直接使用链接地址&lt;超链接地址&gt;</span><br></pre></td></tr></table></figure>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MXW01&#39;s Blog](http:&#x2F;&#x2F;MXW01.github.io)</span><br><span class="line">[Baidu](http:&#x2F;&#x2F;baidu.com)</span><br><span class="line">直接使用链接地址&lt;http:&#x2F;&#x2F;mxw01.github.io&gt;</span><br></pre></td></tr></table></figure>
-<p>效果：<br><a href="http://mxw01.github.io/">MXW01’s Blog</a><br><a href="http://baidu.com/">Baidu</a><br>直接使用链接地址<a href="http://mxw01.github.io/">http://mxw01.github.io</a></p>
-<hr>
-<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p>！+[图片替代文字]+(图片地址”title”)<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![天使](https:&#x2F;&#x2F;ss1.bdstatic.com&#x2F;70cFvXSh_Q1YnxGkpoWK1HF6hhy&#x2F;it&#x2F;u&#x3D;3065461735,3257830606&amp;fm&#x3D;26&amp;gp&#x3D;0.jpg &quot;angel&quot;)</span><br></pre></td></tr></table></figure>
-<p>效果：<br><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3065461735,3257830606&fm=26&gp=0.jpg" alt="天使" title="angel"></p>
-<h2 id="改变图片大小"><a href="#改变图片大小" class="headerlink" title="改变图片大小"></a>改变图片大小</h2><p>使用<code>&lt;img&gt;</code>标签。<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;https:&#x2F;&#x2F;ss1.bdstatic.com&#x2F;70cFvXSh_Q1YnxGkpoWK1HF6hhy&#x2F;it&#x2F;u&#x3D;3065461735,3257830606&amp;fm&#x3D;26&amp;gp&#x3D;0.jpg&quot; width&#x3D;&quot;30%&quot;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>效果：<br><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3065461735,3257830606&fm=26&gp=0.jpg" width="30%"></p>
-<hr>
-<h1 id="hexo标签插件"><a href="#hexo标签插件" class="headerlink" title="hexo标签插件"></a>hexo标签插件</h1><p>hexo标签插件（Tag Plugins）可以修改引用块，代码块，图片，链接，视频等等。</p>
-<h2 id="引用块加颜色"><a href="#引用块加颜色" class="headerlink" title="引用块加颜色"></a>引用块加颜色</h2><p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note [class_name] %&#125;  content  &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>[class_name]可以替换为<code>default</code>，<code>primary</code>，<code>success</code>，<code>info</code>，<code>warning</code>，<code>danger</code></li>
-<li>content写你需要写的内容</li>
-</ul>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note default %&#125;  default  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note primary %&#125;  primary  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note success %&#125;  success  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note info %&#125;  info  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note warning %&#125;  warning  &#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note danger %&#125;  danger  &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<div class="note default">
-            <p>default  </p>
-          </div>
-
-<div class="note primary">
-            <p>primary  </p>
-          </div>
-
-<div class="note success">
-            <p>success  </p>
-          </div>
-
-<div class="note info">
-            <p>info  </p>
-          </div>
-
-<div class="note warning">
-            <p>warning  </p>
-          </div>
-
-<div class="note danger">
-            <p>danger  </p>
-          </div>
-<hr>
-<h1 id="其它技巧"><a href="#其它技巧" class="headerlink" title="其它技巧"></a>其它技巧</h1><p><strong>转义</strong><br>示例：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">**文本加粗**</span><br><span class="line">\*\*显示星星\*\*</span><br></pre></td></tr></table></figure>
-<p>效果：<br><strong>文本加粗</strong><br>**显示星星**</p>
-<p><strong>支持的 HTML 元素</strong></p>
-<h1 id="本文参考"><a href="#本文参考" class="headerlink" title="本文参考"></a>本文参考</h1><p>菜鸟教程——<a href="https://www.runoob.com/markdown/md-tutorial.html">Markdown教程</a></p>
 ]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>语法</tag>
-      </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/11/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>  
+    <title>富士mini90使用</title>
+    <url>/2021/01/12/%E5%AF%8C%E5%A3%ABmini90%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>富士mini90使用</p>
+<a id="more"></a>
 
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h2 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h2>]]></content>
+<h1 id="预备"><a href="#预备" class="headerlink" title="预备"></a>预备</h1><ol>
+<li>先装电池再按相纸，装入一盒新的相纸时会自动吐出一张黑色覆膜</li>
+<li>一盒相纸在没用完之前不要打开后盖！</li>
+<li>mini90有两个快门键，打开相机后—别手抖或者是不小心按到了，相纸就浪费了（横排和竖排）</li>
+</ol>
+<p>电池：720ma锂电池，续航时间大概为100张左右<br>不能按压相纸中心处，可能会导致卡纸</p>
+<p>模式：</p>
+<blockquote>
+<p>【曝光补偿L\D】：可以在”D”、”L”、“L+” 三档曝光补偿之间进行切换。  没把握自动即可</p>
+<ul>
+<li>D档： Dark（暗），适合在光线较充足的环境拍摄，如晴天；</li>
+<li>L档： Light（亮），适合在光线较暗的环境拍摄，如室内、阴雨天等；</li>
+<li>L+档：Lighter（更亮），当用L+拍摄人像时，可实现美肤效果</li>
+</ul>
+</blockquote>
+<p>【延时拍摄】：适用于自拍，但不要轻易尝试，回忆很惨痛，我用手拿着拍了一张，照片不敢直视，建议大家找好角度放在一个固定的地方，或者是<strong>三脚架</strong>更完美，按下后，10秒内拍照完成！</p>
+<p>【闪光灯】根据被拍摄物主体的距离、周围亮度等因素智能地调节闪光灯亮度，实现出色的曝光平衡。在亮度充足的环境下，可以选择手动关闭闪光灯。<br>包括：强开、防红眼、强关和自动，新手选自动<br>按一下强制闪光<br>按两下消除红眼，拍人物<br>按三下闪光灯关闭，拍婴幼儿<br>在光线暗的地方建议打开闪光灯<br>连按两下可去红眼</p>
+<p><strong>红眼</strong>：“红眼”一般是指在人物摄影时，当闪光灯照射到人眼的时候，瞳孔放大而产生的视网膜泛红现象。由于红眼现象的程度是根据拍摄对象色素的深浅决定的，如果拍摄对象的眼睛颜色较深，红眼现象便不会特别明显。</p>
+<p>自拍时候需要看镜头而不是取景块</p>
+<p>取景时候，镜头和取景块有一定偏差，需要做补偿</p>
+<p>【对焦模式】：微距模式：拍摄30到60厘米之间就要打开这个模式，30厘米以内无法拍摄会模糊。</p>
+<blockquote>
+<p><strong>对焦有三档：</strong></p>
+<ol>
+<li>微距模式0.3——0.6m</li>
+<li>什么都不选时候：0.6-3m</li>
+<li>风景模式是3-无穷远</li>
+</ol>
+</blockquote>
+<p>模式：</p>
+<ol>
+<li>人像档</li>
+<li>儿童党，快门速度很快，防止产生虚影，拍摄宠物时候也可以使用</li>
+<li>风景，对焦距离无穷远</li>
+<li>重爆  拍摄两张以后再出片</li>
+<li>B门 时间为10s，比较适合拍摄夜景</li>
+</ol>
+<p>对焦也可以转动镜头边上的圈圈。</p>
+<p>相纸放进拍立得的相机里，是不可以过安检的。</p>
+<p>相纸盒没有开封过的话，是可以过安检的，相纸盒外面的那一层锡纸箔是可以防止X光穿透的。感光胶片，胶卷都存在曝光问题，拍立得相纸也不例外。</p>
+<h1 id="拍照"><a href="#拍照" class="headerlink" title="拍照"></a>拍照</h1><p><strong>光圈与速度</strong>其实是起同样的作用，都是控制光量的。光圈开的大进光就多，光圈开的小进光就少。速度定的慢，光就进的多，速度定的快光就进的少。光圈与速度是配合使用的。<br>一般的相机光圈最大是3.5，最小是22。速度慢的是一秒，快的是千分之一秒。但我们平时拍照很少用最大光圈和最小光圈。常用的光圈是5.6、8、11、16；常用的速度是60、125、250。千分之一秒是干什么用的呢？千分之一秒可拍火箭发射，炮弹出膛，运行快的物体。<br>大光圈快速度是在特定的情况下才使用。大光圈和小光圈比，小光圈照得照片比大光圈清楚。要想把照片照得清楚，尽量用小光圈。要想突出某个人物或物品就用大光圈。因大光圈照出来的物体焦距zhuan的清楚，焦距外的就模糊不清了。</p>
+<p><strong>光圈与速度是反比关系。决定着相机的感光量大小。</strong></p>
+]]></content>
   </entry>
 </search>
