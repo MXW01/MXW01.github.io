@@ -30,17 +30,17 @@
 <meta property="og:site_name" content="MXW01&#39;s Blog">
 <meta property="og:description" content="VS+VTK+QT安装与配置">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/cmake01.png">
-<meta property="og:image" content="http://example.com/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/VS01.png">
-<meta property="og:image" content="http://example.com/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/VS02.png">
-<meta property="og:image" content="http://example.com/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/QT01.png">
-<meta property="og:image" content="http://example.com/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/QT02.png">
+<meta property="og:image" content="http://example.com/cmake01.png">
+<meta property="og:image" content="http://example.com/VS01.png">
+<meta property="og:image" content="http://example.com/VS02.png">
+<meta property="og:image" content="http://example.com/QT01.png">
+<meta property="og:image" content="http://example.com/QT02.png">
 <meta property="article:published_time" content="2020-12-30T14:51:50.000Z">
 <meta property="article:modified_time" content="2020-12-31T02:34:53.947Z">
 <meta property="article:author" content="MXW01">
 <meta property="article:tag" content="cs">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/cmake01.png">
+<meta name="twitter:image" content="http://example.com/cmake01.png">
 
 <link rel="canonical" href="http://example.com/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
 
@@ -242,9 +242,9 @@
 <li>选择qt组件，包括SupportQtOpenGL和Group_Qt,configure后选择QT_DESIGNER_PLUGUIN生成插件</li>
 </ol>
 <p>configure可以多点几次，知道没有红色选项。</p>
-<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/cmake01.png"></p>
+<p><img src="/cmake01.png"></p>
 <p>然后选择generate，没有报错后，打开bin文件夹会有VTK.sln文件双击打开，或者直接点边上Open Project</p>
-<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/VS01.png"></p>
+<p><img src="/VS01.png"></p>
 <p>VS界面中重点关注，Release和Debug版本，位数选X64。一般情况编译会把两个都编译一次。<br>选择好一个版本后(Debug)，选中ALL_BUILD右键选择生成，VS开始编译VTK包，第一次编译大约半小时。<br>编译完成后，选中INSTALL右键选择仅用于此项目——仅生成INSTALL(B),这一步后VTK的依赖包会安装到cmake中修改的修改prefix路径。这些依赖包用来配置VTK工程环境。</p>
 <p>此时Debug版本已编译完成，依赖包安装到prefix路径。把prefix路径中的文件拷贝到另外一个文件夹并做好标记，因为在编译Release时，依赖会被覆盖。</p>
 <p>在visualstudio中编译好两个版本，整理好依赖包后，新建一个工程。</p>
@@ -258,12 +258,12 @@
 <p>到此，DebugX64版本的属性表就设置完成，同样的可以设置ReleaseX64版本的属性表，这两个属性表可以保存一下，以后新建项目都可以用。</p>
 <p>接下来，选择解决方案，选中项目右键属性中——调试——环境中添加PATH=%PATH%;D:\VTK\VTKLibrary820\ReleaseX64\bin（PATH=%PATH%;+debug或者release版本中bin的文件夹路径）<br><strong>环境选项卡下不要选从父级货项目默认设置继承</strong></p>
 <p>到此VTK工程环境安装完毕</p>
-<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/VS02.png"></p>
+<p><img src="/VS02.png"></p>
 <h1 id="Qt安装"><a href="#Qt安装" class="headerlink" title="Qt安装"></a>Qt安装</h1><p>Qt安装mscv2017和mscv2017_64，前者为32位，vs中使用后者64位。</p>
-<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/QT01.png"></p>
+<p><img src="/QT01.png"></p>
 <p>vs中扩展——管理扩展——联机——搜索Qt——下载Qt Visual Studio Tools，下载好重启VS</p>
 <p>vs中扩展——Qt VS Tools——Option——add增加mscv2017_64目录，默认选择64位的，建议只添加64位。</p>
-<p><img src="/2020/12/30/VS-VTK-QT%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/QT02.png"></p>
+<p><img src="/QT02.png"></p>
 <p>至此，VS2019支持Qt插件</p>
 
     </div>
@@ -361,7 +361,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
